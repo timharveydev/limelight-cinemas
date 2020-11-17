@@ -1,0 +1,22 @@
+/* Grid
+--------------------------------------------*/
+
+// This is a simple but effective Flexbox grid system. Credit to Mark Thomas Miller.
+// More info at https://mtm.dev/grid
+
+.grid {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.column { flex: 1; }
+
+.bigger { flex: 2.5; }
+
+.halves .column  { flex: 0 0 50%; }
+.thirds .column  { flex: 0 0 33.3333%; }
+.fourths .column { flex: 0 0 25%; }
+
+@media (max-width: 900px) {
+	.grid { display: block; }
+}

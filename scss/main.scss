@@ -1,0 +1,23 @@
+/* Main.scss
+--------------------------------------------*/
+
+// I have tried to organise the scss files into self-evident categories.
+// Each scss file holds global / universal styles relating to its category.
+// All page-specific / non-global code is included in "_pageStyles.scss".
+// Code which does not fit into any of the categories and is not specific to any page will be included under "General Styles & Utilities" on this page.
+// Scss files are imported here and are then compiled to "/css/main.css".
+
+/* Imports */
+@import "_resets.scss";
+@import "_variables.scss";
+@import "_grid.scss";
+@import "_typography.scss";
+@import "_buttons.scss";
+@import "_forms.scss";
+@import "_graphics.scss";
+@import "_navigation.scss";
+@import "_footer.scss";
+@import "_pageStyles.scss";
+
+
+/* General Styles & Utilities */
