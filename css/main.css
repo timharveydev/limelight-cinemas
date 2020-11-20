@@ -1,7 +1,18 @@
-/* Main.scss
+/* MAIN.SCSS
 --------------------------------------------*/
-/* Imports */
-/* Resets
+/**
+ * SASS folder structure is based on the 7-1 pattern by Hugo Giraudel.
+ * More info at https://sass-guidelin.es/#architecture
+ *
+ * This project makes use of BEM CSS naming conventions.
+*/
+/* COLOURS
+--------------------------------------------*/
+/* FONTS
+--------------------------------------------*/
+/* 
+--------------------------------------------*/
+/* RESET
 --------------------------------------------*/
 * {
   margin: 0;
@@ -10,13 +21,31 @@
           box-sizing: border-box;
 }
 
-/* Variables
+/* 
 --------------------------------------------*/
-/* Colors */
-/* Fonts */
-/* Grid
+/* 
 --------------------------------------------*/
+/* GRID
+--------------------------------------------*/
+/**
+ * This is a simple Flexbox grid system which is intended to be easy to use and easy to customize.
+ * 
+ * 1. Add the .grid class to a parent element.
+ * 2. Add the .column class to direct child elements.
+ *
+ * By default, columns will all be the same width and will keep stacking to fill all available space.
+ *
+ * 3. Add the .bigger class to any .column elements that should be wider.
+ *    The flex value can be increased/decreased as desired.
+ * 4. Add the .halves/.thirds etc. classes to the .grid element to force a fixed number of columns.
+ *
+ * 5. The media query breaks the columns into block items at smaller screen sizes.
+ *
+ * Credit to Mark Thomas Miller.
+ * More info at https://mtm.dev/grid
+*/
 .grid {
+  /* [1] */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -30,57 +59,63 @@
           flex: 1;
 }
 
+/* [2] */
 .bigger {
   -webkit-box-flex: 2.5;
       -ms-flex: 2.5;
           flex: 2.5;
 }
 
+/* [3] */
 .halves .column {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 50%;
           flex: 0 0 50%;
 }
 
+/* [4] */
 .thirds .column {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 33.3333%;
           flex: 0 0 33.3333%;
 }
 
+/* [4] */
 .fourths .column {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 25%;
           flex: 0 0 25%;
 }
 
+/* [4] */
 @media (max-width: 900px) {
+  /* [5] */
   .grid {
     display: block;
   }
 }
 
-/* Typography
+/* WRAPPERS
 --------------------------------------------*/
-/* Buttons
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* 
 --------------------------------------------*/
-/* Forms
+/* 
 --------------------------------------------*/
-/* Graphics
+/* 
 --------------------------------------------*/
-/* Navigation
+/* 
 --------------------------------------------*/
-/* Footer
+/* 
 --------------------------------------------*/
-/* Page-Specific Styles
+/* 
 --------------------------------------------*/
-/* Contents
------------
-* index
-* About
-* Contact
-* Login
-* Register
-*/
-/* General Styles & Utilities */
+/* 
+--------------------------------------------*/
+/* 
+--------------------------------------------*/
 /*# sourceMappingURL=main.css.map */

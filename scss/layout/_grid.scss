@@ -1,0 +1,39 @@
+
+/* GRID
+--------------------------------------------*/
+
+/**
+ * This is a simple Flexbox grid system which is intended to be easy to use and easy to customize.
+ * 
+ * 1. Add the .grid class to a parent element.
+ * 2. Add the .column class to direct child elements.
+ *
+ * By default, columns will all be the same width and will keep stacking to fill all available space.
+ *
+ * 3. Add the .bigger class to any .column elements that should be wider.
+ *    The flex value can be increased/decreased as desired.
+ * 4. Add the .halves/.thirds etc. classes to the .grid element to force a fixed number of columns.
+ *
+ * 5. The media query breaks the columns into block items at smaller screen sizes.
+ *
+ * Credit to Mark Thomas Miller.
+ * More info at https://mtm.dev/grid
+*/
+
+
+.grid { /* [1] */
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.column { flex: 1; } /* [2] */
+
+.bigger { flex: 2.5; } /* [3] */
+
+.halves .column  { flex: 0 0 50%; } /* [4] */
+.thirds .column  { flex: 0 0 33.3333%; } /* [4] */
+.fourths .column { flex: 0 0 25%; } /* [4] */
+
+@media (max-width: 900px) { /* [5] */
+	.grid { display: block; }
+}
