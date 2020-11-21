@@ -1,3 +1,30 @@
 
 /* NAVIGATION
 --------------------------------------------*/
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 10vh;
+  background-color: $medium-grey;
+  @include box-shadow;
+
+  &__container {
+    @include display-flex($justify: space-between, $align: center);
+  }
+
+  &__logo {
+    height: 80%;
+    padding: 2rem 0;
+    cursor: pointer;
+  }
+
+  &__list {
+    list-style: none;
+    height: 100%;
+    @include display-flex;
+    background-color: grey;
+  }
+}

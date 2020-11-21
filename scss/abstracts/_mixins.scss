@@ -1,3 +1,18 @@
 
 /* MIXINS
 --------------------------------------------*/
+
+// Display Flex
+// Accepts flex-direction, justify-content and align-items values
+@mixin display-flex ($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// Box Shadow
+// Accepts h-offset, v-offset, blur and color values
+@mixin box-shadow ($h-offset: 0, $v-offset: 5px, $blur: 5px, $color: rgba(0, 0, 0, 0.2)) {
+  box-shadow: $h-offset $v-offset $blur $color;
+}
