@@ -16,3 +16,9 @@
 @mixin box-shadow ($h-offset: 0, $v-offset: 5px, $blur: 5px, $color: rgba(0, 0, 0, 0.2)) {
   box-shadow: $h-offset $v-offset $blur $color;
 }
+
+// Transition
+// Accepts delay value only - timing is pre-set for consistency across the site
+@mixin transition ($delay: 0s) {
+  transition: all 120ms ease-in-out $delay;
+}

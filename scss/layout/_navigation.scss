@@ -12,7 +12,7 @@
   @include box-shadow;
 
   &__container {
-    @include display-flex($justify: space-between, $align: center);
+    @include display-flex($justify: space-between);
   }
 
   &__logo {
@@ -22,9 +22,32 @@
   }
 
   &__list {
+    height: 80%;
     list-style: none;
+    @include display-flex;
+  }
+
+  &__item {
     height: 100%;
     @include display-flex;
-    background-color: grey;
+  }
+
+  &__link {
+    height: 100%;
+    margin-left: 3rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    @include display-flex;
+    @include transition;
+
+    &:hover { color: $white-hover; }
+  }
+
+  &__separator {
+    height: 50%;
+    border-left: 2px solid $dark-grey;
+    margin-left: 3rem;
   }
 }
