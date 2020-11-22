@@ -11,7 +11,10 @@ body {
 }
 
 
-a { color: $white; }
+a {
+  color: $white;
+  cursor: pointer;
+}
 
 
 img {

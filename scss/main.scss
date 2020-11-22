@@ -11,7 +11,7 @@
 */
 
 
-// Includes SASS-specific files such as variables, mixins, functions etc.
+// Includes SASS-specific files such as variables, global mixins, functions etc.
 // This section does not output any compilable CSS code.
 @import 'abstracts/variables';
 @import 'abstracts/mixins';
@@ -27,7 +27,7 @@
 @import 'layout/navigation';
 @import 'layout/footer';
 
-// Includes all component styles.
+// Includes all component styles, including component-specific mixins and functions.
 // Components are intended to be reusable.
 @import 'components/buttons';
 @import 'components/carousel';

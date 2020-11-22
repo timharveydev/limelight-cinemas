@@ -2,6 +2,11 @@
 /* MIXINS
 --------------------------------------------*/
 
+/**
+ * These are global-only mixins, intended to be used as tools throughout the website.
+ * Component-specific mixins are located within each component's specific .scss file.
+*/
+
 // Display Flex
 // Accepts flex-direction, justify-content and align-items values
 @mixin display-flex ($direction: row, $justify: center, $align: center) {

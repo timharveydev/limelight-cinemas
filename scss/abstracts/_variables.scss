@@ -12,10 +12,10 @@ $light-grey: #d6d6d6;
 $medium-grey: #5c5c5c;
 $dark-grey: #3b3b3b;
 
-// RGB same as $color-primary above
-$color-primary-hover: rgba(73,177,113, 0.8);
 
-// RGB same a $white above
+// Hover versions of above colors with reduced opacity
+// RGB values same as hex values above
+$color-primary-hover: rgba(73,177,113, 0.8);
 $white-hover: rgba(243, 243, 243, 0.6);
 
 
