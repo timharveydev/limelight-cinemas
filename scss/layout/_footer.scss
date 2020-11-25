@@ -2,9 +2,58 @@
 /* FOOTER
 --------------------------------------------*/
 
-footer {
+.footer {
   display: block;
-  height: 20rem;
   width: 100%;
+  height: 15rem;
   background-color: $black;
+  color: $medium-grey;
+
+
+  // Splits footer content into left, middle and right sections
+  &__container { @include display-flex($justify: space-between); }
+
+
+  // Relates to nav links on left side
+  &__nav { @include display-flex($direction: column, $align: left); }
+
+
+  // Contains social media and copyright
+  // Set padding-top to ~ 1/3rd .footer height to keep icons nicely positioned vertically
+  &__flex-wrapper {
+    height: 100%;
+    padding-top: 4.5rem;
+    padding-bottom: 1rem;
+    @include display-flex($direction: column, $justify: space-between);
+  }
+
+
+  // Social media icon styles
+  &__social {
+    width: 20rem;
+    @include display-flex($justify: space-between);
+
+    &--icon {
+      font-size: 3rem;
+      color: $medium-grey;
+      padding: 1rem;
+
+      // Font Awsome classes for hover effect
+      &:hover .fa-facebook-f { color: #4267B2; }
+      &:hover .fa-youtube { color: #FF0000; }
+      &:hover .fa-twitter { color: #1DA1F2; }
+    }
+  }
+  
+
+  // Link styling
+  &__link {
+    color: $medium-grey;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 2rem;
+
+    &:hover { color: $light-grey; }
+  }
 }

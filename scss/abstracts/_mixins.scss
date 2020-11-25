@@ -17,9 +17,9 @@
 }
 
 // Box Shadow
-// Accepts h-offset, v-offset, blur and color values
-@mixin box-shadow ($h-offset: 0, $v-offset: 5px, $blur: 5px, $color: rgba(0, 0, 0, 0.2)) {
-  box-shadow: $h-offset $v-offset $blur $color;
+// Accepts h-offset and v-offset values
+@mixin box-shadow ($h-offset: 0, $v-offset: 5px) {
+  box-shadow: $h-offset $v-offset 8px rgba(0, 0, 0, 0.2);
 }
 
 // Transition

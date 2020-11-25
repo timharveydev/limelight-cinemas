@@ -198,8 +198,8 @@ h6 {
   height: 6.5rem;
   background-color: #5c5c5c;
   z-index: 1000;
-  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
 }
 
 .nav__container {
@@ -224,7 +224,7 @@ h6 {
 }
 
 .nav__list {
-  height: 80%;
+  height: 3.8rem;
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -293,11 +293,110 @@ h6 {
 
 /* FOOTER
 --------------------------------------------*/
-footer {
+.footer {
   display: block;
-  height: 20rem;
   width: 100%;
+  height: 15rem;
   background-color: #1a1a1a;
+  color: #5c5c5c;
+}
+
+.footer__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+}
+
+.footer__flex-wrapper {
+  height: 100%;
+  padding-top: 4.5rem;
+  padding-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer__social {
+  width: 20rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer__social--icon {
+  font-size: 3rem;
+  color: #5c5c5c;
+  padding: 1rem;
+}
+
+.footer__social--icon:hover .fa-facebook-f {
+  color: #4267B2;
+}
+
+.footer__social--icon:hover .fa-youtube {
+  color: #FF0000;
+}
+
+.footer__social--icon:hover .fa-twitter {
+  color: #1DA1F2;
+}
+
+.footer__link {
+  color: #5c5c5c;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: 2rem;
+}
+
+.footer__link:hover {
+  color: #d6d6d6;
 }
 
 /* BUTTONS
@@ -528,6 +627,10 @@ footer {
 
 /* INDEX
 --------------------------------------------*/
+section {
+  height: 100%;
+}
+
 /* JUNIOR
 --------------------------------------------*/
 /* ADMIN
