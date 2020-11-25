@@ -30,8 +30,8 @@
 // Includes all component styles, including component-specific mixins and functions.
 // Components are intended to be reusable.
 @import 'components/buttons';
-@import 'components/carousel';
 @import 'components/forms';
+@import 'components/full-page-slider';
 
 // Includes page-specific styling.
 @import 'pages/index';

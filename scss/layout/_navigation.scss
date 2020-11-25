@@ -7,8 +7,9 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 10vh;
+  height: 6.5rem;
   background-color: $medium-grey;
+  z-index: 1000;
   @include box-shadow;
 
   &__container {
@@ -16,8 +17,8 @@
   }
 
   &__logo {
-    height: 80%;
-    padding: 2rem 0;
+    // 3.8rem = same height as button components
+    height: 3.8rem;
     cursor: pointer;
   }
 
@@ -34,7 +35,7 @@
 
   &__link {
     height: 100%;
-    margin-left: 3rem;
+    margin-left: 5rem;
     font-size: 1.2rem;
     font-weight: 600;
     text-decoration: none;
@@ -45,9 +46,10 @@
     &:hover { color: $white-hover; }
   }
 
-  &__separator {
-    height: 50%;
-    border-left: 2px solid $dark-grey;
-    margin-left: 3rem;
+  &__button {
+    margin-left: 5rem;
+
+    // '!important' overrides the default button padding used for the rest of the website
+    padding: 0 1.2rem !important;
   }
 }

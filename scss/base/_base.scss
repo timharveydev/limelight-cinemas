@@ -2,12 +2,16 @@
 /* BASE STYLES
 --------------------------------------------*/
 
+html { scroll-behavior: smooth; }
+
+
 body {
   width: 100vw;
   max-width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   background-color: $dark-grey;
   color: $white;
+  overflow-x: hidden;
 }
 
 
