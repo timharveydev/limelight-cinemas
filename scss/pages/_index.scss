@@ -2,4 +2,66 @@
 /* INDEX
 --------------------------------------------*/
 
-section { height: 100%; }
+.hero {
+  height: 100%;
+  width: 100%;
+
+  // Position: relative -> hero__button--absolute is positioned absolute
+  // Height 90% moves content up the page, leaving space for the "What's On?" button at the bottom
+  &__container {
+    @include display-flex;
+    position: relative;
+    height: 90%;
+  }
+
+
+  &__left-side { width: 60%; }
+
+  &__main-title {
+    font-size: 9rem;
+    font-weight: 600;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+    padding: 2.5rem 0 5.5rem 0;
+    color: $light-grey;
+
+    &--primary-color {
+      color: $color-primary;
+    }
+  }
+
+
+  &__right-side {
+    width: 40%;
+    text-align: center;
+  }
+
+  // Vertically align "Become a member today ..." with main title "LIMELIGHT"
+  &__sub-title { padding-top: 4.6rem; }
+
+  &__info {
+    width: 50%;
+    font-size: 1.6rem;
+    margin: 0 auto;
+    padding: 2.5rem 0 4.6rem 0;
+  }
+
+
+  // Makes hero buttons larger than global default buttons
+  &__button {
+    font-size: 1.4rem;
+    width: 33%;
+    height: 4.5rem;
+    line-height: 4.5rem;
+
+    &--absolute {
+      font-size: 1.4rem;
+      width: 25%;
+      height: 4.5rem;
+      line-height: 4.5rem;
+
+      position: absolute;
+      top: 90%;
+    }
+  }
+}

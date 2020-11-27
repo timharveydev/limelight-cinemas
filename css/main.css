@@ -60,7 +60,7 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 1.4rem;
   font-weight: 400;
-  line-height: 1.6rem;
+  line-height: 1.8rem;
   letter-spacing: 0.06rem;
 }
 
@@ -528,7 +528,7 @@ h6 {
   z-index: -1;
   top: 0px;
   content: '';
-  background: rgba(0, 0, 0, 0.5) url(../img/pattern.png) repeat top left;
+  background: rgba(0, 0, 0, 0.6) url(../img/pattern.png) repeat top left;
 }
 
 .slider__img {
@@ -627,8 +627,76 @@ h6 {
 
 /* INDEX
 --------------------------------------------*/
-section {
+.hero {
   height: 100%;
+  width: 100%;
+}
+
+.hero__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  height: 90%;
+}
+
+.hero__left-side {
+  width: 60%;
+}
+
+.hero__main-title {
+  font-size: 9rem;
+  font-weight: 600;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  padding: 2.5rem 0 5.5rem 0;
+  color: #d6d6d6;
+}
+
+.hero__main-title--primary-color {
+  color: #49b171;
+}
+
+.hero__right-side {
+  width: 40%;
+  text-align: center;
+}
+
+.hero__sub-title {
+  padding-top: 4.6rem;
+}
+
+.hero__info {
+  width: 50%;
+  font-size: 1.6rem;
+  margin: 0 auto;
+  padding: 2.5rem 0 4.6rem 0;
+}
+
+.hero__button {
+  font-size: 1.4rem;
+  width: 33%;
+  height: 4.5rem;
+  line-height: 4.5rem;
+}
+
+.hero__button--absolute {
+  font-size: 1.4rem;
+  width: 25%;
+  height: 4.5rem;
+  line-height: 4.5rem;
+  position: absolute;
+  top: 90%;
 }
 
 /* JUNIOR
