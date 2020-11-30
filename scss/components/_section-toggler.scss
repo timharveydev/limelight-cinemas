@@ -1,0 +1,69 @@
+
+/* SECTION TOGGLER
+--------------------------------------------*/
+
+/**
+ * This is a handy widget that provides two big bottons a user can use
+ * to toggle between to different sections on one page.
+ *
+ * Each section can be hidden from view and then given a class of "visible" or similar
+ * using a Javascript Toggle function.
+ *
+ * It will fill all available horizontal space.
+ * Place within a container and set preferred width on the container.
+*/
+
+.section-toggler {
+  width: 100%;
+  height: 6rem;
+  text-align: center;
+  @include display-flex;
+
+  // line-height should equal height above ^
+  &__toggle-button {
+    width: 50%;
+    font-weight: 600;
+    font-size: 1.6rem;
+    text-decoration: none;
+    line-height: 6rem;
+    letter-spacing: 0.2rem;
+    background-color: $medium-grey;
+    cursor: pointer;
+    @include transition;
+
+    // Set border radius
+    &:nth-child(1) {
+      border-top-left-radius: $border-radius-default;
+      border-bottom-left-radius: $border-radius-default;
+    }
+    &:nth-child(2) {
+      border-top-right-radius: $border-radius-default;
+      border-bottom-right-radius: $border-radius-default;
+    }
+
+    &:hover,
+    &:focus { background-color: $medium-grey-hover; }
+  }
+
+  & > .active {
+    background-color: $color-primary;
+    &:hover { background-color: $color-primary; }
+  }
+}
+
+
+
+
+/*
+  &--primary {
+    @include button;
+    background-color: $color-primary;
+    border-color: $color-primary;
+
+    &:hover,
+    &:focus {
+      background-color: $color-primary-hover;
+      border-color: $color-primary-hover; 
+    }
+  }
+  */

@@ -10,6 +10,8 @@
 --------------------------------------------*/
 /* FONTS
 --------------------------------------------*/
+/* BORDERS
+--------------------------------------------*/
 /* MIXINS
 --------------------------------------------*/
 /**
@@ -414,6 +416,7 @@ h6 {
   text-decoration: none;
   white-space: nowrap;
   background-color: transparent;
+  color: #f3f3f3;
   border-radius: 4px;
   border: 1px solid #f3f3f3;
   cursor: pointer;
@@ -439,6 +442,7 @@ h6 {
   text-decoration: none;
   white-space: nowrap;
   background-color: transparent;
+  color: #f3f3f3;
   border-radius: 4px;
   border: 1px solid #f3f3f3;
   cursor: pointer;
@@ -466,6 +470,7 @@ h6 {
   text-decoration: none;
   white-space: nowrap;
   background-color: transparent;
+  color: #f3f3f3;
   border-radius: 4px;
   border: 1px solid #f3f3f3;
   cursor: pointer;
@@ -491,6 +496,7 @@ h6 {
   text-decoration: none;
   white-space: nowrap;
   background-color: transparent;
+  color: #f3f3f3;
   border-radius: 4px;
   border: 1px solid #f3f3f3;
   cursor: pointer;
@@ -503,8 +509,40 @@ h6 {
   border-color: #ee6d49;
 }
 
+.button--large {
+  font-size: 1.4rem;
+  height: 5rem;
+  line-height: 5rem;
+  padding: 0 4rem;
+}
+
 /* FORMS
 --------------------------------------------*/
+/**
+ * Forms will take up all available horizontal space.
+ * Place them within a container set to whichever width is preferable.
+ */
+.form {
+  width: 100%;
+}
+
+.form__label {
+  font-weight: 600;
+}
+
+.form__label > .required {
+  color: #ee6d49;
+  font-size: 1rem;
+}
+
+.form__text-input {
+  width: 100%;
+}
+
+.form__button {
+  width: 100%;
+}
+
 /* FULL-PAGE-SLIDER
 --------------------------------------------*/
 /**
@@ -625,6 +663,85 @@ h6 {
   }
 }
 
+/* SECTION TOGGLER
+--------------------------------------------*/
+/**
+ * This is a handy widget that provides two big bottons a user can use
+ * to toggle between to different sections on one page.
+ *
+ * Each section can be hidden from view and then given a class of "visible" or similar
+ * using a Javascript Toggle function.
+ *
+ * It will fill all available horizontal space.
+ * Place within a container and set preferred width on the container.
+*/
+.section-toggler {
+  width: 100%;
+  height: 6rem;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section-toggler__toggle-button {
+  width: 50%;
+  font-weight: 600;
+  font-size: 1.6rem;
+  text-decoration: none;
+  line-height: 6rem;
+  letter-spacing: 0.2rem;
+  background-color: #5c5c5c;
+  cursor: pointer;
+  -webkit-transition: all 100ms ease-in-out 0s;
+  transition: all 100ms ease-in-out 0s;
+}
+
+.section-toggler__toggle-button:nth-child(1) {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.section-toggler__toggle-button:nth-child(2) {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.section-toggler__toggle-button:hover, .section-toggler__toggle-button:focus {
+  background-color: rgba(92, 92, 92, 0.6);
+}
+
+.section-toggler > .active {
+  background-color: #49b171;
+}
+
+.section-toggler > .active:hover {
+  background-color: #49b171;
+}
+
+/*
+  &--primary {
+    @include button;
+    background-color: $color-primary;
+    border-color: $color-primary;
+
+    &:hover,
+    &:focus {
+      background-color: $color-primary-hover;
+      border-color: $color-primary-hover; 
+    }
+  }
+  */
 /* INDEX
 --------------------------------------------*/
 .hero {
@@ -684,19 +801,37 @@ h6 {
 }
 
 .hero__button {
-  font-size: 1.4rem;
   width: 33%;
-  height: 4.5rem;
-  line-height: 4.5rem;
 }
 
 .hero__button--absolute {
-  font-size: 1.4rem;
   width: 25%;
-  height: 4.5rem;
-  line-height: 4.5rem;
   position: absolute;
   top: 90%;
+}
+
+/* REGISTER
+--------------------------------------------*/
+.login-register {
+  height: 100%;
+  width: 100%;
+}
+
+.login-register__container {
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 /* JUNIOR

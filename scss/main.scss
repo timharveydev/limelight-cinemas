@@ -32,9 +32,11 @@
 @import 'components/buttons';
 @import 'components/forms';
 @import 'components/full-page-slider';
+@import 'components/section-toggler';
 
 // Includes page-specific styling.
 @import 'pages/index';
+@import 'pages/loginRegister';
 
 // Includes alternate theme styles for different user types.
 // Classes applied using PHP when user logs in.

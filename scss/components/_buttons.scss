@@ -17,7 +17,8 @@
   text-decoration: none;
   white-space: nowrap;
   background-color: transparent;
-  border-radius: 4px;
+  color: $white;
+  border-radius: $border-radius-default;
   border: 1px solid $white;
   cursor: pointer;
   @include transition;
@@ -63,5 +64,13 @@
       background-color:$color-secondary;
       border-color: $color-secondary; 
     }
+  }
+
+
+  &--large {
+    font-size: 1.4rem;
+    height: 5rem;
+    line-height: 5rem;
+    padding: 0 4rem;
   }
 }

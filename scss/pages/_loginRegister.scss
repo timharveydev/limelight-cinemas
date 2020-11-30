@@ -1,0 +1,16 @@
+
+/* REGISTER
+--------------------------------------------*/
+
+.login-register {
+  height: 100%;
+  width: 100%;
+
+
+  // Width determines width of form
+  &__container {
+    width: 30%;
+    @include display-flex($direction: column);
+  }
+
+}

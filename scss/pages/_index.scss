@@ -49,17 +49,10 @@
 
   // Makes hero buttons larger than global default buttons
   &__button {
-    font-size: 1.4rem;
     width: 33%;
-    height: 4.5rem;
-    line-height: 4.5rem;
 
     &--absolute {
-      font-size: 1.4rem;
       width: 25%;
-      height: 4.5rem;
-      line-height: 4.5rem;
-
       position: absolute;
       top: 90%;
     }
