@@ -40,6 +40,9 @@ body {
   background-color: #3b3b3b;
   color: #f3f3f3;
   overflow-x: hidden;
+  opacity: 0;
+  -webkit-transition: 800ms ease opacity;
+  transition: 800ms ease opacity;
 }
 
 a {
