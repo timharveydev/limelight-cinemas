@@ -3,11 +3,10 @@
 --------------------------------------------*/
 
 /**
- * This is a handy widget that provides two big bottons a user can use
- * to toggle between to different sections on one page.
+ * This component provides two big buttons a user can click
+ * to toggle between two different sections of a page.
  *
- * Each section can be hidden from view and then given a class of "visible" or similar
- * using a Javascript Toggle function.
+ * Used in conjunction with the JS toggleSection() function -> see "toggleSection.js" for more details
  *
  * It will fill all available horizontal space.
  * Place within a container and set preferred width on the container.
@@ -45,6 +44,7 @@
     &:focus { background-color: $medium-grey-hover; }
   }
 
+  // .active class togled by JS toggleSection() function
   & > .active {
     background-color: $color-primary;
     &:hover { background-color: $color-primary; }

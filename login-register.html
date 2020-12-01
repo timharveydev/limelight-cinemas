@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Tim Harvey">
   <meta name="description" content="A dynamic cinema website created for my HND Web Development course.">
-  <title>Limelight | Register & Login</title>
+  <title>Limelight | Login & Register</title>
 
   <!-- CSS
   --------------------------------------------------------->
@@ -64,15 +64,16 @@
   <section class="login-register">
     <div class="login-register__container container">
 
+      <!-- Section toggler component - .active class toggled by JS toggleSection() function using IDs -->
       <div class="section-toggler">
-        <a href="#" class="section-toggler__toggle-button">Register</a>
-        <a href="#" class="section-toggler__toggle-button active">Login</a>
+        <a class="section-toggler__toggle-button" id="register-button" onclick="toggleSection('register')">Register</a>
+        <a class="section-toggler__toggle-button" id="login-button" onclick="toggleSection('login')">Login</a>
       </div>
 
-      <!-- Heading - content is changed by JS toggleSection() function depending on the section chosen on the toggler component above -->
-      <h1 class="login-register__heading">Login</h1>
+      <!-- Heading - text content is added by JS toggleSection() function depending on the section chosen on the toggler component above -->
+      <h1 class="login-register__heading"></h1>
 
-      <!-- Registration form - display:none can be toggled by the JS toggleSection function -->
+      <!-- Registration form - display:none is toggled by the JS toggleSection() function -->
       <form action="#" class="register__form form">
         <label for="username" class="form__label">Username <span class="required">*</span></label>
         <input name="username" type="text" class="form__text-input">
@@ -93,7 +94,7 @@
         <input name="reset" type="reset" value="Reset" class="form__button button--negative button--large">
       </form>
 
-      <!-- Login form - display:none can be toggled by the JS toggleSection function -->
+      <!-- Login form - display:none is toggled by the JS toggleSection function -->
       <form action="#" class="login__form form">
         <label for="username" class="form__label">Username</label>
         <input name="username" type="text" class="form__text-input">
@@ -143,6 +144,10 @@
 
     </div>
   </footer>
+
+  <!-- JAVASCRIPT
+  --------------------------------------------------------->
+  <script src="/js/toggleSection.js"></script>
 
   <!-- END DOCUMENT
   --------------------------------------------------------->

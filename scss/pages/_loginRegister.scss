@@ -18,8 +18,9 @@
 }
 
 
-// TEMPORARY
-.register__form { display: none; }
+// Overwritten by JS toggleSection() function
+.register__form,
+.login__form { display: none; }
 
 // Padding-bottom stops section toggler, heading and form being too vertically spread out
 .login__form { padding-bottom: 20rem; }
