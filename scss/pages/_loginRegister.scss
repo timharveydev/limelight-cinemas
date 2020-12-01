@@ -1,5 +1,5 @@
 
-/* REGISTER
+/* LOGIN & REGISTER
 --------------------------------------------*/
 
 .login-register {
@@ -8,9 +8,17 @@
 
 
   // Width determines width of form
+  // Display-flex spaces out section toggler, heading and form to make use of all vertical space
+  // Padding sets maximum top and bottom for container content
   &__container {
     width: 30%;
-    @include display-flex($direction: column);
+    padding: 12rem 0;
+    @include display-flex($direction: column, $justify: space-between);
   }
-
 }
+
+
+.register__form { display: none; }
+
+// Padding-bottom stops section toggler, heading and form being too vertically spread out
+.login__form { padding-bottom: 20rem; }

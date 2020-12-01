@@ -50,20 +50,3 @@
     &:hover { background-color: $color-primary; }
   }
 }
-
-
-
-
-/*
-  &--primary {
-    @include button;
-    background-color: $color-primary;
-    border-color: $color-primary;
-
-    &:hover,
-    &:focus {
-      background-color: $color-primary-hover;
-      border-color: $color-primary-hover; 
-    }
-  }
-  */
