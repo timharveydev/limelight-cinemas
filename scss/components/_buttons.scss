@@ -42,7 +42,8 @@
     &:hover,
     &:focus {
       background-color: $color-primary-hover;
-      border-color: $color-primary-hover; 
+      border-color: $color-primary-hover;
+      outline: 0;
     }
   }
 
@@ -52,7 +53,8 @@
     &:hover,
     &:focus {
       background-color: $color-primary;
-      border-color:  $color-primary; 
+      border-color:  $color-primary;
+      outline: 0;
     }
   }
 
@@ -62,11 +64,13 @@
     &:hover,
     &:focus {
       background-color:$color-secondary;
-      border-color: $color-secondary; 
+      border-color: $color-secondary;
+      outline: 0;
     }
   }
 
 
+  // To be added in addition to one of the other button classes
   &--large {
     font-size: 1.4rem;
     height: 5rem;

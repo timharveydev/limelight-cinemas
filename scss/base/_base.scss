@@ -13,9 +13,11 @@ body {
   color: $white;
   overflow-x: hidden;
 
-  // Required for page fade-in on load effect
-  opacity: 0;
-  transition: 800ms ease opacity;
+  // Page fade-in effect
+  &.fade-in {
+    opacity: 0;
+    transition: 800ms ease opacity;
+  }
 }
 
 

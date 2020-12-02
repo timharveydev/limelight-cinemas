@@ -40,6 +40,9 @@ body {
   background-color: #3b3b3b;
   color: #f3f3f3;
   overflow-x: hidden;
+}
+
+body.fade-in {
   opacity: 0;
   -webkit-transition: 800ms ease opacity;
   transition: 800ms ease opacity;
@@ -458,6 +461,7 @@ h6 {
 .button--primary:hover, .button--primary:focus {
   background-color: rgba(73, 177, 113, 0.8);
   border-color: rgba(73, 177, 113, 0.8);
+  outline: 0;
 }
 
 .button--positive {
@@ -484,6 +488,7 @@ h6 {
 .button--positive:hover, .button--positive:focus {
   background-color: #49b171;
   border-color: #49b171;
+  outline: 0;
 }
 
 .button--negative {
@@ -510,6 +515,7 @@ h6 {
 .button--negative:hover, .button--negative:focus {
   background-color: #ee6d49;
   border-color: #ee6d49;
+  outline: 0;
 }
 
 .button--large {

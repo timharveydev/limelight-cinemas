@@ -31,7 +31,9 @@
   <link rel="mask-icon" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/img/favicon/safari-pinned-tab.svg" color="#49b171">
 
 </head>
-<body id="top" onload="document.body.style.opacity='1'">
+
+<!-- PHP passes 'arg' from URL into toggleSection() function to determine which content is displayed in the 'Login & Reg. Screen Content' section below -->
+<body id="top" onload="toggleSection('<?php echo $_GET[arg]; ?>')">
 
   <!-- MAIN CONTENT
   --------------------------------------------------------->
@@ -49,18 +51,20 @@
         <li class="nav__item"><a href="#" class="nav__link">What's On?</a></li>
         <li class="nav__item"><a href="#" class="nav__link">About</a></li>
         <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
-        <li class="nav__item"><a href="login-register.html?arg=login" class="nav__button button--positive"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+        <li class="nav__item"><a href="login-register.php?arg=login" class="nav__button button--positive"><i class="fas fa-sign-in-alt"></i> Login</a></li>
       </ul>
 
     </div>
   </nav>
 
 
-
+  
 
 
   <!-- Login & Registration Screen Content
   ------------------------------------->
+
+  <!-- Content displayed is determined by the toggleSection() function - see body element above "MAIN CONTENT" heading -->
   <section class="login-register">
     <div class="login-register__container container">
 
@@ -70,8 +74,10 @@
         <a class="section-toggler__toggle-button" id="login-button" onclick="toggleSection('login')">Login</a>
       </div>
 
+
       <!-- Heading - text content is added by JS toggleSection() function depending on the section chosen on the toggler component above -->
       <h1 class="login-register__heading"></h1>
+
 
       <!-- Registration form - display:none is toggled by the JS toggleSection() function -->
       <form action="#" class="register__form form">
@@ -93,6 +99,7 @@
         <input name="submit" type="submit" value="Submit" class="form__button button--primary button--large">
         <input name="reset" type="reset" value="Reset" class="form__button button--negative button--large">
       </form>
+
 
       <!-- Login form - display:none is toggled by the JS toggleSection function -->
       <form action="#" class="login__form form">
@@ -145,9 +152,11 @@
     </div>
   </footer>
 
+
   <!-- JAVASCRIPT
   --------------------------------------------------------->
   <script src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/js/toggleSection.js"></script>
+
 
   <!-- END DOCUMENT
   --------------------------------------------------------->
