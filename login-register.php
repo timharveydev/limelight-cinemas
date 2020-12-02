@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Tim Harvey">
   <meta name="description" content="A dynamic cinema website created for my HND Web Development course.">
-  <title>Limelight | Login & Register</title>
+  <title>Limelight | Register & Login</title>
 
   <!-- CSS
   --------------------------------------------------------->
@@ -32,7 +32,7 @@
 
 </head>
 
-<!-- PHP passes 'arg' from URL into toggleSection() function to determine which content is displayed in the 'Login & Reg. Screen Content' section below -->
+<!-- PHP passes 'arg' from URL into toggleSection() function to determine which content is displayed in the 'Login & Registration Screen Content' section below -->
 <body id="top" onload="toggleSection('<?php echo $_GET[arg]; ?>')">
 
   <!-- MAIN CONTENT
@@ -80,21 +80,21 @@
 
 
       <!-- Registration form - display:none is toggled by the JS toggleSection() function -->
-      <form action="#" class="register__form form">
+      <form class="register__form form" action="register-request.php" method="POST">
         <label for="username" class="form__label">Username <span class="required">*</span></label>
-        <input name="username" type="text" class="form__text-input">
+        <input name="username" type="text" class="form__text-input" maxlength="40">
 
         <label for="password" class="form__label">Password (8-12 characters) <span class="required">*</span></label>
-        <input name="password" type="password" class="form__text-input">
+        <input name="password" type="password" class="form__text-input" maxlength="12">
 
         <label for="confirm-password" class="form__label">Confirm Password <span class="required">*</span></label>
-        <input name="confirm-password" type="password" class="form__text-input">
+        <input name="confirm-password" type="password" class="form__text-input" max-length="12">
 
         <label for="date-of-birth" class="form__label">Date of Birth <span class="required">*</span></label>
         <input name="date-of-birth" type="date" class="form__text-input">
 
         <label for="email" class="form__label">Email (optional)</label>
-        <input name="email" type="text" class="form__text-input">
+        <input name="email" type="text" class="form__text-input" maxlength="40">
 
         <input name="submit" type="submit" value="Submit" class="form__button button--primary button--large">
         <input name="reset" type="reset" value="Reset" class="form__button button--negative button--large">
@@ -102,7 +102,7 @@
 
 
       <!-- Login form - display:none is toggled by the JS toggleSection function -->
-      <form action="#" class="login__form form">
+      <form class="login__form form" action="login-request.php" method="POST">
         <label for="username" class="form__label">Username</label>
         <input name="username" type="text" class="form__text-input">
 
