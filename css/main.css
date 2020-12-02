@@ -834,8 +834,8 @@ h6 {
           align-items: center;
 }
 
-.register__form,
-.login__form {
+.login__form,
+.register__form {
   display: none;
 }
 

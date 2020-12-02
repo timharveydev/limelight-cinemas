@@ -18,9 +18,10 @@
 }
 
 
-// Overwritten by JS toggleSection() function
-.register__form,
-.login__form { display: none; }
+// Display:none toggled between login and register forms by JS toggleSection() function
+.login__form,
+.register__form { display: none; }
+
 
 // Padding-bottom stops section toggler, heading and form being too vertically spread out
 .login__form { padding-bottom: 20rem; }
