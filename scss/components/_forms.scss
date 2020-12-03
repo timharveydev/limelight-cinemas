@@ -21,6 +21,13 @@
   }
 
 
+  &__error {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: $color-secondary;
+  }
+
+
   &__text-input {
     width: 100%;
     height: 3.8rem;

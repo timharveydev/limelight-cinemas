@@ -1,6 +1,6 @@
 
 // Used in conjunction with the Section Toggler component
-function toggleSection(arg) {
+function toggleSection(section) {
 
   // Variables
   const loginButton = document.querySelector('#login-button');
@@ -11,7 +11,7 @@ function toggleSection(arg) {
 
 
   // Checks which toggle button the user has pressed
-  if (arg == 'login') {
+  if (section == 'login') {
     
     // Set active button class
     loginButton.classList.add('active');
@@ -27,7 +27,7 @@ function toggleSection(arg) {
   }
   
 
-  else if (arg == 'register') {
+  else if (section == 'register') {
     
     registerButton.classList.add('active');
     loginButton.classList.remove('active');
