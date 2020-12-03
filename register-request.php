@@ -1,25 +1,27 @@
 <?php
 
+session_start();
+
 // Connection
 include 'connection.php';
 
 
 // User input variables
-$username = $_POST['username'];
-$password = $_POST['password'];
-$confirmPassword = $_POST['confirm-password'];
-$dob = $_POST['date-of-birth'];
-$email = $_POST['email'];
+$_SESSION['username'] = $_POST['username'];
+$_SESSION['password'] = $_POST['password'];
+$_SESSION['confirm-password'] = $_POST['confirm-password'];
+$_SESSION['dob'] = $_POST['date-of-birth'];
+$_SESSION['email'] = $_POST['email'];
 
 
-// Check username is not already taken
-$query = mysqli_query($connection, "SELECT * FROM users WHERE username='$username'");
+// Check username is not already taken - if it is, return to register form with username error in URL
+$query = mysqli_query($connection, "SELECT * FROM users WHERE username='$_SESSION[username]'");
 
 if (mysqli_num_rows($query) > 0) {
   header("Location: login-register.php?section=register&error=usernameError");
 }
 
-// Check password matches confirmPassword
+// Check password matches confirmPassword - if it doesn't, return to register form with password error in URL
 elseif ($password !== $confirmPassword) {
   header("Location: login-register.php?section=register&error=passwordError");
 }
@@ -29,18 +31,24 @@ else {
 
 
   // Include email, if provided
-  if ($email != '') {
-    mysqli_query($connection, "INSERT INTO users (username, password, date_of_birth, email) VALUES ('$username', '$password', '$dob', '$email')");
+  if ($_SESSION['email'] != '') {
+    mysqli_query($connection, "INSERT INTO users (username, password, date_of_birth, email) VALUES ('$_SESSION[username]', '$_SESSION[password]', '$_SESSION[dob]', '$_SESSION[email]')");
   }
 
   // Exclude email, if not provided
   else {
-    mysqli_query($connection, "INSERT INTO users (username, password, date_of_birth) VALUES ('$username', '$password', '$dob')");
+    mysqli_query($connection, "INSERT INTO users (username, password, date_of_birth) VALUES ('$_SESSION[username]', '$_SESSION[password]', '$_SESSION[dob]')");
   }
 
 
+
+
+echo 'registration success';
+
+  
+
   // THIS NEEDS TO BE IMPROVED - USE SESSIONS INSTEAD OF GET
-  header("Location: login-request.php?username=$username&password=$password");
+  //header("Location: login-request.php?username=$username&password=$password");
 }
 
 ?>
