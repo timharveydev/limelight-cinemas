@@ -86,12 +86,13 @@ session_start();
 
 
       <!-- Registration form - display:none is toggled by the JS toggleSection() function -->
-      <!-- PHP code between label and input produces error spans -> error type is sent via URL from register-request.php -->
+      <!-- PHP code between label and input produces error spans -> error type is sent via URL from register-request.php or login-request.php -->
+      <!-- PHP within input value parameters populates form fields with previous user input when returning from register-request.php with errors (excludes password for security) -->
       <form class="register__form form" action="register-request.php" method="POST">
 
         <label for="username" class="form__label">Username <span class="required">*</span></label>
         <?php if($_GET['error'] == 'usernameError') {echo '<span class="form__error">Sorry, this username already exists</span>';} ?>
-        <input name="username" type="text" class="form__text-input" maxlength="40" required>
+        <input name="username" type="text" class="form__text-input" maxlength="40" required value="<?php echo $_SESSION['username']; ?>">
 
         <label for="password" class="form__label">Password (8-12 characters) <span class="required">*</span></label>
         <input name="password" type="password" class="form__text-input" maxlength="12" required>
@@ -101,10 +102,10 @@ session_start();
         <input name="confirm-password" type="password" class="form__text-input" max-length="12" required>
 
         <label for="date-of-birth" class="form__label">Date of Birth <span class="required">*</span></label>
-        <input name="date-of-birth" type="date" class="form__text-input datepicker" min="1900-01-01" required> <!-- See setDateInputMax.js -->
+        <input name="date-of-birth" type="date" class="form__text-input datepicker" min="1900-01-01" required value="<?php echo $_SESSION['dob']; ?>"> <!-- See setDateInputMax.js -->
 
         <label for="email" class="form__label">Email (optional)</label>
-        <input name="email" type="text" class="form__text-input" maxlength="40">
+        <input name="email" type="text" class="form__text-input" maxlength="40" value="<?php echo $_SESSION['email']; ?>">
 
         <input name="submit" type="submit" value="Submit" class="form__button button--primary button--large">
         <input name="reset" type="reset" value="Reset" class="form__button button--negative button--large">
@@ -115,6 +116,7 @@ session_start();
       <!-- Login form - display:none is toggled by the JS toggleSection function -->
       <form class="login__form form" action="login-request.php" method="POST">
         <label for="username" class="form__label">Username</label>
+        <?php if($_GET['error'] == 'user_details_not_found') {echo '<span class="form__error">Details not found - you need to register before you can login</span>';} ?>
         <input name="username" type="text" class="form__text-input" required>
 
         <label for="password" class="form__label">Password</label>

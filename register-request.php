@@ -22,13 +22,13 @@ if (mysqli_num_rows($query) > 0) {
 }
 
 // Check password matches confirmPassword - if it doesn't, return to register form with password error in URL
-elseif ($password !== $confirmPassword) {
+elseif ($_SESSION['password'] != $_SESSION['confirm-password']) {
   header("Location: login-register.php?section=register&error=passwordError");
 }
 
+
 // If above checks ok, insert data into DB
 else {
-
 
   // Include email, if provided
   if ($_SESSION['email'] != '') {
@@ -41,14 +41,8 @@ else {
   }
 
 
-
-
-echo 'registration success';
-
-  
-
-  // THIS NEEDS TO BE IMPROVED - USE SESSIONS INSTEAD OF GET
-  //header("Location: login-request.php?username=$username&password=$password");
+  // Head to login-request.php for automatic login
+  header("Location: login-request.php");
 }
 
 ?>
