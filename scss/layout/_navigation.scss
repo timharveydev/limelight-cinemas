@@ -41,7 +41,8 @@
     @include display-flex;
     @include transition;
 
-    &:hover { color: $white-hover; }
+    &:hover,
+    &.active { color: $white-hover; }
   }
 
   &__button {

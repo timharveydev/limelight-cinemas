@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Tim Harvey">
   <meta name="description" content="A dynamic cinema website created for my HND Web Development course.">
-  <title>Limelight | Home</title>
+  <title>Limelight | Contact Us</title>
 
   <!-- CSS
   --------------------------------------------------------->
@@ -31,7 +31,7 @@
   <link rel="mask-icon" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/img/favicon/safari-pinned-tab.svg" color="#49b171">
 
 </head>
-<body id="top" class="fade-in" onload="document.querySelector('.fade-in').style.opacity='1'">
+<body id="top">
 
   <!-- MAIN CONTENT
   --------------------------------------------------------->
@@ -42,13 +42,13 @@
     <div class="nav__container container">
 
       <div class="nav__logo">
-        <a href="#"><img src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/img/logo.svg" alt="Limelight Cinemas Logo"></a>
+        <a href="index.html"><img src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/img/logo.svg" alt="Limelight Cinemas Logo"></a>
       </div>
 
       <ul class="nav__list">
         <li class="nav__item"><a href="#" class="nav__link">What's On?</a></li>
         <li class="nav__item"><a href="#" class="nav__link">About</a></li>
-        <li class="nav__item"><a href="contact.php" class="nav__link">Contact</a></li>
+        <li class="nav__item"><a href="#" class="nav__link active">Contact</a></li>
         <li class="nav__item"><a href="login-register.php?section=login" class="nav__button button--positive"><i class="fas fa-sign-in-alt"></i> Login</a></li>
       </ul>
 
@@ -59,39 +59,34 @@
 
 
 
-  <!-- Full-Page Image Slider Component
+  <!-- Contact Form
   ------------------------------------->
-  <div class="slider">
-    <span class="slider__img">Image 1</span>
-    <span class="slider__img">Image 2</span>
-    <span class="slider__img">Image 3</span>
-    <span class="slider__img">Image 4</span>
-    <span class="slider__img">Image 5</span>
-    <span class="slider__img">Image 6</span>
-  </div>
+
+  <section class="contact">
+    <div class="contact__container container">
+
+      <!-- Heading -->
+      <h1 class="contact__heading">Contact Us</h1>
+
+      <!-- Sub-Heading -->
+      <p class="contact__subheading">If you would like to get in touch, please fill in the form below and we will get back to you as soon as we can.</p>
 
 
+      <form class="contact__form form" action="contact.php" method="POST">
 
+        <label for="name" class="form__label">Name</label>
+        <input name="name" type="text" class="form__text-input" required>
 
+        <label for="email" class="form__label">Email</label>
+        <input name="email" type="text" class="form__text-input" required>
 
-  <!-- Hero Screen Content
-  ------------------------------------->
-  <section class="hero">
-    <div class="hero__container container">
+        <label for="message" class="form__label">Message</label>
+        <textarea name="message" cols="50" rows="5" class="form__text-area" placeholder="Type your message here ..."></textarea>
 
-      <div class="hero__left-side">
-        <h2 class="hero__pre-title">Welcome to</h2>
-        <h1 class="hero__main-title"><span class="hero__main-title--primary-color">Lime</span>light</h1>
-        <h3 class="hero__sub-title">Premier cinemas in Midlothian</h3>
-      </div>
-
-      <div class="hero__right-side">
-        <h3 class="hero__sub-title">Become a member today ...</h3>
-        <p class="hero__info">... to gain access to our full film database, book tickets and more!</p>
-        <a href="login-register.php?section=register" class="hero__button button--primary button--large"><i class="fas fa-user-plus"></i> Register</a>
-      </div>
-
-      <a href="#" class="hero__button--absolute button button--large">What's On? <i class="fas fa-arrow-down"></i></a>
+        <input name="submit" type="submit" value="Submit" class="form__button button--primary button--large">
+        <input name="reset" type="reset" value="Reset" class="form__button button--negative button--large">
+        
+      </form>
 
     </div>
   </section>
@@ -108,12 +103,11 @@
       <div class="footer__nav">
         <a href="#" class="footer__link">What's On?</a>
         <a href="#" class="footer__link">About</a>
-        <a href="#" class="footer__link">Contact</a>
+        <a href="#top" class="footer__link">Contact</a>
       </div>
 
-
+      
       <div class="footer__flex-wrapper">
-
         <div class="footer__social">
           <a class="footer__social--icon" href="#"><i class="fab fa-facebook-f"></i></a>
           <a class="footer__social--icon" href="#"><i class="fab fa-youtube"></i></a>
@@ -123,7 +117,6 @@
         <div class="footer__copyright">
           &copy; 2020 Limelight Cinemas. All Rights Reserved.
         </div>
-
       </div>
 
 
@@ -133,6 +126,7 @@
 
     </div>
   </footer>
+
 
   <!-- END DOCUMENT
   --------------------------------------------------------->

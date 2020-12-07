@@ -1,0 +1,26 @@
+
+/* CONTACT
+--------------------------------------------*/
+
+.contact {
+  height: 100%;
+  width: 100%;
+
+
+  // Width determines width of form
+  // Display-flex spaces out section toggler, heading and form to make use of all vertical space
+  // Padding sets maximum top and bottom for container content
+  &__container {
+    width: 30%;
+    padding: 12rem 0;
+    @include display-flex($direction: column, $justify: space-between);
+  }
+
+  &__subheading {
+    text-align: center;
+    max-width: 75%;
+  }
+
+  // Padding-bottom stops form, heading and subheading being too vertically spread out
+&__form { padding-bottom: 2rem; }
+}

@@ -56,7 +56,7 @@ session_start();
       <ul class="nav__list">
         <li class="nav__item"><a href="#" class="nav__link">What's On?</a></li>
         <li class="nav__item"><a href="#" class="nav__link">About</a></li>
-        <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
+        <li class="nav__item"><a href="contact.php" class="nav__link">Contact</a></li>
         <li class="nav__item"><a href="login-register.php?section=login" class="nav__button button--positive"><i class="fas fa-sign-in-alt"></i> Login</a></li>
       </ul>
 
