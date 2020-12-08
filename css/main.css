@@ -824,11 +824,11 @@ h6 {
 }
 
 .hero__button {
-  width: 33%;
+  min-width: 20rem;
 }
 
 .hero__button--absolute {
-  width: 25%;
+  min-width: 35rem;
   position: absolute;
   top: 90%;
 }
@@ -867,6 +867,17 @@ h6 {
   padding-bottom: 20rem;
 }
 
+/* MEDIA QUERIES
+--------------------------------------------*/
+@media only screen and (max-width: 1650px) {
+  .login-register {
+    height: 130%;
+  }
+  .login-register__container {
+    width: 45%;
+  }
+}
+
 /* CONTACT
 --------------------------------------------*/
 .contact {
@@ -899,6 +910,23 @@ h6 {
 
 .contact__form {
   padding-bottom: 2rem;
+}
+
+/* MEDIA QUERIES
+--------------------------------------------*/
+@media only screen and (max-width: 1650px) {
+  .contact {
+    height: 120%;
+  }
+  .contact__container {
+    width: 45%;
+  }
+  .contact__subheading {
+    max-width: 80%;
+  }
+  .contact__form {
+    padding-bottom: 0;
+  }
 }
 
 /* JUNIOR

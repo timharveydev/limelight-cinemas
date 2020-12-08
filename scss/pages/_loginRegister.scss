@@ -25,3 +25,18 @@
 
 // Padding-bottom stops section toggler, heading and form being too vertically spread out
 .login__form { padding-bottom: 20rem; }
+
+
+
+
+
+/* MEDIA QUERIES
+--------------------------------------------*/
+
+@media only screen and (max-width: 1650px) {
+  .login-register {
+    height: 130%;
+
+    &__container { width: 45%; }
+  }
+}

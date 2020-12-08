@@ -24,3 +24,22 @@
   // Padding-bottom stops form, heading and subheading being too vertically spread out
 &__form { padding-bottom: 2rem; }
 }
+
+
+
+
+
+/* MEDIA QUERIES
+--------------------------------------------*/
+
+@media only screen and (max-width: 1650px) {
+  .contact {
+    height: 120%;
+
+    &__container { width: 45%; }
+
+    &__subheading { max-width: 80%; }
+
+    &__form { padding-bottom: 0; }
+  }
+}

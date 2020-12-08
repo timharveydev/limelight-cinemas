@@ -15,6 +15,7 @@
   }
 
 
+  // Left side
   &__left-side { width: 60%; }
 
   &__main-title {
@@ -31,6 +32,7 @@
   }
 
 
+  // Right side
   &__right-side {
     width: 40%;
     text-align: center;
@@ -49,10 +51,10 @@
 
   // Makes hero buttons larger than global default buttons
   &__button {
-    width: 33%;
+    min-width: 20rem;
 
     &--absolute {
-      width: 25%;
+      min-width: 35rem;
       position: absolute;
       top: 90%;
     }

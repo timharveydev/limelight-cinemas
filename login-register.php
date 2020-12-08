@@ -148,7 +148,7 @@ session_start();
       <div class="footer__flex-wrapper">
         <div class="footer__social">
           <a class="footer__social--icon" href="#"><i class="fab fa-facebook-f"></i></a>
-          <a class="footer__social--icon" href="#"><i class="fab fa-youtube"></i></a>
+          <a class="footer__social--icon" href="taskComplete.html"><i class="fab fa-youtube"></i></a>
           <a class="footer__social--icon" href="#"><i class="fab fa-twitter"></i></a>
         </div>
 

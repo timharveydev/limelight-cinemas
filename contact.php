@@ -72,7 +72,7 @@
       <p class="contact__subheading">If you would like to get in touch, please fill in the form below and we will get back to you as soon as we can.</p>
 
 
-      <form class="contact__form form" action="contact.php" method="POST">
+      <form class="contact__form form" action="taskComplete.html" method="POST">
 
         <label for="name" class="form__label">Name</label>
         <input name="name" type="text" class="form__text-input" required>
@@ -81,7 +81,7 @@
         <input name="email" type="text" class="form__text-input" required>
 
         <label for="message" class="form__label">Message</label>
-        <textarea name="message" cols="50" rows="5" class="form__text-area" placeholder="Type your message here ..."></textarea>
+        <textarea name="message" cols="50" rows="5" class="form__text-area" placeholder="Type your message here ..." required></textarea>
 
         <input name="submit" type="submit" value="Submit" class="form__button button--primary button--large">
         <input name="reset" type="reset" value="Reset" class="form__button button--negative button--large">
@@ -110,7 +110,7 @@
       <div class="footer__flex-wrapper">
         <div class="footer__social">
           <a class="footer__social--icon" href="#"><i class="fab fa-facebook-f"></i></a>
-          <a class="footer__social--icon" href="#"><i class="fab fa-youtube"></i></a>
+          <a class="footer__social--icon" href="taskComplete.html"><i class="fab fa-youtube"></i></a>
           <a class="footer__social--icon" href="#"><i class="fab fa-twitter"></i></a>
         </div>
 
