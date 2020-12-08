@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,14 +49,30 @@
     <div class="nav__container container">
 
       <div class="nav__logo">
-        <a href="index.html"><img src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/img/logo.svg" alt="Limelight Cinemas Logo"></a>
+        <a href="index.php"><img src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/img/logo.svg" alt="Limelight Cinemas Logo"></a>
       </div>
 
       <ul class="nav__list">
         <li class="nav__item"><a href="#" class="nav__link">What's On?</a></li>
         <li class="nav__item"><a href="#" class="nav__link">About</a></li>
         <li class="nav__item"><a href="#" class="nav__link active">Contact</a></li>
-        <li class="nav__item"><a href="login-register.php?section=login" class="nav__button button--positive"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+        
+
+        <!-- Nav button -->
+        <!-- PHP code changes nav button type and content depending on whether a user is logged in or not -->
+        <li class="nav__item">
+          <?php
+
+          if (isset($_SESSION['username'])) {
+            echo '<a class="nav__button button--negative" href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>';
+          }
+          
+          else {
+            echo '<a class="nav__button button--positive" href="login-register.php?section=login"><i class="fas fa-sign-in-alt"></i> Login</a>';
+          }
+          
+          ?>
+        </li>
       </ul>
 
     </div>

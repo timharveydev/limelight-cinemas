@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,13 +56,29 @@
         <li class="nav__item"><a href="#" class="nav__link">What's On?</a></li>
         <li class="nav__item"><a href="#" class="nav__link">About</a></li>
         <li class="nav__item"><a href="contact.php" class="nav__link">Contact</a></li>
-        <li class="nav__item"><a href="login-register.php?section=login" class="nav__button button--positive"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+
+
+        <!-- Nav button -->
+        <!-- PHP code changes nav button type and content depending on whether a user is logged in or not -->
+        <li class="nav__item">
+          <?php
+
+          if (isset($_SESSION['username'])) {
+            echo '<a class="nav__button button--negative" href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>';
+          }
+          
+          else {
+            echo '<a class="nav__button button--positive" href="login-register.php?section=login"><i class="fas fa-sign-in-alt"></i> Login</a>';
+          }
+          
+          ?>
+        </li>
       </ul>
 
     </div>
   </nav>
 
-
+  
 
 
 
@@ -108,7 +131,7 @@
       <div class="footer__nav">
         <a href="#" class="footer__link">What's On?</a>
         <a href="#" class="footer__link">About</a>
-        <a href="#" class="footer__link">Contact</a>
+        <a href="contact.php" class="footer__link">Contact</a>
       </div>
 
 
@@ -133,6 +156,20 @@
 
     </div>
   </footer>
+
+
+
+
+
+  <!-- Success alert - shown on successful registration -->
+  <?php
+
+  if ($_SESSION['registrationSuccess'] == true) {
+    echo '<script>alert("Registration successful!\nYou are now logged in.");</script>';
+    unset($_SESSION['registrationSuccess']);
+  }
+
+  ?>
 
   <!-- END DOCUMENT
   --------------------------------------------------------->

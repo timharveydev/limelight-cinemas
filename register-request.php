@@ -41,7 +41,9 @@ else {
   }
 
 
+  // Set reg-success variable to true - used to provide success alert following successful login - see bottom of index.php
   // Head to login-request.php for automatic login
+  $_SESSION['registrationSuccess'] = true;
   header("Location: login-request.php");
 }
 
