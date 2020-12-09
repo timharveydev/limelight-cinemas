@@ -54,6 +54,12 @@ session_start();
 
       <ul class="nav__list">
         <li class="nav__item"><a href="#" class="nav__link">What's On?</a></li>
+        <!-- PHP adds activities link for junior users -->
+        <?php
+        if (isset($_SESSION['username']) && $_SESSION['userAge'] < 18) {
+          echo '<li class="nav__item"><a href="#" class="nav__link">Activities</a></li>';
+        }
+        ?>
         <li class="nav__item"><a href="#" class="nav__link">About</a></li>
         <li class="nav__item"><a href="#" class="nav__link active">Contact</a></li>
         
@@ -125,6 +131,12 @@ session_start();
 
       <div class="footer__nav">
         <a href="#" class="footer__link">What's On?</a>
+        <!-- PHP adds activities link for junior users -->
+        <?php
+        if (isset($_SESSION['username']) && $_SESSION['userAge'] < 18) {
+          echo '<a href="#" class="footer__link">Activities</a>';
+        }
+        ?>
         <a href="#" class="footer__link">About</a>
         <a href="#top" class="footer__link">Contact</a>
       </div>

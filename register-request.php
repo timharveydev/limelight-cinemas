@@ -21,6 +21,7 @@ if (mysqli_num_rows($query) > 0) {
   header("Location: login-register.php?section=register&error=usernameError");
 }
 
+
 // Check password matches confirmPassword - if it doesn't, return to register form with password error in URL
 elseif ($_SESSION['password'] != $_SESSION['confirm-password']) {
   header("Location: login-register.php?section=register&error=passwordError");
@@ -39,6 +40,15 @@ else {
   else {
     mysqli_query($connection, "INSERT INTO users (username, password, date_of_birth) VALUES ('$_SESSION[username]', '$_SESSION[password]', '$_SESSION[dob]')");
   }
+
+
+  
+  // Set user age
+  list($year, $month, $day) = explode('-', $_SESSION['dob']);
+    
+  $timeOfBirth = mktime(0, 0, 0, $month, $day, $year);
+
+  $_SESSION['userAge'] = floor((time() - $timeOfBirth) / 31556926);
 
 
   // Set reg-success variable to true - used to provide success alert following successful login - see bottom of index.php

@@ -12,6 +12,9 @@ if (isset($_SESSION['username'])) {
 }
 
 
+
+
+
 // If $_SESSION['username'] not already set, standard log in process below:
 else {
   
@@ -19,10 +22,8 @@ else {
   $_SESSION['username'] = $_POST['username'];
   $_SESSION['password'] = $_POST['password'];
 
-
   // Check username and password exist in DB
   $query = mysqli_query($connection, "SELECT * FROM users WHERE username='$_SESSION[username]' AND password='$_SESSION[password]'");
-
 
   // If details not found, return to login form with error
   if (!mysqli_num_rows($query) == 1) {
@@ -32,6 +33,9 @@ else {
   }
 
 
+
+
+  
   // If details found, set session variables
   else {
 
