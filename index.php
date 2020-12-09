@@ -115,13 +115,35 @@ session_start();
       </div>
 
       <div class="hero__right-side">
-        <h3 class="hero__sub-title">Become a member today ...</h3>
-        <p class="hero__info">... to gain access to our full film database, book tickets and more!</p>
-        <a href="login-register.php?section=register" class="hero__button button--primary button--large"><i class="fas fa-user-plus"></i> Register</a>
+        <!-- PHP determines which right-side hero content is displayed depending on if user is logged in and user age -->
+        <?php
+        // If no user logged in, display membership info 
+        if (!isset($_SESSION['username'])) {
+          echo '<h3 class="hero__sub-title">Become a member today ...</h3>';
+          echo '<p class="hero__info">... to gain access to our full film database, book tickets and more!</p>';
+          echo '<a href="login-register.php?section=register" class="hero__button button--primary button--large"><i class="fas fa-user-plus"></i> Register</a>';
+        }
+        // If user under 18, show activities info
+        elseif ($_SESSION['userAge'] < 18) {
+          echo '<h3 class="hero__sub-title">Visit our Activities page ...</h3>';
+          echo '<p class="hero__info">... and put your knowledge to the test with some of our film trivia quizzes.</p>';
+          echo '<a href="#" class="hero__button button--primary button--large"><i class="fas fa-trophy"></i> Activities</a>';
+        }
+        ?>
       </div>
 
-      <a href="#" class="hero__button--absolute button button--large">What's On? <i class="fas fa-arrow-down"></i></a>
-
+      <!-- PHP determines 'What's On?' button type depending on who is logged in -->
+      <?php
+      // If no user logged in or user logged in and under 18, show regular button
+      if (!isset($_SESSION['username']) || $_SESSION['userAge'] < 18) {
+        echo '<a href="#" class="hero__button--absolute button button--large">What\'s On? <i class="fas fa-arrow-down"></i></a>';
+      }
+      // If user logged in and over 18, show button--primary
+      else {
+        echo '<a href="#" class="hero__button--absolute button--primary button--large">What\'s On? <i class="fas fa-arrow-down"></i></a>';
+      }
+      ?>
+      
     </div>
   </section>
 
