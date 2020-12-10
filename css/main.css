@@ -836,7 +836,7 @@ h6 {
 /* LOGIN & REGISTER
 --------------------------------------------*/
 .login-register {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
 }
 
@@ -858,6 +858,10 @@ h6 {
           align-items: center;
 }
 
+.login-register__heading {
+  padding: 5rem 0;
+}
+
 .login__form,
 .register__form {
   display: none;
@@ -870,9 +874,6 @@ h6 {
 /* MEDIA QUERIES
 --------------------------------------------*/
 @media only screen and (max-width: 1650px) {
-  .login-register {
-    height: 130%;
-  }
   .login-register__container {
     width: 45%;
   }
@@ -881,7 +882,7 @@ h6 {
 /* CONTACT
 --------------------------------------------*/
 .contact {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
 }
 
@@ -906,6 +907,7 @@ h6 {
 .contact__subheading {
   text-align: center;
   max-width: 75%;
+  padding: 5rem 0;
 }
 
 .contact__form {
@@ -915,17 +917,11 @@ h6 {
 /* MEDIA QUERIES
 --------------------------------------------*/
 @media only screen and (max-width: 1650px) {
-  .contact {
-    height: 120%;
-  }
   .contact__container {
     width: 45%;
   }
   .contact__subheading {
     max-width: 80%;
-  }
-  .contact__form {
-    padding-bottom: 0;
   }
 }
 
