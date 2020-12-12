@@ -49,6 +49,8 @@ session_start();
   <nav class="nav">
     <div class="nav__container container">
 
+      <div class="nav__burger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+
       <div class="nav__logo">
         <a href="index.php"><img src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/img/logo.svg" alt="Limelight Cinemas Logo"></a>
       </div>
@@ -67,7 +69,7 @@ session_start();
 
         <!-- Nav button -->
         <!-- PHP code changes nav button type and content depending on whether a user is logged in or not -->
-        <li class="nav__item">
+        <li class="nav__item mobile-hidden">
           <?php
 
           if (isset($_SESSION['username'])) {
@@ -176,7 +178,7 @@ session_start();
       <div class="footer__flex-wrapper">
         <div class="footer__social">
           <a class="footer__social--icon" href="#"><i class="fab fa-facebook-f"></i></a>
-          <a class="footer__social--icon" href="taskComplete.html"><i class="fab fa-youtube"></i></a>
+          <a class="footer__social--icon" href="#"><i class="fab fa-youtube"></i></a>
           <a class="footer__social--icon" href="#"><i class="fab fa-twitter"></i></a>
         </div>
 
@@ -198,6 +200,7 @@ session_start();
   --------------------------------------------------------->
   <script type='text/javascript' src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/js/toggleSection.js"></script>
   <script type='text/javascript' src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/js/setDateInputMax.js"></script>
+  <script type='text/javascript' src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/js/toggleMenu.js"></script>
 
 
   <!-- END DOCUMENT
