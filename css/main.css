@@ -192,8 +192,29 @@ h6 {
 --------------------------------------------*/
 .container {
   width: 80%;
+  max-width: 1500px;
   height: 100%;
   margin: 0 auto;
+}
+
+/* MEDIA QUERIES
+--------------------------------------------*/
+@media only screen and (max-width: 1200px) {
+  .container {
+    width: 85%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .container {
+    width: 95%;
+  }
 }
 
 /* NAVIGATION
@@ -924,6 +945,182 @@ h6 {
   position: absolute;
   top: 90%;
   background-color: rgba(92, 92, 92, 0.2);
+}
+
+/* MEDIA QUERIES
+--------------------------------------------*/
+@media only screen and (max-width: 1600px) {
+  .hero__main-title {
+    font-size: 8rem;
+  }
+  .hero__info {
+    width: 55%;
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  .hero__main-title {
+    font-size: 7rem;
+    padding: 2.5rem 0 3rem 0;
+  }
+  .hero__sub-title {
+    font-size: 2rem;
+  }
+  .hero__info {
+    width: 65%;
+    padding: 2.5rem 0 3.2rem 0;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .hero__main-title {
+    font-size: 8rem;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .hero__main-title {
+    font-size: 7rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .hero__main-title {
+    font-size: 6rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .hero__main-title {
+    font-size: 5rem;
+  }
+  .hero__sub-title {
+    display: none;
+  }
+  .hero__info {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .hero__main-title {
+    font-size: 4.5rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (max-height: 1400px) {
+  .hero__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .hero__left-side {
+    width: 100%;
+    text-align: center;
+    margin-top: 25rem;
+  }
+  .hero__main-title {
+    font-size: 9rem;
+    padding: 2.5rem 0;
+  }
+  .hero__right-side {
+    width: 100%;
+    margin-bottom: 30rem;
+  }
+  .hero__sub-title {
+    font-size: 2.5rem;
+    padding-top: 2rem;
+  }
+  .hero__info {
+    width: 55%;
+    font-size: 1.8rem;
+  }
+  .hero__button {
+    min-width: 35rem;
+    margin-top: 2.5rem;
+  }
+  .hero__button--absolute {
+    position: absolute;
+    top: 78%;
+  }
+}
+
+@media only screen and (max-width: 800px) and (max-height: 1024px) {
+  .hero__left-side {
+    margin-top: 22rem;
+  }
+  .hero__right-side {
+    margin-bottom: 20rem;
+  }
+  .hero__button--absolute {
+    top: 82%;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (max-height: 900px) {
+  .hero__left-side {
+    margin-top: 18rem;
+  }
+  .hero__right-side {
+    margin-bottom: 11rem;
+  }
+  .hero__sub-title {
+    display: none;
+  }
+  .hero__info {
+    display: none;
+  }
+  .hero__button--absolute {
+    top: 88%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .hero__button {
+    min-width: 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+  .hero__button--absolute {
+    min-width: 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 900px) and (max-height: 450px) {
+  .hero__left-side {
+    margin-top: 9rem;
+  }
+  .hero__main-title {
+    font-size: 6rem;
+  }
+  .hero__right-side {
+    margin-bottom: 7.5rem;
+  }
+  .hero__button--absolute {
+    top: 90%;
+  }
+}
+
+@media only screen and (max-width: 580px) and (max-height: 350px) {
+  .hero__left-side {
+    margin-top: 8.5rem;
+  }
+  .hero__main-title {
+    font-size: 5rem;
+    padding: 1rem 0 0 0;
+  }
 }
 
 /* LOGIN & REGISTER

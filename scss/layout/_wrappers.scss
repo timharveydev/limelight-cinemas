@@ -4,6 +4,28 @@
 
 .container {
   width: 80%;
+  max-width: 1500px;
   height: 100%;
   margin: 0 auto;
+}
+
+
+
+
+
+/* MEDIA QUERIES
+--------------------------------------------*/
+
+@media only screen and (max-width: 1200px) {
+  .container { width: 85%; }
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .container { width: 90%; }
+}
+
+
+@media only screen and (max-width: 750px) {
+  .container { width: 95%; }
 }

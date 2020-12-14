@@ -83,6 +83,21 @@ session_start();
         </li>
       </ul>
 
+
+      <!-- Nav button - for small devices -->
+      <!-- PHP code changes nav button type and content depending on whether a user is logged in or not -->
+      <?php
+
+      if (isset($_SESSION['username'])) {
+        echo '<a class="nav__button button--negative mobile-only" href="logout.php"><i class="fas fa-sign-out-alt"></i></a>';
+      }
+      
+      else {
+        echo '<a class="nav__button button--primary mobile-only" href="login-register.php?section=login"><i class="fas fa-sign-in-alt"></i></a>';
+      }
+      
+      ?>
+
     </div>
   </nav>
 

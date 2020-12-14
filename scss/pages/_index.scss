@@ -63,3 +63,226 @@
     }
   }
 }
+
+
+
+
+
+/* MEDIA QUERIES
+--------------------------------------------*/
+
+// Width-dependent content sizing
+@media only screen and (max-width: 1600px) {
+  .hero {
+
+    &__main-title { font-size: 8rem; }
+  
+    &__info { width: 55%; }
+  }
+}
+
+
+@media only screen and (max-width: 1366px) {
+  .hero {
+  
+    &__main-title {
+      font-size: 7rem;
+      padding: 2.5rem 0 3rem 0;
+    }
+
+    &__sub-title { font-size: 2rem; }
+  
+    &__info {
+      width: 65%;
+      padding: 2.5rem 0 3.2rem 0;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 800px) {
+  .hero {
+    &__main-title { font-size: 8rem; }
+  }
+}
+
+
+@media only screen and (max-width: 580px) {
+  .hero {
+    &__main-title { font-size: 7rem; }
+  }
+}
+
+
+@media only screen and (max-width: 500px) {
+  .hero {
+    &__main-title { font-size: 6rem; }
+  }
+}
+
+
+@media only screen and (max-width: 450px) {
+  .hero {
+    &__main-title { font-size: 5rem; }
+
+    &__sub-title { display: none; }
+  
+    &__info { display: none; }
+  }
+}
+
+
+@media only screen and (max-width: 380px) {
+  .hero {
+    &__main-title { font-size: 4.5rem; }
+  }
+}
+
+
+
+
+
+// Mobile break point - width & height dependent
+// Large tablet - portrait
+@media only screen and (max-width: 1024px) and (max-height: 1400px) {
+  .hero {
+
+    &__container { @include display-flex($direction: column, $justify: space-between); }
+
+
+    // Top section
+    &__left-side {
+      width: 100%;
+      text-align: center;
+      margin-top: 25rem; // Used to position titling vertically
+    }
+
+    &__main-title {
+      font-size: 9rem;
+      padding: 2.5rem 0;
+    }
+
+    // Bottom section
+    &__right-side {
+      width: 100%;
+      margin-bottom: 30rem; // used to position the register button stuff vertically
+    }
+
+    &__sub-title {
+      font-size: 2.5rem;
+      padding-top: 2rem;
+    }
+
+    &__info {
+      width: 55%;
+      font-size: 1.8rem;
+    }
+
+
+    &__button {
+      min-width: 35rem;
+      margin-top: 2.5rem;
+
+      &--absolute {
+        position: absolute;
+        top: 78%; // used to position What's On button vertically
+      }
+    }
+  }
+}
+
+
+// Small tablet - portrait
+@media only screen and (max-width: 800px) and (max-height: 1024px) {
+  .hero {
+
+    // Top section
+    &__left-side { margin-top: 22rem; } // Used to position titling vertically
+
+    // Bottom section
+    &__right-side { margin-bottom: 20rem; } // used to position the register button stuff vertically
+
+
+    &__button {
+      &--absolute {
+        top: 82%; // used to position What's On button vertically
+      }
+    }
+  }
+}
+
+
+// Small tablet - landscape  | most phones - portrait
+@media only screen and (max-width: 1024px) and (max-height: 900px) {
+  .hero {
+
+    // Top section
+    &__left-side { margin-top: 18rem; } // Used to position titling vertically
+
+    // Bottom section
+    &__right-side { margin-bottom: 11rem; } // used to position the register button stuff vertically
+
+    &__sub-title { display: none; }
+
+    &__info { display: none; }
+
+    &__button {
+      &--absolute {
+        top: 88%; // used to position What's On button vertically
+      }
+    }
+  }
+}
+
+
+// Small phones - portrait
+@media only screen and (max-width: 400px) {
+  .hero {
+    &__button {
+      min-width: 100%;
+      width: 100%;
+      max-width: 100%;
+      &--absolute {
+        min-width: 100%;
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+
+// Most phones - landscape
+@media only screen and (max-width: 900px) and (max-height: 450px) {
+  .hero {
+
+    // Top section
+    &__left-side { margin-top: 9rem; } // Used to position titling vertically
+
+    &__main-title { font-size: 6rem; }
+
+    // Bottom section
+    &__right-side { margin-bottom: 7.5rem; } // used to position the register button stuff vertically
+
+    &__button {
+      &--absolute {
+        top: 90%; // used to position What's On button vertically
+      }
+    }
+  }
+}
+
+
+// Small phones - landscape
+@media only screen and (max-width: 580px) and (max-height: 350px) {
+  .hero {
+
+    // Top section
+    &__left-side { margin-top: 8.5rem; } // Used to position titling vertically
+
+    &__main-title {
+      font-size: 5rem;
+      padding: 1rem 0 0 0;
+    }
+  }
+}
