@@ -57,6 +57,9 @@
       min-width: 35rem;
       position: absolute;
       top: 90%;
+
+      // Helps What's On? button to stand out without being full blown button--primary
+      background-color: rgba($color: $medium-grey, $alpha: 0.2);
     }
   }
 }

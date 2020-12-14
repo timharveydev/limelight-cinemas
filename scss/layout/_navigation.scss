@@ -77,6 +77,17 @@
 
     // '!important' overrides the default button padding used for the rest of the website
     padding: 0 1.2rem !important;
+
+
+    &.mobile-only {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+
+      // 6.5rem navbar height - 3.8rem button height = 2.7rem. Divide by 2 = 1.35rem top and bottom padding.
+      margin: 1.35rem 3.5rem;
+    }
   }
 }
 
@@ -145,6 +156,11 @@
         color: $white;
         background-color: $medium-grey;
       }
+    }
+
+
+    &__button {
+      &.mobile-only { display: block; }
     }
   
   

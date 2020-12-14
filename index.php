@@ -66,7 +66,7 @@ session_start();
         <li class="nav__item"><a href="contact.php" class="nav__link">Contact</a></li>
 
 
-        <!-- Nav button -->
+        <!-- Nav button - for large devices -->
         <!-- PHP code changes nav button type and content depending on whether a user is logged in or not -->
         <li class="nav__item mobile-hidden">
           <?php
@@ -82,6 +82,21 @@ session_start();
           ?>
         </li>
       </ul>
+
+
+      <!-- Nav button - for small devices -->
+      <!-- PHP code changes nav button type and content depending on whether a user is logged in or not -->
+      <?php
+
+      if (isset($_SESSION['username'])) {
+        echo '<a class="nav__button button--negative mobile-only" href="logout.php"><i class="fas fa-sign-out-alt"></i></a>';
+      }
+      
+      else {
+        echo '<a class="nav__button button--primary mobile-only" href="login-register.php?section=login"><i class="fas fa-sign-in-alt"></i></a>';
+      }
+      
+      ?>
 
     </div>
   </nav>
@@ -134,17 +149,7 @@ session_start();
         ?>
       </div>
 
-      <!-- PHP determines 'What's On?' button type depending on who is logged in -->
-      <?php
-      // If no user logged in or user logged in and under 18, show regular button
-      if (!isset($_SESSION['username']) || $_SESSION['userAge'] < 18) {
-        echo '<a href="#" class="hero__button--absolute button button--large">What\'s On? <i class="fas fa-arrow-down"></i></a>';
-      }
-      // If user logged in and over 18, show button--primary
-      else {
-        echo '<a href="#" class="hero__button--absolute button--primary button--large">What\'s On? <i class="fas fa-arrow-down"></i></a>';
-      }
-      ?>
+      <a href="#" class="hero__button--absolute button--positive button--large">What's On? <i class="fas fa-arrow-down"></i></a>
       
     </div>
   </section>
