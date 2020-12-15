@@ -57,3 +57,32 @@
     &:hover { color: $light-grey; }
   }
 }
+
+
+
+
+
+/* MEDIA QUERIES
+--------------------------------------------*/
+
+@media only screen and (max-width: 750px) {
+  .footer {
+    height: 24rem;
+    text-align: center;
+  
+    &__container {
+      @include display-flex($direction: column-reverse, $justify: space-around);
+      padding: 2rem 0;
+    }
+  
+    &__nav { display: none; }
+  
+  
+    // Contains social media and copyright
+    &__flex-wrapper {
+      height: 50%;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}
