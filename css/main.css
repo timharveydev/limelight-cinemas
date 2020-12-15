@@ -1174,6 +1174,27 @@ h6 {
   }
 }
 
+@media only screen and (max-width: 1024px) {
+  .login-register__container {
+    width: 55%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .login-register__container {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .login-register__container {
+    width: 90%;
+  }
+  .login-register__heading {
+    font-size: 3.8rem;
+  }
+}
+
 /* CONTACT
 --------------------------------------------*/
 .contact {
@@ -1217,6 +1238,30 @@ h6 {
   }
   .contact__subheading {
     max-width: 80%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .contact__container {
+    width: 55%;
+  }
+  .contact__subheading {
+    max-width: 90%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .contact__container {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .contact__container {
+    width: 90%;
+  }
+  .contact__heading {
+    font-size: 3.8rem;
   }
 }
 

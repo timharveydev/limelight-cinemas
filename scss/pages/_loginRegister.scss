@@ -37,7 +37,29 @@
 
 @media only screen and (max-width: 1650px) {
   .login-register {
-
     &__container { width: 45%; }
+  }
+}
+
+
+@media only screen and (max-width: 1024px) {
+  .login-register {
+    &__container { width: 55%; }
+  }
+}
+
+
+@media only screen and (max-width: 800px) {
+  .login-register {
+    &__container { width: 75%; }
+  }
+}
+
+
+@media only screen and (max-width: 500px) {
+  .login-register {
+    &__container { width: 90%; }
+
+    &__heading { font-size: 3.8rem; }
   }
 }
