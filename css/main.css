@@ -972,42 +972,6 @@ h6 {
   }
 }
 
-@media only screen and (max-width: 800px) {
-  .hero__main-title {
-    font-size: 8rem;
-  }
-}
-
-@media only screen and (max-width: 580px) {
-  .hero__main-title {
-    font-size: 7rem;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  .hero__main-title {
-    font-size: 6rem;
-  }
-}
-
-@media only screen and (max-width: 450px) {
-  .hero__main-title {
-    font-size: 5rem;
-  }
-  .hero__sub-title {
-    display: none;
-  }
-  .hero__info {
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 380px) {
-  .hero__main-title {
-    font-size: 4.5rem;
-  }
-}
-
 @media only screen and (max-width: 1024px) and (max-height: 1400px) {
   .hero__container {
     display: -webkit-box;
@@ -1074,6 +1038,9 @@ h6 {
   .hero__right-side {
     margin-bottom: 11rem;
   }
+  .hero__main-title {
+    font-size: 8rem;
+  }
   .hero__sub-title {
     display: none;
   }
@@ -1082,6 +1049,12 @@ h6 {
   }
   .hero__button--absolute {
     top: 88%;
+  }
+}
+
+@media only screen and (max-width: 450px) and (max-height: 850px) {
+  .hero__main-title {
+    font-size: 4.5rem;
   }
 }
 
