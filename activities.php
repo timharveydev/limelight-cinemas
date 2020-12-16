@@ -15,7 +15,7 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Tim Harvey">
   <meta name="description" content="A dynamic cinema website created for my HND Web Development course.">
-  <title>Limelight | Home</title>
+  <title>Limelight | Activities</title>
 
   <!-- CSS
   --------------------------------------------------------->
@@ -38,7 +38,7 @@ session_start();
   <link rel="mask-icon" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/img/favicon/safari-pinned-tab.svg" color="#49b171">
 
 </head>
-<body id="top" class="fade-in" onload="document.querySelector('.fade-in').style.opacity='1'">
+<body id="top">
 
   <!-- MAIN CONTENT
   --------------------------------------------------------->
@@ -51,7 +51,7 @@ session_start();
       <div class="nav__burger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
 
       <div class="nav__logo">
-        <a href="#"><img src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/img/logo.svg" alt="Limelight Cinemas Logo"></a>
+        <a href="index.php"><img src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/img/logo.svg" alt="Limelight Cinemas Logo"></a>
       </div>
 
       <ul class="nav__list">
@@ -59,14 +59,14 @@ session_start();
         <!-- PHP adds activities link for junior users -->
         <?php
         if (isset($_SESSION['username']) && $_SESSION['userAge'] < 18) {
-          echo '<li class="nav__item"><a href="activities.php" class="nav__link">Activities</a></li>';
+          echo '<li class="nav__item"><a href="#" class="nav__link active">Activities</a></li>';
         }
         ?>
         <li class="nav__item"><a href="#" class="nav__link">About</a></li>
         <li class="nav__item"><a href="contact.php" class="nav__link">Contact</a></li>
+        
 
-
-        <!-- Nav button - for large devices -->
+        <!-- Nav button -->
         <!-- PHP code changes nav button type and content depending on whether a user is logged in or not -->
         <li class="nav__item mobile-hidden">
           <?php
@@ -101,56 +101,26 @@ session_start();
     </div>
   </nav>
 
-  
 
 
 
-  <!-- Full-Page Image Slider Component
+
+  <!-- Quiz Selection
   ------------------------------------->
-  <div class="slider">
-    <span class="slider__img">Image 1</span>
-    <span class="slider__img">Image 2</span>
-    <span class="slider__img">Image 3</span>
-    <span class="slider__img">Image 4</span>
-    <span class="slider__img">Image 5</span>
-    <span class="slider__img">Image 6</span>
-  </div>
+
+  <section class="activities">
+    <div class="activities__container container">
+
+      <!-- Heading -->
+      <h1 class="activities__heading">Activities</h1>
+
+      <!-- Sub-Heading -->
+      <p class="activities__subheading">Put your knowledge to the test with our Film Trivia Quiz. More games coming soon!</p>
 
 
+      <!-- Quiz Embed Code -->
+      <a data-quiz="QQUQFW1XX" data-type=4 href="https://www.quiz-maker.com/QQUQFW1XX">Loading...</a><script>(function(i,s,o,g,r,a,m){var ql=document.querySelectorAll('A[quiz],DIV[quiz],A[data-quiz],DIV[data-quiz]'); if(ql){if(ql.length){for(var k=0;k<ql.length;k++){ql[k].id='quiz-embed-'+k;ql[k].href="javascript:var i=document.getElementById('quiz-embed-"+k+"');try{qz.startQuiz(i)}catch(e){i.start=1;i.style.cursor='wait';i.style.opacity='0.5'};void(0);"}}};i['QP']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//cdn.poll-maker.com/quiz-embed-v1.js','qp');</script>
 
-
-
-  <!-- Hero Screen Content
-  ------------------------------------->
-  <section class="hero">
-    <div class="hero__container container">
-
-      <div class="hero__left-side">
-        <h2 class="hero__pre-title">Welcome to</h2>
-        <h1 class="hero__main-title"><span class="hero__main-title--primary-color">Lime</span>light</h1>
-        <h3 class="hero__sub-title">Premier cinemas in Midlothian</h3>
-      </div>
-
-      <div class="hero__right-side">
-        <!-- PHP determines which right-side hero content is displayed depending on if user is logged in and user age -->
-        <?php
-        // If no user logged in, display membership info 
-        if (!isset($_SESSION['username'])) {
-          echo '<h3 class="hero__sub-title">Become a member today ...</h3>';
-          echo '<p class="hero__info">... to gain access to our full film database, book tickets and more!</p>';
-          echo '<a href="login-register.php?section=register" class="hero__button button--primary button--large"><i class="fas fa-user-plus"></i> Register</a>';
-        }
-        // If user under 18, show activities info
-        elseif ($_SESSION['userAge'] < 18) {
-          echo '<h3 class="hero__sub-title">Visit our Activities page ...</h3>';
-          echo '<p class="hero__info">... and put your knowledge to the test with some of our film trivia quizzes.</p>';
-          echo '<a href="activities.php" class="hero__button button--primary button--large"><i class="fas fa-trophy"></i> Activities</a>';
-        }
-        ?>
-      </div>
-
-      <a href="#" class="hero__button--absolute button--positive button--large">What's On? <i class="fas fa-arrow-down"></i></a>
-      
     </div>
   </section>
 
@@ -168,16 +138,15 @@ session_start();
         <!-- PHP adds activities link for junior users -->
         <?php
         if (isset($_SESSION['username']) && $_SESSION['userAge'] < 18) {
-          echo '<a href="activities.php" class="footer__link">Activities</a>';
+          echo '<a href="#top" class="footer__link">Activities</a>';
         }
         ?>
         <a href="#" class="footer__link">About</a>
         <a href="contact.php" class="footer__link">Contact</a>
       </div>
 
-
+      
       <div class="footer__flex-wrapper">
-
         <div class="footer__social">
           <a class="footer__social--icon" href="#"><i class="fab fa-facebook-f"></i></a>
           <a class="footer__social--icon" href="#"><i class="fab fa-youtube"></i></a>
@@ -187,7 +156,6 @@ session_start();
         <div class="footer__copyright">
           &copy; 2020 Limelight Cinemas. All Rights Reserved.
         </div>
-
       </div>
 
 
@@ -197,20 +165,6 @@ session_start();
 
     </div>
   </footer>
-
-
-
-
-
-  <!-- Success alert - shown on successful registration -->
-  <?php
-
-  if ($_SESSION['registrationSuccess'] == true) {
-    echo '<script>alert("Registration successful!\nYou are now logged in.");</script>';
-    unset($_SESSION['registrationSuccess']);
-  }
-
-  ?>
 
 
   <!-- JAVASCRIPT

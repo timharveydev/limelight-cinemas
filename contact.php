@@ -59,7 +59,7 @@ session_start();
         <!-- PHP adds activities link for junior users -->
         <?php
         if (isset($_SESSION['username']) && $_SESSION['userAge'] < 18) {
-          echo '<li class="nav__item"><a href="#" class="nav__link">Activities</a></li>';
+          echo '<li class="nav__item"><a href="activities.php" class="nav__link">Activities</a></li>';
         }
         ?>
         <li class="nav__item"><a href="#" class="nav__link">About</a></li>
@@ -151,7 +151,7 @@ session_start();
         <!-- PHP adds activities link for junior users -->
         <?php
         if (isset($_SESSION['username']) && $_SESSION['userAge'] < 18) {
-          echo '<a href="#" class="footer__link">Activities</a>';
+          echo '<a href="activities.php" class="footer__link">Activities</a>';
         }
         ?>
         <a href="#" class="footer__link">About</a>
