@@ -55,7 +55,7 @@ session_start();
       </div>
 
       <ul class="nav__list">
-        <li class="nav__item"><a href="#" class="nav__link">What's On?</a></li>
+        <li class="nav__item"><a href="#films" class="nav__link">What's On?</a></li>
         <!-- PHP adds activities link for junior users -->
         <?php
         if (isset($_SESSION['username']) && $_SESSION['userAge'] < 18) {
@@ -105,6 +105,9 @@ session_start();
 
 
 
+  <!-- HOMEPAGE
+  ------------------------------------->
+
   <!-- Full-Page Image Slider Component
   ------------------------------------->
   <div class="slider">
@@ -149,8 +152,148 @@ session_start();
         ?>
       </div>
 
-      <a href="#" class="hero__button--absolute button--positive button--large">What's On? <i class="fas fa-arrow-down"></i></a>
+
+      <?php
+        // If no user logged in, display membership info 
+        if (isset($_SESSION['username']) && $_SESSION['userAge'] >= 18) {
+          echo '<a href="#films" class="hero__button--absolute-primary button--primary button--large">What\'s On? <i class="fas fa-arrow-down"></i></a>';
+        }
+        else {
+          echo '<a href="#films" class="hero__button--absolute-positive button--positive button--large">What\'s On? <i class="fas fa-arrow-down"></i></a>';
+        }
+      ?>
       
+    </div>
+  </section>
+
+
+
+
+
+  <!-- FILMS SECTION
+  ------------------------------------->
+
+  <section class="films" id="films">
+    <div class="films__container container">
+
+      <!-- Heading -->
+      <h1 class="films__heading">Films</h1>
+
+
+      <!-- PHP displays registration/booking notice to unregistered/underage users -->
+      <?php
+        if (!isset($_SESSION['username'])) {
+          echo '<p class="films__notice">Please note - only registered members can book tickets. <a href="login-register.php?section=register">Click here</a> to register today and gain access to our extended film database.</p>';
+        }
+        elseif ($_SESSION['userAge'] < 18) {
+          echo '<p class="films__notice">Please note - you must be over 18 to book tickets.</p>';
+        }
+      ?>
+
+
+      <!-- Search bar placeholder -->
+      <div class="films__search"></div>
+
+
+      <!-- Genre selectors placeholder -->
+      <div class="films__genre-selectors"></div>
+
+
+
+      <!-- Film info box component-->
+      <div class="film-info-box">
+
+        <!-- Film poster -->
+        <div class="film-info-box__img-div">
+          <img src="img/placeholder.jpg" alt="placeholder image">
+        </div>
+
+
+        <!-- Film info & content -->
+        <div class="film-info-box__content-div">
+
+          <div class="film-info-box__flex-wrapper">
+            <h2 class="film-info-box__title">Film Title</h2>
+            <hr class="film-info-box__underline">
+            <div class="film-info-box__attributes">
+              <p>Action | Rating: 15 | <i class="far fa-clock"></i> 1h 47m | <a href="#">Viewing times</a></p>
+            </div>
+          </div>
+
+          <p class="film-info-box__summary"><u><strong>Summary:</strong></u><br><br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta id repudiandae sit fugit dolorem, error minima. Earum perferendis incidunt ea molestias placeat ad, ipsum voluptate temporibus? Dolore fugit asperiores ex. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta id repudiandae sit fugit dolorem, error minima. Earum perferendis incidunt ea molestias placeat ad, ipsum voluptate temporibus? Dolore fugit asperiores ex. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta id repudiandae sit fugit dolorem, error minima. Earum perferendis incidunt ea molestias placeat ad, ipsum voluptate temporibus? Dolore fugit asperiores ex.</p>
+
+          <div class="film-info-box__buttons">
+            <a href="#" class="button">View Trailer</a>
+            <a href="#" class="button--primary">Book Tickets</a>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <!-- The following are just placeholder film info boxes. Delete when PHP is done.
+        -------------------------------------->
+
+      <!-- Film info box component-->
+      <div class="film-info-box">
+
+        <!-- Film poster -->
+        <div class="film-info-box__img-div">
+          <img src="img/placeholder.jpg" alt="placeholder image">
+        </div>
+
+
+        <!-- Film info & content -->
+        <div class="film-info-box__content-div">
+
+          <div class="film-info-box__flex-wrapper">
+            <h2 class="film-info-box__title">Film Title</h2>
+            <hr class="film-info-box__underline">
+            <div class="film-info-box__attributes">
+              <p>Action | Rating: 15 | <i class="far fa-clock"></i> 1h 47m | <a href="#">Viewing times</a></p>
+            </div>
+          </div>
+
+          <p class="film-info-box__summary"><u><strong>Summary:</strong></u><br><br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta id repudiandae sit fugit dolorem, error minima. Earum perferendis incidunt ea molestias placeat ad, ipsum voluptate temporibus? Dolore fugit asperiores ex. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta id repudiandae sit fugit dolorem, error minima. Earum perferendis incidunt ea molestias placeat ad, ipsum voluptate temporibus? Dolore fugit asperiores ex. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta id repudiandae sit fugit dolorem, error minima. Earum perferendis incidunt ea molestias placeat ad, ipsum voluptate temporibus? Dolore fugit asperiores ex.</p>
+
+          <div class="film-info-box__buttons">
+            <a href="#" class="button">View Trailer</a>
+            <a href="#" class="button--primary">Book Tickets</a>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Film info box component-->
+      <div class="film-info-box">
+
+        <!-- Film poster -->
+        <div class="film-info-box__img-div">
+          <img src="img/placeholder.jpg" alt="placeholder image">
+        </div>
+
+
+        <!-- Film info & content -->
+        <div class="film-info-box__content-div">
+
+          <div class="film-info-box__flex-wrapper">
+            <h2 class="film-info-box__title">Film Title</h2>
+            <hr class="film-info-box__underline">
+            <div class="film-info-box__attributes">
+              <p>Action | Rating: 15 | <i class="far fa-clock"></i> 1h 47m | <a href="#">Viewing times</a></p>
+            </div>
+          </div>
+
+          <p class="film-info-box__summary"><u><strong>Summary:</strong></u><br><br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta id repudiandae sit fugit dolorem, error minima. Earum perferendis incidunt ea molestias placeat ad, ipsum voluptate temporibus? Dolore fugit asperiores ex. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta id repudiandae sit fugit dolorem, error minima. Earum perferendis incidunt ea molestias placeat ad, ipsum voluptate temporibus? Dolore fugit asperiores ex. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta id repudiandae sit fugit dolorem, error minima. Earum perferendis incidunt ea molestias placeat ad, ipsum voluptate temporibus? Dolore fugit asperiores ex.</p>
+
+          <div class="film-info-box__buttons">
+            <a href="#" class="button">View Trailer</a>
+            <a href="#" class="button--primary">Book Tickets</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -164,7 +307,7 @@ session_start();
     <div class="footer__container container">
 
       <div class="footer__nav">
-        <a href="#" class="footer__link">What's On?</a>
+        <a href="#films" class="footer__link">What's On?</a>
         <!-- PHP adds activities link for junior users -->
         <?php
         if (isset($_SESSION['username']) && $_SESSION['userAge'] < 18) {

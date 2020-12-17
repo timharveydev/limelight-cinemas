@@ -22,7 +22,6 @@
 @import 'base/typography';
 
 // Includes layout tools and styles for core page elements.
-@import 'layout/grid';
 @import 'layout/wrappers';
 @import 'layout/navigation';
 @import 'layout/footer';
@@ -33,9 +32,11 @@
 @import 'components/forms';
 @import 'components/full-page-slider';
 @import 'components/section-toggler';
+@import 'components/film-info-box';
 
 // Includes page-specific styling.
-@import 'pages/index';
+@import 'pages/homepage'; // Within index.php
+@import 'pages/films'; // Within index.php
 @import 'pages/loginRegister';
 @import 'pages/activities';
 @import 'pages/contact';

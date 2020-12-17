@@ -1,0 +1,21 @@
+
+/* FILMS
+--------------------------------------------*/
+
+.films {
+  min-height: 100%;
+  width: 100%;
+
+
+  &__container {
+    max-width: 1200px;
+    padding: 12rem 0;
+    @include display-flex($direction: column, $justify: flex-start);
+  }
+
+
+  &__notice {
+    text-align: center;
+    padding: 4rem 0;
+  }
+}

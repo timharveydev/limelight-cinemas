@@ -1,0 +1,51 @@
+
+/* FILM INFO BOX
+--------------------------------------------*/
+
+/**
+ * This component provides an info box with a picture section on the left, and a content section on the right
+ *
+ * It will fill all available horizontal space.
+ * Place within a container and set preferred width on the container.
+*/
+
+.film-info-box {
+  width: 100%;
+  padding: 6rem;
+  margin: 4rem 0;
+  background-color: $medium-grey;
+  border-radius: $border-radius-default;
+  @include display-flex;
+  @include box-shadow;
+
+  &__img-div {
+    flex: 1;
+  }
+
+  &__content-div {
+    flex: 3;
+    height: 37rem; // Approx. match to image height on larger displays
+    padding-left: 8rem;
+    @include display-flex($direction: column, $justify: space-between, $align: flex-start)
+  }
+
+
+  &__flex-wrapper { width: 100%; }
+
+  &__title { padding-bottom: 0.5rem; }
+
+  &__underline {
+    background-color: $dark-grey;
+    height: 2px;
+    border: none;
+  }
+
+  &__attributes { padding-top: 1rem; }
+
+  &__summary { padding-bottom: 4rem; }
+
+  &__buttons {
+    width: 100%;
+    @include display-flex($justify: space-between);
+  }
+}

@@ -55,7 +55,7 @@ session_start();
       </div>
 
       <ul class="nav__list">
-        <li class="nav__item"><a href="#" class="nav__link">What's On?</a></li>
+        <li class="nav__item"><a href="index.php#films" class="nav__link">What's On?</a></li>
         <!-- PHP adds activities link for junior users -->
         <?php
         if (isset($_SESSION['username']) && $_SESSION['userAge'] < 18) {
@@ -134,7 +134,7 @@ session_start();
     <div class="footer__container container">
 
       <div class="footer__nav">
-        <a href="#" class="footer__link">What's On?</a>
+        <a href="index.php#films" class="footer__link">What's On?</a>
         <!-- PHP adds activities link for junior users -->
         <?php
         if (isset($_SESSION['username']) && $_SESSION['userAge'] < 18) {

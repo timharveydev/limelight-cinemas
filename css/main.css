@@ -118,76 +118,6 @@ h6 {
   letter-spacing: 0.2rem;
 }
 
-/* GRID
---------------------------------------------*/
-/**
- * This is a simple Flexbox grid system which is intended to be easy to use and easy to customize.
- * 
- * 1. Add the .grid class to a parent element.
- * 2. Add the .column class to direct child elements.
- *
- * By default, columns will all be the same width and will keep stacking to fill all available space.
- *
- * 3. Add the .bigger class to any .column elements that should be wider.
- *    The flex value can be increased/decreased as desired.
- * 4. Add the .halves/.thirds etc. classes to the .grid element to force a fixed number of columns.
- *
- * 5. The media query breaks the columns into block items at smaller screen sizes.
- *
- * Credit to Mark Thomas Miller.
- * More info at https://mtm.dev/grid
-*/
-.grid {
-  /* [1] */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.column {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
-/* [2] */
-.bigger {
-  -webkit-box-flex: 2.5;
-      -ms-flex: 2.5;
-          flex: 2.5;
-}
-
-/* [3] */
-.halves .column {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 50%;
-          flex: 0 0 50%;
-}
-
-/* [4] */
-.thirds .column {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 33.3333%;
-          flex: 0 0 33.3333%;
-}
-
-/* [4] */
-.fourths .column {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 25%;
-          flex: 0 0 25%;
-}
-
-/* [4] */
-@media (max-width: 900px) {
-  /* [5] */
-  .grid {
-    display: block;
-  }
-}
-
 /* WRAPPERS
 --------------------------------------------*/
 .container {
@@ -910,7 +840,104 @@ h6 {
   background-color: #49b171;
 }
 
-/* INDEX
+/* FILM INFO BOX
+--------------------------------------------*/
+/**
+ * This component provides an info box with a picture section on the left, and a content section on the right
+ *
+ * It will fill all available horizontal space.
+ * Place within a container and set preferred width on the container.
+*/
+.film-info-box {
+  width: 100%;
+  padding: 6rem;
+  margin: 4rem 0;
+  background-color: #5c5c5c;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+}
+
+.film-info-box__img-div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.film-info-box__content-div {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  height: 37rem;
+  padding-left: 8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.film-info-box__flex-wrapper {
+  width: 100%;
+}
+
+.film-info-box__title {
+  padding-bottom: 0.5rem;
+}
+
+.film-info-box__underline {
+  background-color: #3b3b3b;
+  height: 2px;
+  border: none;
+}
+
+.film-info-box__attributes {
+  padding-top: 1rem;
+}
+
+.film-info-box__summary {
+  padding-bottom: 4rem;
+}
+
+.film-info-box__buttons {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* HOMEPAGE
 --------------------------------------------*/
 .hero {
   height: 100%;
@@ -972,7 +999,13 @@ h6 {
   min-width: 20rem;
 }
 
-.hero__button--absolute {
+.hero__button--absolute-primary {
+  min-width: 35rem;
+  position: absolute;
+  top: 90%;
+}
+
+.hero__button--absolute-positive {
   min-width: 35rem;
   position: absolute;
   top: 90%;
@@ -1126,6 +1159,36 @@ h6 {
     font-size: 5rem;
     padding: 1rem 0 0 0;
   }
+}
+
+/* FILMS
+--------------------------------------------*/
+.films {
+  min-height: 100%;
+  width: 100%;
+}
+
+.films__container {
+  max-width: 1200px;
+  padding: 12rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.films__notice {
+  text-align: center;
+  padding: 4rem 0;
 }
 
 /* LOGIN & REGISTER

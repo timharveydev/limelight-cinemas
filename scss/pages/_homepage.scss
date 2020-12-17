@@ -1,5 +1,5 @@
 
-/* INDEX
+/* HOMEPAGE
 --------------------------------------------*/
 
 .hero {
@@ -53,12 +53,21 @@
   &__button {
     min-width: 20rem;
 
-    &--absolute {
+    // Make What's On? button use button--primary for adult users (PHP)
+    &--absolute-primary {
+      min-width: 35rem;
+      position: absolute;
+      top: 90%;
+    }
+
+    // Give What's On? button background alpha for junior/unregistered users (PHP)
+    &--absolute-positive {
       min-width: 35rem;
       position: absolute;
       top: 90%;
 
-      // Helps What's On? button to stand out without being full blown button--primary
+      // Helps What's On? button to stand out against background
+      // Applies to unregistered and junior users only
       background-color: rgba($color: $medium-grey, $alpha: 0.2);
     }
   }
