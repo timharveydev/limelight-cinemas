@@ -183,10 +183,10 @@ session_start();
       <!-- PHP displays registration/booking notice to unregistered/underage users -->
       <?php
         if (!isset($_SESSION['username'])) {
-          echo '<p class="films__notice">Please note - only registered members can book tickets. <a href="login-register.php?section=register">Click here</a> to register today and gain access to our extended film database.</p>';
+          echo '<p class="films__notice"><strong>Please note</strong> - only registered members can book tickets. <a href="login-register.php?section=register">Click here</a> to register today and gain access to our extended film database.</p>';
         }
         elseif ($_SESSION['userAge'] < 18) {
-          echo '<p class="films__notice">Please note - you must be over 18 to book tickets.</p>';
+          echo '<p class="films__notice"><strong>Please note</strong> - you must be over 18 to book tickets.</p>';
         }
       ?>
 
@@ -220,7 +220,7 @@ session_start();
             </div>
           </div>
 
-          <p class="film-info-box__summary"><u><strong>Summary:</strong></u><br><br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta id repudiandae sit fugit dolorem, error minima. Earum perferendis incidunt ea molestias placeat ad, ipsum voluptate temporibus? Dolore fugit asperiores ex. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta id repudiandae sit fugit dolorem, error minima. Earum perferendis incidunt ea molestias placeat ad, ipsum voluptate temporibus? Dolore fugit asperiores ex. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta id repudiandae sit fugit dolorem, error minima. Earum perferendis incidunt ea molestias placeat ad, ipsum voluptate temporibus? Dolore fugit asperiores ex.</p>
+          <p class="film-info-box__summary"><strong>Summary:</strong><br><br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta id repudiandae sit fugit dolorem, error minima. Earum perferendis incidunt ea molestias placeat ad, ipsum voluptate temporibus? Dolore fugit asperiores ex. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta id repudiandae sit fugit dolorem, error minima. Earum perferendis incidunt ea molestias placeat ad, ipsum voluptate temporibus? Dolore fugit asperiores ex. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta id repudiandae sit fugit dolorem, error minima. Earum perferendis incidunt ea molestias placeat ad, ipsum voluptate temporibus? Dolore fugit asperiores ex.</p>
 
           <div class="film-info-box__buttons">
             <a href="#" class="button">View Trailer</a>
@@ -255,7 +255,7 @@ session_start();
             </div>
           </div>
 
-          <p class="film-info-box__summary"><u><strong>Summary:</strong></u><br><br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta id repudiandae sit fugit dolorem, error minima. Earum perferendis incidunt ea molestias placeat ad, ipsum voluptate temporibus? Dolore fugit asperiores ex. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta id repudiandae sit fugit dolorem, error minima. Earum perferendis incidunt ea molestias placeat ad, ipsum voluptate temporibus? Dolore fugit asperiores ex. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta id repudiandae sit fugit dolorem, error minima. Earum perferendis incidunt ea molestias placeat ad, ipsum voluptate temporibus? Dolore fugit asperiores ex.</p>
+          <p class="film-info-box__summary"><strong>Summary:</strong><br><br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta id repudiandae sit fugit dolorem, error minima. Earum perferendis incidunt ea molestias placeat ad, ipsum voluptate temporibus? Dolore fugit asperiores ex. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta id repudiandae sit fugit dolorem, error minima. Earum perferendis incidunt ea molestias placeat ad, ipsum voluptate temporibus? Dolore fugit asperiores ex. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta id repudiandae sit fugit dolorem, error minima. Earum perferendis incidunt ea molestias placeat ad, ipsum voluptate temporibus? Dolore fugit asperiores ex.</p>
 
           <div class="film-info-box__buttons">
             <a href="#" class="button">View Trailer</a>
@@ -285,7 +285,7 @@ session_start();
             </div>
           </div>
 
-          <p class="film-info-box__summary"><u><strong>Summary:</strong></u><br><br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta id repudiandae sit fugit dolorem, error minima. Earum perferendis incidunt ea molestias placeat ad, ipsum voluptate temporibus? Dolore fugit asperiores ex. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta id repudiandae sit fugit dolorem, error minima. Earum perferendis incidunt ea molestias placeat ad, ipsum voluptate temporibus? Dolore fugit asperiores ex. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta id repudiandae sit fugit dolorem, error minima. Earum perferendis incidunt ea molestias placeat ad, ipsum voluptate temporibus? Dolore fugit asperiores ex.</p>
+          <p class="film-info-box__summary"><strong>Summary:</strong><br><br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta id repudiandae sit fugit dolorem, error minima. Earum perferendis incidunt ea molestias placeat ad, ipsum voluptate temporibus? Dolore fugit asperiores ex. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta id repudiandae sit fugit dolorem, error minima. Earum perferendis incidunt ea molestias placeat ad, ipsum voluptate temporibus? Dolore fugit asperiores ex. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta id repudiandae sit fugit dolorem, error minima. Earum perferendis incidunt ea molestias placeat ad, ipsum voluptate temporibus? Dolore fugit asperiores ex.</p>
 
           <div class="film-info-box__buttons">
             <a href="#" class="button">View Trailer</a>

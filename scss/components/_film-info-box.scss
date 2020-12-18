@@ -40,12 +40,107 @@
     border: none;
   }
 
-  &__attributes { padding-top: 1rem; }
+  &__attributes {
+    padding-top: 1rem;
+    line-height: 2.2rem;
+  }
 
   &__summary { padding-bottom: 4rem; }
 
   &__buttons {
     width: 100%;
     @include display-flex($justify: space-between);
+  }
+}
+
+
+
+
+
+/* MEDIA QUERIES
+--------------------------------------------*/
+
+// Small desktops / laptops
+@media only screen and (max-width: 1400px) {
+  .film-info-box {
+  
+    &__content-div { height: 34rem; }
+
+    &__summary { padding-bottom: 0; }
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .film-info-box {
+  
+    &__content-div { height: 32rem; }
+  }
+}
+
+
+// Large tablets - portrait
+@media only screen and (max-width: 1080px) {
+  .film-info-box {
+    padding: 4rem;
+
+    &__img-div {
+      flex: 1;
+    }
+  
+    &__content-div {
+      flex: 2;
+      height: 37rem;
+      padding-left: 6rem;
+    }
+  }
+}
+
+
+// Small tablets - portrait | most phones - landscape
+@media only screen and (max-width: 980px) {
+  .film-info-box {
+    padding: 3rem 2rem;
+    margin: 3rem 0;
+  
+    &__content-div {
+      flex: 1;
+      height: 50rem;
+      padding-left: 2rem;
+    }
+
+    &__attributes { max-width: 25rem; }
+  }
+}
+
+
+// Most phones - portrait & small phones - landscape
+@media only screen and (max-width: 750px) {
+  .film-info-box {
+    text-align: center;
+    @include display-flex($direction: column, $justify: center);
+  
+    &__content-div {
+      padding-left: 0;
+      padding-top: 3rem;
+    }
+
+    &__attributes {
+      margin: 0 auto;
+      @include display-flex($direction: column, $justify: center);
+    }
+    
+    &__summary { padding: 3rem 0; }
+
+    &__buttons {
+      @include display-flex($direction: column);
+
+      & > .button,
+      & > .button--primary {
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+        margin-top: 1rem;
+      }
+    }
   }
 }

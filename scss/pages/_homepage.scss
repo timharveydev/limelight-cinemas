@@ -153,7 +153,8 @@
       min-width: 35rem;
       margin-top: 2.5rem;
 
-      &--absolute {
+      &--absolute-primary,
+      &--absolute-positive {
         position: absolute;
         top: 78%; // used to position What's On button vertically
       }
@@ -174,7 +175,8 @@
 
 
     &__button {
-      &--absolute {
+      &--absolute-primary,
+      &--absolute-positive {
         top: 82%; // used to position What's On button vertically
       }
     }
@@ -199,7 +201,8 @@
     &__info { display: none; }
 
     &__button {
-      &--absolute {
+      &--absolute-primary,
+      &--absolute-positive {
         top: 88%; // used to position What's On button vertically
       }
     }
@@ -222,7 +225,8 @@
       min-width: 100%;
       width: 100%;
       max-width: 100%;
-      &--absolute {
+      &--absolute-primary,
+      &--absolute-positive {
         min-width: 100%;
         width: 100%;
         max-width: 100%;
@@ -245,7 +249,8 @@
     &__right-side { margin-bottom: 7.5rem; } // used to position the register button stuff vertically
 
     &__button {
-      &--absolute {
+      &--absolute-primary,
+      &--absolute-positive {
         top: 90%; // used to position What's On button vertically
       }
     }

@@ -914,6 +914,7 @@ h6 {
 
 .film-info-box__attributes {
   padding-top: 1rem;
+  line-height: 2.2rem;
 }
 
 .film-info-box__summary {
@@ -935,6 +936,122 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+/* MEDIA QUERIES
+--------------------------------------------*/
+@media only screen and (max-width: 1400px) {
+  .film-info-box__content-div {
+    height: 34rem;
+  }
+  .film-info-box__summary {
+    padding-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .film-info-box__content-div {
+    height: 32rem;
+  }
+}
+
+@media only screen and (max-width: 1080px) {
+  .film-info-box {
+    padding: 4rem;
+  }
+  .film-info-box__img-div {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .film-info-box__content-div {
+    -webkit-box-flex: 2;
+        -ms-flex: 2;
+            flex: 2;
+    height: 37rem;
+    padding-left: 6rem;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .film-info-box {
+    padding: 3rem 2rem;
+    margin: 3rem 0;
+  }
+  .film-info-box__content-div {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    height: 50rem;
+    padding-left: 2rem;
+  }
+  .film-info-box__attributes {
+    max-width: 25rem;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .film-info-box {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .film-info-box__content-div {
+    padding-left: 0;
+    padding-top: 3rem;
+  }
+  .film-info-box__attributes {
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .film-info-box__summary {
+    padding: 3rem 0;
+  }
+  .film-info-box__buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .film-info-box__buttons > .button,
+  .film-info-box__buttons > .button--primary {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    margin-top: 1rem;
+  }
 }
 
 /* HOMEPAGE
@@ -1078,7 +1195,7 @@ h6 {
     min-width: 35rem;
     margin-top: 2.5rem;
   }
-  .hero__button--absolute {
+  .hero__button--absolute-primary, .hero__button--absolute-positive {
     position: absolute;
     top: 78%;
   }
@@ -1091,7 +1208,7 @@ h6 {
   .hero__right-side {
     margin-bottom: 20rem;
   }
-  .hero__button--absolute {
+  .hero__button--absolute-primary, .hero__button--absolute-positive {
     top: 82%;
   }
 }
@@ -1112,7 +1229,7 @@ h6 {
   .hero__info {
     display: none;
   }
-  .hero__button--absolute {
+  .hero__button--absolute-primary, .hero__button--absolute-positive {
     top: 88%;
   }
 }
@@ -1129,7 +1246,7 @@ h6 {
     width: 100%;
     max-width: 100%;
   }
-  .hero__button--absolute {
+  .hero__button--absolute-primary, .hero__button--absolute-positive {
     min-width: 100%;
     width: 100%;
     max-width: 100%;
@@ -1146,7 +1263,7 @@ h6 {
   .hero__right-side {
     margin-bottom: 7.5rem;
   }
-  .hero__button--absolute {
+  .hero__button--absolute-primary, .hero__button--absolute-positive {
     top: 90%;
   }
 }
