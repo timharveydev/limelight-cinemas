@@ -180,6 +180,8 @@ session_start();
       <h1 class="films__heading">Films</h1>
 
 
+
+      <!-- Alert/notification -->
       <!-- PHP displays registration/booking notice to unregistered/underage users -->
       <?php
         if (!isset($_SESSION['username'])) {
@@ -191,8 +193,20 @@ session_start();
       ?>
 
 
-      <!-- Search bar placeholder -->
-      <div class="films__search"></div>
+
+      <!-- Search bar component -->
+      <form class="films__search-bar search-bar" action="#" method="#">
+        
+        <input type="text" name="search" class="search-bar__input" placeholder="Enter film name ...">
+
+        <!-- Search button for most devices -->
+        <button type="submit" name="submit" class="search-bar__button button--positive">Search</button>
+
+        <!-- Search button for phones -->
+        <button type="submit" name="submit" class="search-bar__button--mobile button--primary"><i class="fas fa-search"></i></button>
+
+      </form>
+
 
 
       <!-- Genre selectors placeholder -->
