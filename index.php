@@ -200,7 +200,7 @@ session_start();
         <input type="text" name="search" class="search-bar__input" placeholder="Enter film name ...">
 
         <!-- Search button for most devices -->
-        <button type="submit" name="submit" class="search-bar__button button--positive">Search</button>
+        <button type="submit" name="submit" class="search-bar__button button--positive"><i class="fas fa-search"></i> Search</button>
 
         <!-- Search button for phones -->
         <button type="submit" name="submit" class="search-bar__button--mobile button--primary"><i class="fas fa-search"></i></button>
@@ -209,8 +209,30 @@ session_start();
 
 
 
-      <!-- Genre selectors placeholder -->
-      <div class="films__genre-selectors"></div>
+      <!-- Genre criteria selectors component -->
+      <form class="films__criteria-selectors criteria-selectors" action="#" method="#">
+
+        <button type="submit" class="criteria-selectors__selector" name="action">Action</button>
+
+        <button type="submit" class="criteria-selectors__selector" name="adventure">Adventure</button>
+
+        <button type="submit" class="criteria-selectors__selector" name="comedy">Comedy</button>
+
+        <button type="submit" class="criteria-selectors__selector" name="horror">Horror</button>
+
+        <button type="submit" class="criteria-selectors__selector" name="romance">Romance</button>
+
+        <button type="submit" class="criteria-selectors__selector" name="scifi">Sci-Fi</button>
+
+        <button type="submit" class="criteria-selectors__selector" name="fantasy">Fantasy</button>
+
+        <button type="submit" class="criteria-selectors__selector" name="musical">Musical</button>
+
+        <button type="submit" class="criteria-selectors__selector" name="drama">Drama</button>
+
+        <button type="submit" class="criteria-selectors__selector" name="family">Family</button>
+
+      </form>
 
 
 

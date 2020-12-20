@@ -845,7 +845,7 @@ h6 {
 .search-bar {
   width: 100%;
   max-width: 60rem;
-  margin: 6rem 0;
+  margin: 6rem 0 2rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -893,7 +893,7 @@ h6 {
 --------------------------------------------*/
 @media only screen and (max-width: 450px) {
   .search-bar {
-    margin: 4rem 0;
+    margin-top: 4rem;
   }
   .search-bar__button {
     display: none;
@@ -901,6 +901,52 @@ h6 {
   .search-bar__button--mobile {
     display: block;
   }
+}
+
+/* CRITERIA SELECTORS
+--------------------------------------------*/
+.criteria-selectors {
+  width: 100%;
+  max-width: 55rem;
+  margin-bottom: 6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.criteria-selectors__selector {
+  height: 2.8rem;
+  width: 10rem;
+  margin: 1rem 0.5rem 0 0.5rem;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 2.8rem;
+  letter-spacing: 0.1rem;
+  background-color: #5c5c5c;
+  color: #f3f3f3;
+  border-radius: 1.4rem;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: all 100ms ease-in-out 0s;
+  transition: all 100ms ease-in-out 0s;
+}
+
+.criteria-selectors__selector:hover, .criteria-selectors__selector:focus {
+  background-color: rgba(92, 92, 92, 0.6);
+  outline: 0;
 }
 
 /* FILM INFO BOX

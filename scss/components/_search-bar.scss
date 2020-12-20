@@ -7,7 +7,7 @@
 .search-bar {
   width: 100%;
   max-width: 60rem;
-  margin: 6rem 0;
+  margin: 6rem 0 2rem 0;
   @include display-flex;
 
   &__input {
@@ -47,7 +47,7 @@
 // Phones
 @media only screen and (max-width: 450px) {
   .search-bar {
-    margin: 4rem 0;
+    margin-top: 4rem;
   
     &__button { display: none; }
   
