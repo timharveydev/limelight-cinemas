@@ -650,6 +650,19 @@ h6 {
   border: none;
 }
 
+.form__select {
+  width: 100%;
+  height: 3.8rem;
+  padding: 0 1.5rem;
+  margin: 0.5rem 0 2rem 0;
+  font-size: 2rem;
+  line-height: 3.8rem;
+  background-color: #5c5c5c;
+  color: #f3f3f3;
+  border-radius: 4px;
+  border: none;
+}
+
 .form__button {
   width: 100%;
   margin-top: 3rem;
@@ -1581,6 +1594,210 @@ h6 {
   }
   .contact__heading {
     font-size: 3.8rem;
+  }
+}
+
+/* BOOKING
+--------------------------------------------*/
+.booking {
+  min-height: 100%;
+  width: 100%;
+}
+
+.booking__container {
+  max-width: 1200px;
+  padding: 12rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.booking-box {
+  width: 100%;
+  padding: 6rem;
+  margin: 6rem 0;
+  background-color: #5c5c5c;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+}
+
+.booking-box__img-div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.booking-box__content-div {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  height: 46rem;
+  padding-left: 8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.booking-box__flex-wrapper {
+  width: 100%;
+}
+
+.booking-box__title {
+  padding-bottom: 0.5rem;
+}
+
+.booking-box__underline {
+  background-color: #3b3b3b;
+  height: 2px;
+  border: none;
+}
+
+.booking-box__attributes {
+  padding-top: 1rem;
+  line-height: 2.2rem;
+}
+
+.booking-box__form {
+  text-align: center;
+}
+
+.booking-box__form > .form__select {
+  width: 6rem;
+  margin: 0 2rem;
+  font-size: 1.6rem;
+  background-color: #3b3b3b;
+}
+
+.booking-box__form > .form__button {
+  width: 80%;
+  margin-top: 6rem;
+}
+
+/* MEDIA QUERIES
+--------------------------------------------*/
+@media only screen and (max-width: 1400px) {
+  .booking-box__content-div {
+    height: 34rem;
+  }
+  .booking-box__disclaimer {
+    padding-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .booking-box__content-div {
+    height: 32rem;
+  }
+}
+
+@media only screen and (max-width: 1080px) {
+  .booking-box {
+    padding: 4rem;
+  }
+  .booking-box__img-div {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .booking-box__content-div {
+    -webkit-box-flex: 2;
+        -ms-flex: 2;
+            flex: 2;
+    height: 37rem;
+    padding-left: 6rem;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .booking-box {
+    padding: 3rem 2rem;
+    margin: 3rem 0;
+  }
+  .booking-box__content-div {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    height: 50rem;
+    padding-left: 2rem;
+  }
+  .booking-box__attributes {
+    max-width: 25rem;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .booking-box {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .booking-box__content-div {
+    padding-left: 0;
+    padding-top: 3rem;
+  }
+  .booking-box__attributes {
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .booking-box__disclaimer {
+    padding: 3rem 0;
   }
 }
 

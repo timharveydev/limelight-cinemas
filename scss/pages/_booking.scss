@@ -1,0 +1,152 @@
+
+/* BOOKING
+--------------------------------------------*/
+
+.booking {
+  min-height: 100%;
+  width: 100%;
+
+
+  &__container {
+    max-width: 1200px;
+    padding: 12rem 0;
+    @include display-flex($direction: column, $justify: flex-start);
+  }
+}
+
+
+
+
+
+.booking-box {
+  width: 100%;
+  padding: 6rem;
+  margin: 6rem 0;
+  background-color: $medium-grey;
+  border-radius: $border-radius-default;
+  @include display-flex;
+  @include box-shadow;
+
+  &__img-div {
+    flex: 1;
+  }
+
+  &__content-div {
+    flex: 2;
+    height: 46rem; // Approx. match to image height on larger displays
+    padding-left: 8rem;
+    @include display-flex($direction: column, $justify: space-between, $align: flex-start)
+  }
+
+
+  &__flex-wrapper { width: 100%; }
+
+  &__title { padding-bottom: 0.5rem; }
+
+  &__underline {
+    background-color: $dark-grey;
+    height: 2px;
+    border: none;
+  }
+
+  &__attributes {
+    padding-top: 1rem;
+    line-height: 2.2rem;
+  }
+
+  &__form {
+    text-align: center;
+
+    & > .form__select {
+      width: 6rem;
+      margin: 0 2rem;
+      font-size: 1.6rem;
+      background-color: $dark-grey;
+    }
+  
+    & > .form__button {
+      width: 80%;
+      margin-top: 6rem;
+    }
+  }
+}
+
+
+
+
+
+/* MEDIA QUERIES
+--------------------------------------------*/
+
+// Small desktops / laptops
+@media only screen and (max-width: 1400px) {
+  .booking-box {
+  
+    &__content-div { height: 34rem; }
+
+    &__disclaimer { padding-bottom: 0; }
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .booking-box {
+  
+    &__content-div { height: 32rem; }
+  }
+}
+
+
+// Large tablets - portrait
+@media only screen and (max-width: 1080px) {
+  .booking-box {
+    padding: 4rem;
+
+    &__img-div {
+      flex: 1;
+    }
+  
+    &__content-div {
+      flex: 2;
+      height: 37rem;
+      padding-left: 6rem;
+    }
+  }
+}
+
+
+// Small tablets - portrait | most phones - landscape
+@media only screen and (max-width: 980px) {
+  .booking-box {
+    padding: 3rem 2rem;
+    margin: 3rem 0;
+  
+    &__content-div {
+      flex: 1;
+      height: 50rem;
+      padding-left: 2rem;
+    }
+
+    &__attributes { max-width: 25rem; }
+  }
+}
+
+
+// Most phones - portrait & small phones - landscape
+@media only screen and (max-width: 750px) {
+  .booking-box {
+    text-align: center;
+    @include display-flex($direction: column, $justify: center);
+  
+    &__content-div {
+      padding-left: 0;
+      padding-top: 3rem;
+    }
+
+    &__attributes {
+      margin: 0 auto;
+      @include display-flex($direction: column, $justify: center);
+    }
+    
+    &__disclaimer { padding: 3rem 0; }
+  }
+}

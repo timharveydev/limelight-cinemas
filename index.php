@@ -260,7 +260,13 @@ session_start();
 
           <div class="film-info-box__buttons">
             <a href="#" class="button">View Trailer</a>
-            <a href="#" class="button--primary">Book Tickets</a>
+
+            <!-- PHP displays Book Tickets button to logged in users over 18 only -->
+            <?php
+              if (isset($_SESSION['username']) && $_SESSION['userAge'] >= 18) {
+                echo '<a href="booking.php" class="button--primary">Book Tickets</a>';
+              }
+            ?>
           </div>
         </div>
       </div>
@@ -295,7 +301,13 @@ session_start();
 
           <div class="film-info-box__buttons">
             <a href="#" class="button">View Trailer</a>
-            <a href="#" class="button--primary">Book Tickets</a>
+
+            <!-- PHP displays Book Tickets button to logged in users over 18 only -->
+            <?php
+              if (isset($_SESSION['username']) && $_SESSION['userAge'] >= 18) {
+                echo '<a href="booking.php" class="button--primary">Book Tickets</a>';
+              }
+            ?>
           </div>
         </div>
       </div>
@@ -325,7 +337,13 @@ session_start();
 
           <div class="film-info-box__buttons">
             <a href="#" class="button">View Trailer</a>
-            <a href="#" class="button--primary">Book Tickets</a>
+
+            <!-- PHP displays Book Tickets button to logged in users over 18 only -->
+            <?php
+              if (isset($_SESSION['username']) && $_SESSION['userAge'] >= 18) {
+                echo '<a href="booking.php" class="button--primary">Book Tickets</a>';
+              }
+            ?>
           </div>
         </div>
       </div>
