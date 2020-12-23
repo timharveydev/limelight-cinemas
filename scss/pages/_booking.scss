@@ -78,20 +78,14 @@
 /* MEDIA QUERIES
 --------------------------------------------*/
 
-// Small desktops / laptops
-@media only screen and (max-width: 1400px) {
-  .booking-box {
-  
-    &__content-div { height: 34rem; }
-
-    &__disclaimer { padding-bottom: 0; }
-  }
-}
-
+// Small computers | laptops
 @media only screen and (max-width: 1280px) {
   .booking-box {
-  
     &__content-div { height: 32rem; }
+
+    &__form {
+      & > .form__button { margin-top: 3rem; }
+    }
   }
 }
 
@@ -118,21 +112,30 @@
 @media only screen and (max-width: 980px) {
   .booking-box {
     padding: 3rem 2rem;
-    margin: 3rem 0;
+    margin: 6rem 0;
   
     &__content-div {
       flex: 1;
-      height: 50rem;
+      height: 46rem;
       padding-left: 2rem;
     }
 
     &__attributes { max-width: 25rem; }
+
+    &__form {  
+      & > .form__select {
+        width: 16rem;
+        margin: 1rem 4rem;
+      }
+    }
   }
 }
 
 
 // Most phones - portrait & small phones - landscape
 @media only screen and (max-width: 750px) {
+  .booking { text-align: center; }
+
   .booking-box {
     text-align: center;
     @include display-flex($direction: column, $justify: center);
