@@ -1802,6 +1802,65 @@ h6 {
   }
 }
 
+/* BOOKING CONFIRMATION
+--------------------------------------------*/
+.confirmation {
+  min-height: 100%;
+  width: 100%;
+}
+
+.confirmation__container {
+  max-width: 1200px;
+  padding: 12rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.confirmation-box {
+  width: 100%;
+  padding: 6rem 16rem;
+  margin: 6rem 0;
+  text-align: center;
+  background-color: #5c5c5c;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+}
+
+.confirmation-box__subheading {
+  margin: 3rem 0;
+}
+
+.confirmation-box__details--large {
+  font-size: 3rem;
+  margin: 1.5rem 0;
+}
+
+/* MEDIA QUERIES
+--------------------------------------------*/
+@media only screen and (max-width: 1280px) {
+  .confirmation-box {
+    padding: 6rem;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .confirmation-box {
+    padding: 4rem 1.5rem;
+  }
+}
+
 /* JUNIOR
 --------------------------------------------*/
 /* ADMIN

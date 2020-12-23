@@ -15,7 +15,7 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Tim Harvey">
   <meta name="description" content="A dynamic cinema website created for my HND Web Development course.">
-  <title>Limelight | Book Tickets</title>
+  <title>Limelight | Booking Confirmation</title>
 
   <!-- CSS
   --------------------------------------------------------->
@@ -105,58 +105,33 @@ session_start();
 
 
 
-  <!-- Booking Section
+  <!-- Booking Confirmation Section
   ------------------------------------->
 
-  <section class="booking">
-    <div class="booking__container container">
+  <section class="confirmation">
+    <div class="confirmation__container container">
 
-      <h1 class="booking__heading">Book Tickets</h1>
+      <!-- Confirmation box -->
+      <div class="confirmation-box">
 
+        <!-- Heading -->
+        <h2 class="confirmation-box__heading">Booking Success!</h2>
 
-      <!-- Booking box -->
-      <div class="booking-box">
+        <!-- Subheading -->
+        <h3 class="confirmation-box__subheading">You have booked X tickets to see FILM TITLE.</h3>
 
-        <!-- Film poster -->
-        <div class="booking-box__img-div">
-          <img src="img/placeholder.jpg" alt="placeholder image">
-        </div>
+        <!-- Details -->
+        <p class="confirmation-box__details">Your booking reference number:</p>
+        <p class="confirmation-box__details--large">XXXXXXXXXX</p>
+        <br><br>
+        <p class="confirmation-box__details">Please make a note of your booking reference number as you will be required to show it on arrival at the cinema. If you provided an email address during registration, a confirmation email will be sent to you.</p>
+        <br><br>
+        <p class="confirmation-box__details">Thank you, we hope you enjoy the film!</p>
+        <br><br>
 
-
-        <!-- Film info & title -->
-        <div class="booking-box__content-div">
-
-          <div class="booking-box__flex-wrapper">
-            <h2 class="booking-box__title">Film Title</h2>
-            <hr class="booking-box__underline">
-            <div class="booking-box__attributes">
-              <p>Action | Rating: 15 | <i class="far fa-clock"></i> 1h 47m | <a href="#">Viewing times</a></p>
-            </div>
-          </div>
-
-          <!-- Disclaimer -->
-          <p class="booking-box__disclaimer"><strong>Please note:</strong><br><br>There is a limit of 4 tickets per person.<br><br>Tickets are valid for the chosen film only and for any viewing time.<br><a href="#">Click here</a> for more information on viewing times and ticket terms and conditions.</p>
-
-
-          <!-- Ticket selection -->
-          <form class="booking-box__form form" action="booking-confirmation.php" method="#">
-
-            <label class="form__label" for="tickets"><strong>Quantity:</strong></label>
-
-            <select name="tickets" class="form__select">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-            </select>
-
-            <label class="form__label">(XX tickets remaining)</label>
-
-            <input class="form__button button--primary button--large" type="submit" name="submit" value="Book Now">
-
-          </form>
-
-        </div>
+        <!-- Return to homepage -->
+        <a class="confirmation-box__return" href="index.php">Return to homepage</a>
+        
       </div>
 
     </div>

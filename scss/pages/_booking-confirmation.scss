@@ -1,0 +1,55 @@
+
+/* BOOKING CONFIRMATION
+--------------------------------------------*/
+
+.confirmation {
+  min-height: 100%;
+  width: 100%;
+
+  &__container {
+    max-width: 1200px;
+    padding: 12rem 0;
+    @include display-flex($direction: column, $justify: flex-start);
+  }
+}
+
+
+
+.confirmation-box {
+  width: 100%;
+  padding: 6rem 16rem;
+  margin: 6rem 0;
+  text-align: center;
+  background-color: $medium-grey;
+  border-radius: $border-radius-default;
+  @include box-shadow;
+
+  &__subheading { margin: 3rem 0; }
+
+  &__details--large {
+    font-size: 3rem;
+    margin: 1.5rem 0;
+  }
+}
+
+
+
+
+
+/* MEDIA QUERIES
+--------------------------------------------*/
+
+// Small computers | laptops | tablets
+@media only screen and (max-width: 1280px) {
+  .confirmation-box {
+    padding: 6rem;
+  }
+}
+
+
+// Most phones
+@media only screen and (max-width: 750px) {
+  .confirmation-box {
+    padding: 4rem 1.5rem;
+  }
+}
