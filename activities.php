@@ -62,7 +62,7 @@ session_start();
           echo '<li class="nav__item"><a href="#" class="nav__link active">Activities</a></li>';
         }
         ?>
-        <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+        <li class="nav__item"><a href="about.php" class="nav__link">About</a></li>
         <li class="nav__item"><a href="contact.php" class="nav__link">Contact</a></li>
         
 
@@ -141,7 +141,7 @@ session_start();
           echo '<a href="#top" class="footer__link">Activities</a>';
         }
         ?>
-        <a href="#" class="footer__link">About</a>
+        <a href="about.php" class="footer__link">About</a>
         <a href="contact.php" class="footer__link">Contact</a>
       </div>
 

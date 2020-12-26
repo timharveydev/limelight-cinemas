@@ -62,7 +62,7 @@ session_start();
           echo '<li class="nav__item"><a href="activities.php" class="nav__link active">Activities</a></li>';
         }
         ?>
-        <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+        <li class="nav__item"><a href="about.php" class="nav__link">About</a></li>
         <li class="nav__item"><a href="contact.php" class="nav__link">Contact</a></li>
         
 
@@ -130,12 +130,12 @@ session_start();
             <h2 class="booking-box__title">Film Title</h2>
             <hr class="booking-box__underline">
             <div class="booking-box__attributes">
-              <p>Action | Rating: 15 | <i class="far fa-clock"></i> 1h 47m | <a href="#">Viewing times</a></p>
+              <p>Action | Rating: 15 | <i class="far fa-clock"></i> 1h 47m | <a href="about.php">Showing times</a></p>
             </div>
           </div>
 
           <!-- Disclaimer -->
-          <p class="booking-box__disclaimer"><strong>Please note:</strong><br><br>There is a limit of 4 tickets per person.<br><br>Tickets are valid for the chosen film only and for any viewing time.<br><a href="#">Click here</a> for more information on viewing times and ticket terms and conditions.</p>
+          <p class="booking-box__disclaimer"><strong>Please note:</strong><br><br>There is a limit of 4 tickets per person.<br><br>Tickets are valid for the chosen film only and for any viewing time.<br><a href="about.php">Click here</a> for more information on viewing times and ticket terms & conditions.</p>
 
 
           <!-- Ticket selection -->
@@ -179,7 +179,7 @@ session_start();
           echo '<a href="activities.php" class="footer__link">Activities</a>';
         }
         ?>
-        <a href="#" class="footer__link">About</a>
+        <a href="about.php" class="footer__link">About</a>
         <a href="contact.php" class="footer__link">Contact</a>
       </div>
 

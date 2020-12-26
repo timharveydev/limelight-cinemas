@@ -1,0 +1,30 @@
+
+/* ABOUT
+--------------------------------------------*/
+
+.about {
+  min-height: 100%;
+  width: 100%;
+
+  &__container { padding: 12rem 0; }
+
+  &__heading { text-align: center; }
+
+  &__flex-wrapper { @include display-flex; }
+
+  &__info { flex: 2; }
+
+  &__showing-times {
+    flex: 1;
+    @include display-flex($direction: column, $justify: flex-start);
+  }
+
+  &__image { margin: 6rem 0; }
+
+  &__hours-table {
+    border-spacing: 2rem;
+    & th { text-align: right; }
+  }
+
+  &__text { margin: 2.5rem 0; }
+}

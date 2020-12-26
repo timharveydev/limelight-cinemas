@@ -15,7 +15,7 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Tim Harvey">
   <meta name="description" content="A dynamic cinema website created for my HND Web Development course.">
-  <title>Limelight | Booking Confirmation</title>
+  <title>Limelight | About</title>
 
   <!-- CSS
   --------------------------------------------------------->
@@ -59,14 +59,14 @@ session_start();
         <!-- PHP adds activities link for junior users -->
         <?php
         if (isset($_SESSION['username']) && $_SESSION['userAge'] < 18) {
-          echo '<li class="nav__item"><a href="activities.php" class="nav__link active">Activities</a></li>';
+          echo '<li class="nav__item"><a href="activities.php" class="nav__link">Activities</a></li>';
         }
         ?>
-        <li class="nav__item"><a href="about.php" class="nav__link">About</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">About</a></li>
         <li class="nav__item"><a href="contact.php" class="nav__link">Contact</a></li>
-        
 
-        <!-- Nav button -->
+
+        <!-- Nav button - for large devices -->
         <!-- PHP code changes nav button type and content depending on whether a user is logged in or not -->
         <li class="nav__item mobile-hidden">
           <?php
@@ -105,35 +105,46 @@ session_start();
 
 
 
-  <!-- Booking Confirmation Section
+  <!-- About page content
   ------------------------------------->
+  <section class="about">
+    <div class="about__container container">
 
-  <section class="confirmation">
-    <div class="confirmation__container container">
+      <!-- Heading -->
+      <h1 class="about__heading">About Us</h1>
 
-      <!-- Confirmation box -->
-      <div class="confirmation-box">
+      <!-- Cinema image -->
+      <img class="about__image" src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/img/about.jpg" alt="Cinema screening room">
 
-        <!-- Heading -->
-        <h2 class="confirmation-box__heading">Booking Success!</h2>
 
-        <!-- Subheading -->
-        <h3 class="confirmation-box__subheading">You have booked X tickets to see FILM TITLE.</h3>
+      <!-- Flex wrapper -->
+      <div class="about__flex-wrapper">
 
-        <!-- Details -->
-        <p class="confirmation-box__details">Your booking reference number:</p>
-        <p class="confirmation-box__details--large">XXXXXXXXXX</p>
-        <br><br>
-        <p class="confirmation-box__details">Please make a note of your booking reference number as you will be required to show it on arrival at the cinema. If you provided an email address during registration, a confirmation email will be sent to you.</p>
-        <br><br>
-        <p class="confirmation-box__details">Thank you, we hope you enjoy the film!</p>
-        <br><br>
+        <div class="about__info">
+          <!-- Who we are -->
+          <h2 class="about__subheading">Who We Are</h2>
+          <p class="about__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere iusto perferendis deserunt libero ut voluptatum est aliquid optio unde, ea repudiandae architecto vel placeat, natus, molestiae blanditiis id quibusdam magni. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium, deserunt quasi assumenda sequi sunt aperiam minus omnis eius expedita deleniti consequatur quisquam. Voluptate ab sapiente ex pariatur incidunt delectus nesciunt.</p>
 
-        <!-- Return to homepage -->
-        <a class="confirmation-box__return" href="index.php">Return to homepage</a>
-        
+          <!-- Ticket terms -->
+          <h2 class="about__subheading">Ticket Terms & Conditions</h2>
+          <p class="about__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere iusto perferendis deserunt libero ut voluptatum est aliquid optio unde, ea repudiandae architecto vel placeat, natus, molestiae blanditiis id quibusdam magni. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium, deserunt quasi assumenda sequi sunt aperiam minus omnis eius expedita deleniti consequatur quisquam. Voluptate ab sapiente ex pariatur incidunt delectus nesciunt.</p>
+        </div>
+
+
+        <div class="about__showing-times">
+          <h2 class="about__subheading">Showing Times</h2>
+          <table class="about__hours-table">
+            <tr><th>Monday</th><td>Closed</td></tr>
+            <tr><th>Tuesday</th><td>Closed</td></tr>
+            <tr><th>Wed - Sun</th><td>11am</td></tr>
+            <tr><th></th><td>2pm</td></tr>
+            <tr><th></th><td>5pm</td></tr>
+            <tr><th></th><td>8pm</td></tr>
+          </table>
+        </div>
+
       </div>
-
+      
     </div>
   </section>
 
@@ -154,12 +165,13 @@ session_start();
           echo '<a href="activities.php" class="footer__link">Activities</a>';
         }
         ?>
-        <a href="about.php" class="footer__link">About</a>
+        <a href="#" class="footer__link">About</a>
         <a href="contact.php" class="footer__link">Contact</a>
       </div>
 
-      
+
       <div class="footer__flex-wrapper">
+
         <div class="footer__social">
           <a class="footer__social--icon" href="#"><i class="fab fa-facebook-f"></i></a>
           <a class="footer__social--icon" href="#"><i class="fab fa-youtube"></i></a>
@@ -169,6 +181,7 @@ session_start();
         <div class="footer__copyright">
           &copy; 2020 Limelight Cinemas. All Rights Reserved.
         </div>
+
       </div>
 
 

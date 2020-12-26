@@ -62,7 +62,7 @@ session_start();
           echo '<li class="nav__item"><a href="activities.php" class="nav__link">Activities</a></li>';
         }
         ?>
-        <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+        <li class="nav__item"><a href="about.php" class="nav__link">About</a></li>
         <li class="nav__item"><a href="contact.php" class="nav__link">Contact</a></li>
 
 
@@ -241,7 +241,7 @@ session_start();
 
         <!-- Film poster -->
         <div class="film-info-box__img-div">
-          <img src="img/placeholder.jpg" alt="placeholder image">
+          <img src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/img/placeholder.jpg" alt="placeholder image">
         </div>
 
 
@@ -252,7 +252,7 @@ session_start();
             <h2 class="film-info-box__title">Film Title</h2>
             <hr class="film-info-box__underline">
             <div class="film-info-box__attributes">
-              <p>Action | Rating: 15 | <i class="far fa-clock"></i> 1h 47m | <a href="#">Viewing times</a></p>
+              <p>Action | Rating: 15 | <i class="far fa-clock"></i> 1h 47m | <a href="about.php">Showing times</a></p>
             </div>
           </div>
 
@@ -282,7 +282,7 @@ session_start();
 
         <!-- Film poster -->
         <div class="film-info-box__img-div">
-          <img src="img/placeholder.jpg" alt="placeholder image">
+          <img src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/img/placeholder.jpg" alt="placeholder image">
         </div>
 
 
@@ -293,7 +293,7 @@ session_start();
             <h2 class="film-info-box__title">Film Title</h2>
             <hr class="film-info-box__underline">
             <div class="film-info-box__attributes">
-              <p>Action | Rating: 15 | <i class="far fa-clock"></i> 1h 47m | <a href="#">Viewing times</a></p>
+              <p>Action | Rating: 15 | <i class="far fa-clock"></i> 1h 47m | <a href="about.php">Showing times</a></p>
             </div>
           </div>
 
@@ -318,7 +318,7 @@ session_start();
 
         <!-- Film poster -->
         <div class="film-info-box__img-div">
-          <img src="img/placeholder.jpg" alt="placeholder image">
+          <img src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/img/placeholder.jpg" alt="placeholder image">
         </div>
 
 
@@ -329,7 +329,7 @@ session_start();
             <h2 class="film-info-box__title">Film Title</h2>
             <hr class="film-info-box__underline">
             <div class="film-info-box__attributes">
-              <p>Action | Rating: 15 | <i class="far fa-clock"></i> 1h 47m | <a href="#">Viewing times</a></p>
+              <p>Action | Rating: 15 | <i class="far fa-clock"></i> 1h 47m | <a href="about.php">Showing times</a></p>
             </div>
           </div>
 
@@ -368,7 +368,7 @@ session_start();
           echo '<a href="activities.php" class="footer__link">Activities</a>';
         }
         ?>
-        <a href="#" class="footer__link">About</a>
+        <a href="about.php" class="footer__link">About</a>
         <a href="contact.php" class="footer__link">Contact</a>
       </div>
 
