@@ -123,15 +123,17 @@ session_start();
         <div class="about__info">
           <!-- Who we are -->
           <h2 class="about__subheading">Who We Are</h2>
-          <p class="about__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere iusto perferendis deserunt libero ut voluptatum est aliquid optio unde, ea repudiandae architecto vel placeat, natus, molestiae blanditiis id quibusdam magni. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium, deserunt quasi assumenda sequi sunt aperiam minus omnis eius expedita deleniti consequatur quisquam. Voluptate ab sapiente ex pariatur incidunt delectus nesciunt.</p>
+          <p class="about__text">Limelight Cinemas are an independant cinema group with venues situated throughout Midlothian. Our mission is to present the very best of what the film industry has to offer, whether it be brand new releases, time-proven classics or indie hits. We have seven separate screening rooms, which allows us to show seven films simultaneously at each showing time, Wed - Sun. Our film roster changes weekly so be sure to check back regularly to catch the latest and greatest, only at Limelight Cinemas.</p>
+
+          <br>
 
           <!-- Ticket terms -->
           <h2 class="about__subheading">Ticket Terms & Conditions</h2>
-          <p class="about__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere iusto perferendis deserunt libero ut voluptatum est aliquid optio unde, ea repudiandae architecto vel placeat, natus, molestiae blanditiis id quibusdam magni. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium, deserunt quasi assumenda sequi sunt aperiam minus omnis eius expedita deleniti consequatur quisquam. Voluptate ab sapiente ex pariatur incidunt delectus nesciunt.</p>
+          <p class="about__text">We operate an open ticket policy where tickets are valid for all showing times weekly. Simply turn up at your preffered showing time and present your ticket at the door. Tickets expire on Sundays after 8pm. Tickets are single use only. A maximum of four tickets can be reserved per person.</p>
         </div>
 
 
-        <div class="about__showing-times">
+        <div class="about__showing-times" id="showing-times">
           <h2 class="about__subheading">Showing Times</h2>
           <table class="about__hours-table">
             <tr><th>Monday</th><td>Closed</td></tr>

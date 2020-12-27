@@ -252,7 +252,7 @@ session_start();
             <h2 class="film-info-box__title">Film Title</h2>
             <hr class="film-info-box__underline">
             <div class="film-info-box__attributes">
-              <p>Action | Rating: 15 | <i class="far fa-clock"></i> 1h 47m | <a href="about.php">Showing times</a></p>
+              <p>Action | Rating: 15 | <i class="far fa-clock"></i> 1h 47m | <a href="about.php#showing-times">Showing times</a></p>
             </div>
           </div>
 
@@ -293,7 +293,7 @@ session_start();
             <h2 class="film-info-box__title">Film Title</h2>
             <hr class="film-info-box__underline">
             <div class="film-info-box__attributes">
-              <p>Action | Rating: 15 | <i class="far fa-clock"></i> 1h 47m | <a href="about.php">Showing times</a></p>
+              <p>Action | Rating: 15 | <i class="far fa-clock"></i> 1h 47m | <a href="about.php#showing-times">Showing times</a></p>
             </div>
           </div>
 
@@ -329,7 +329,7 @@ session_start();
             <h2 class="film-info-box__title">Film Title</h2>
             <hr class="film-info-box__underline">
             <div class="film-info-box__attributes">
-              <p>Action | Rating: 15 | <i class="far fa-clock"></i> 1h 47m | <a href="about.php">Showing times</a></p>
+              <p>Action | Rating: 15 | <i class="far fa-clock"></i> 1h 47m | <a href="about.php#showing-times">Showing times</a></p>
             </div>
           </div>
 
