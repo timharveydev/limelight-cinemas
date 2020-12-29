@@ -377,9 +377,10 @@ session_start();
 
       <div class="footer__nav">
         <a href="#films" class="footer__link">What's On?</a>
-        <!-- PHP adds activities link for junior users -->
+        <!-- PHP adds activities link for junior and admin users -->
         <?php
-        if (isset($_SESSION['username']) && $_SESSION['userAge'] < 18) {
+
+        if ((isset($_SESSION['username']) && $_SESSION['userAge'] < 18) || $_SESSION['admin'] == 'admin') {
           echo '<a href="activities.php" class="footer__link">Activities</a>';
         }
         ?>

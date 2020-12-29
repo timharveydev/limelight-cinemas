@@ -1950,6 +1950,55 @@ h6 {
   }
 }
 
+/* ADMIN HOME
+--------------------------------------------*/
+.admin-home {
+  min-height: 100%;
+  width: 100%;
+}
+
+.admin-home__container {
+  max-width: 1200px;
+  padding: 12rem 0;
+}
+
+.admin-home__heading {
+  text-align: center;
+}
+
+.admin-home__user {
+  text-align: right;
+  margin: 3rem 0;
+}
+
+.admin-home__button-selectors {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.admin-home__button {
+  height: 12rem;
+  line-height: 12rem;
+  width: 40rem;
+  max-width: 40rem;
+  min-width: 40rem;
+  font-size: 1.8rem;
+  margin: 3rem 8rem;
+}
+
 /* JUNIOR
 --------------------------------------------*/
 /* ADMIN
