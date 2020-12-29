@@ -56,17 +56,32 @@ session_start();
 
       <ul class="nav__list">
         <li class="nav__item"><a href="index.php#films" class="nav__link">What's On?</a></li>
-        <!-- PHP adds activities link for junior users -->
+        <!-- PHP adds activities link for junior and admin users -->
         <?php
-        if (isset($_SESSION['username']) && $_SESSION['userAge'] < 18) {
+
+        if ((isset($_SESSION['username']) && $_SESSION['userAge'] < 18) || $_SESSION['admin'] == 'admin') {
           echo '<li class="nav__item"><a href="activities.php" class="nav__link">Activities</a></li>';
         }
+        
         ?>
-        <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+        <li class="nav__item"><a href="#" class="nav__link active">About</a></li>
         <li class="nav__item"><a href="contact.php" class="nav__link">Contact</a></li>
 
 
-        <!-- Nav button - for large devices -->
+        <!-- Admin panel button - for large devices only -->
+        <!-- PHP code displays button only if admin user logged in -->
+        <li class="nav__item mobile-hidden">
+          <?php
+
+          if ($_SESSION['admin'] == 'admin') {
+            echo '<a class="nav__button button" href="admin-home.php">Admin Panel</a>';
+          }
+          
+          ?>
+        </li>
+
+
+        <!-- Login/logout button - for large devices -->
         <!-- PHP code changes nav button type and content depending on whether a user is logged in or not -->
         <li class="nav__item mobile-hidden">
           <?php
@@ -84,7 +99,7 @@ session_start();
       </ul>
 
 
-      <!-- Nav button - for small devices -->
+      <!-- Login/logout button - for small devices -->
       <!-- PHP code changes nav button type and content depending on whether a user is logged in or not -->
       <?php
 
