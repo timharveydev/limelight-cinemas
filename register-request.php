@@ -29,39 +29,27 @@ elseif ($_SESSION['password'] != $_SESSION['confirm-password']) {
 
 
 // If above checks ok, insert data into DB
+mysqli_query($connection, "INSERT INTO users (username, password, date_of_birth, email, admin) VALUES ('$_SESSION[username]', '$_SESSION[password]', '$_SESSION[dob]', '$_SESSION[email]', '$_SESSION[admin]')");
+
+
+// Set user age (only if user is not admin - ensures admin user's age doesn't get reset)
+if ($_SESSION['admin'] != 'admin') {
+  list($year, $month, $day) = explode('-', $_SESSION['dob']);
+    
+  $timeOfBirth = mktime(0, 0, 0, $month, $day, $year);
+
+  $_SESSION['userAge'] = floor((time() - $timeOfBirth) / 31556926);
+}
+
+
+// Set reg-success variable to true - used to provide success alert following successful login - see bottom of index.php
+// Not applicable to admins adding new user
+if ($_SESSION['admin'] != 'admin') {
+  $_SESSION['registrationSuccess'] = true;
+  header("Location: login-request.php");
+}
 else {
-
-  // Include email, if provided
-  if ($_SESSION['email'] != '') {
-    mysqli_query($connection, "INSERT INTO users (username, password, date_of_birth, email) VALUES ('$_SESSION[username]', '$_SESSION[password]', '$_SESSION[dob]', '$_SESSION[email]')");
-  }
-
-  // Exclude email, if not provided
-  else {
-    mysqli_query($connection, "INSERT INTO users (username, password, date_of_birth) VALUES ('$_SESSION[username]', '$_SESSION[password]', '$_SESSION[dob]')");
-  }
-
-
-  
-  // Set user age (only if user is not admin - ensures admin user's age doesn't get reset)
-  if ($_SESSION['admin'] != 'admin') {
-    list($year, $month, $day) = explode('-', $_SESSION['dob']);
-      
-    $timeOfBirth = mktime(0, 0, 0, $month, $day, $year);
-
-    $_SESSION['userAge'] = floor((time() - $timeOfBirth) / 31556926);
-  }
-
-
-  // Set reg-success variable to true - used to provide success alert following successful login - see bottom of index.php
-  // Not applicable to admins adding new user
-  if ($_SESSION['admin'] != 'admin') {
-    $_SESSION['registrationSuccess'] = true;
-    header("Location: login-request.php");
-  }
-  else {
-    header("Location: " . $_SESSION['redirect'] . "?success=success");
-  }
+  header("Location: " . $_SESSION['redirect'] . "?success=success");
 }
 
 ?>

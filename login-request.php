@@ -48,6 +48,7 @@ else {
       
       $_SESSION['dob'] = $date_of_birth;
       $_SESSION['email'] = $email;
+      $_SESSION['admin'] = $admin;
     }
 
 
@@ -59,8 +60,13 @@ else {
     $_SESSION['userAge'] = floor((time() - $timeOfBirth) / 31556926);
 
 
-    // Redirect to index page
-    header("Location: index.php");
+    // Redirect to index page (regular users) or admin panel (admin users)
+    if ($_SESSION['admin'] == 'admin') {
+      header("Location: admin-home.php");
+    }
+    else {
+      header("Location: index.php");
+    }
   }
 }
 

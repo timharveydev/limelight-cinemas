@@ -63,7 +63,7 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
 
         <!-- Admin panel button - for large devices only -->
         <li class="nav__item mobile-hidden">
-          <a class="nav__button button" href="#">Admin Panel</a>
+          <a class="nav__button button" href="admin-home.php">Admin Panel</a>
         </li>
 
         <!-- Logout button (login button not needed - admin pages not accessible unless logged in) -->
@@ -81,23 +81,50 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
 
   <!-- Admin panel content
   ------------------------------------->
-  <section class="admin-home">
-    <div class="admin-home__container container">
+  <section class="admin-new-admin">
+    <div class="admin-new-admin__container container">
 
-      <h1 class="admin-home__heading">Admin Panel</h1>
+      <h1 class="admin-new-admin__heading">Add New Admin User</h1>
 
-      <h4 class="admin-home__user">User: <?php echo $_SESSION['username']; ?></h4>
+      <!-- Register form (this is the same form that appears on the register/login page) -->
+      <!-- PHP code between label and input produces error spans -> error type is sent via URL from register-request.php -->
+      <!-- PHP within input value parameters populates form fields with previous user input when returning from register-request.php with errors (excludes password for security) -->
+      <form class="admin-new-admin__form form" action="register-request.php" method="POST">
 
-      <div class="admin-home__button-selectors">
-        <a href="admin-new-user.php" class="admin-home__button button--primary">New User</a>
-        <a href="admin-change-users.php" class="admin-home__button button--primary">Change / Remove Users</a>
-        <a href="admin-new-admin.php" class="admin-home__button button--primary">New Admin</a>
-        <a href="admin-change-admins.php" class="admin-home__button button--primary">Change / Remove Admins</a>
-        <a href="admin-new-film.php" class="admin-home__button button--primary">New Film</a>
-        <a href="admin-change-films.php" class="admin-home__button button--primary">Change / Remove Films</a>
-        <a href="admin-update-stock.php" class="admin-home__button button--primary">Update Stock</a>
-      </div>
-      
+        <label for="username" class="form__label">Username <span class="required">*</span></label>
+        <?php if($_GET['error'] == 'usernameError') {echo '<span class="form__error">Sorry, this username already exists</span>';} ?>
+        <input name="username" type="text" class="form__text-input" maxlength="40" required>
+
+        <label for="password" class="form__label">Password (8-12 characters) <span class="required">*</span></label>
+        <input name="password" type="password" class="form__text-input" maxlength="12" required>
+
+        <label for="confirm-password" class="form__label">Confirm Password <span class="required">*</span></label>
+        <?php if($_GET['error'] == 'passwordError') {echo '<span class="form__error">Password does not match</span>';} ?>
+        <input name="confirm-password" type="password" class="form__text-input" max-length="12" required>
+
+        <label for="date-of-birth" class="form__label">Date of Birth <span class="required">*</span></label>
+        <input name="date-of-birth" type="date" class="form__text-input datepicker" min="1900-01-01" required> <!-- See setDateInputMax.js -->
+
+        <label for="email" class="form__label">Email (optional)</label>
+        <input name="email" type="text" class="form__text-input" maxlength="40">
+
+        <!-- Allows register-request.php to set $_SESSION['admin'] = 'admin' -->
+        <input type="hidden" name="admin" value="admin">
+
+        <input name="submit" type="submit" value="Add Admin User" class="form__button button--primary button--large">
+        <input name="reset" type="reset" value="Reset" class="form__button button--negative button--large">
+        
+      </form>
+
+      <!-- PHP shows success confirmation when new user added -->
+      <?php
+
+      if ($_GET['success'] == 'success') {
+        echo '<span class="admin-new-user__success">Admin user added successfully</span>';
+      }
+
+      ?>
+
     </div>
   </section>
 

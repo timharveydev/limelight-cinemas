@@ -108,7 +108,10 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
         <label for="email" class="form__label">Email (optional)</label>
         <input name="email" type="text" class="form__text-input" maxlength="40">
 
-        <input name="submit" type="submit" value="Submit" class="form__button button--primary button--large">
+        <!-- Allows register-request.php to set $_SESSION['admin'] = empty string -->
+        <input type="hidden" name="admin" value="">
+
+        <input name="submit" type="submit" value="Add User" class="form__button button--primary button--large">
         <input name="reset" type="reset" value="Reset" class="form__button button--negative button--large">
         
       </form>
