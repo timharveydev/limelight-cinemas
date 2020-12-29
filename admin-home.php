@@ -2,6 +2,9 @@
 
 session_start();
 
+// Stores current URL minus arguments
+$_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
+
 ?>
 
 
@@ -49,7 +52,7 @@ session_start();
     <div class="nav__container container">
 
       <div class="nav__logo">
-        <a href="#"><img src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/img/logo.svg" alt="Limelight Cinemas Logo"></a>
+        <a href="index.php"><img src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/img/logo.svg" alt="Limelight Cinemas Logo"></a>
       </div>
 
       <ul class="nav__list">
@@ -86,13 +89,13 @@ session_start();
       <h4 class="admin-home__user">User: <?php echo $_SESSION['username']; ?></h4>
 
       <div class="admin-home__button-selectors">
-        <a href="#" class="admin-home__button button--primary">New User</a>
-        <a href="#" class="admin-home__button button--primary">Change / Remove Users</a>
-        <a href="#" class="admin-home__button button--primary">New Admin</a>
-        <a href="#" class="admin-home__button button--primary">Change / Remove Admins</a>
-        <a href="#" class="admin-home__button button--primary">New Film</a>
-        <a href="#" class="admin-home__button button--primary">Change / Remove Films</a>
-        <a href="#" class="admin-home__button button--primary">Update Stock</a>
+        <a href="admin-new-user.php" class="admin-home__button button--primary">New User</a>
+        <a href="admin-change-users.php" class="admin-home__button button--primary">Change / Remove Users</a>
+        <a href="admin-new-admin.php" class="admin-home__button button--primary">New Admin</a>
+        <a href="admin-change-admins.php" class="admin-home__button button--primary">Change / Remove Admins</a>
+        <a href="admin-new-film.php" class="admin-home__button button--primary">New Film</a>
+        <a href="admin-change-films.php" class="admin-home__button button--primary">Change / Remove Films</a>
+        <a href="admin-update-stock.php" class="admin-home__button button--primary">Update Stock</a>
       </div>
       
     </div>

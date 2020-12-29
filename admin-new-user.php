@@ -18,7 +18,7 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Tim Harvey">
   <meta name="description" content="A dynamic cinema website created for my HND Web Development course.">
-  <title>Limelight | Activities</title>
+  <title>Limelight | Admin Panel</title>
 
   <!-- CSS
   --------------------------------------------------------->
@@ -46,12 +46,10 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
   <!-- MAIN CONTENT
   --------------------------------------------------------->
 
-  <!-- Navigation
+  <!-- Navigation (Mobile-specific stuff removed - admin section not used on mobile devices)
   ------------------------------------->
   <nav class="nav">
     <div class="nav__container container">
-
-      <div class="nav__burger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
 
       <div class="nav__logo">
         <a href="index.php"><img src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/img/logo.svg" alt="Limelight Cinemas Logo"></a>
@@ -59,62 +57,20 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
 
       <ul class="nav__list">
         <li class="nav__item"><a href="index.php#films" class="nav__link">What's On?</a></li>
-        <!-- PHP adds activities link for junior and admin users -->
-        <?php
-
-        if ((isset($_SESSION['username']) && $_SESSION['userAge'] < 18) || $_SESSION['admin'] == 'admin') {
-          echo '<li class="nav__item"><a href="activities.php" class="nav__link active">Activities</a></li>';
-        }
-        
-        ?>
+        <li class="nav__item"><a href="activities.php" class="nav__link">Activities</a></li>
         <li class="nav__item"><a href="about.php" class="nav__link">About</a></li>
         <li class="nav__item"><a href="contact.php" class="nav__link">Contact</a></li>
-        
 
         <!-- Admin panel button - for large devices only -->
-        <!-- PHP code displays button only if admin user logged in -->
         <li class="nav__item mobile-hidden">
-          <?php
-
-          if ($_SESSION['admin'] == 'admin') {
-            echo '<a class="nav__button button" href="admin-home.php">Admin Panel</a>';
-          }
-          
-          ?>
+          <a class="nav__button button" href="admin-home.php">Admin Panel</a>
         </li>
 
-
-        <!-- Login/logout button -->
-        <!-- PHP code changes nav button type and content depending on whether a user is logged in or not -->
+        <!-- Logout button (login button not needed - admin pages not accessible unless logged in) -->
         <li class="nav__item mobile-hidden">
-          <?php
-
-          if (isset($_SESSION['username'])) {
-            echo '<a class="nav__button button--negative" href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>';
-          }
-          
-          else {
-            echo '<a class="nav__button button--positive" href="login-register.php?section=login"><i class="fas fa-sign-in-alt"></i> Login</a>';
-          }
-          
-          ?>
+          <a class="nav__button button--negative" href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </li>
       </ul>
-
-
-      <!-- Login/logout button - for small devices -->
-      <!-- PHP code changes nav button type and content depending on whether a user is logged in or not -->
-      <?php
-
-      if (isset($_SESSION['username'])) {
-        echo '<a class="nav__button button--negative mobile-only" href="logout.php"><i class="fas fa-sign-out-alt"></i></a>';
-      }
-      
-      else {
-        echo '<a class="nav__button button--primary mobile-only" href="login-register.php?section=login"><i class="fas fa-sign-in-alt"></i></a>';
-      }
-      
-      ?>
 
     </div>
   </nav>
@@ -123,21 +79,48 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
 
 
 
-  <!-- Quiz Selection
+  <!-- Admin panel content
   ------------------------------------->
+  <section class="admin-new-user">
+    <div class="admin-new-user__container container">
 
-  <section class="activities">
-    <div class="activities__container container">
+      <h1 class="admin-new-user__heading">Add New User</h1>
 
-      <!-- Heading -->
-      <h1 class="activities__heading">Activities</h1>
+      <!-- Register form (this is the same form that appears on the register/login page) -->
+      <!-- PHP code between label and input produces error spans -> error type is sent via URL from register-request.php -->
+      <!-- PHP within input value parameters populates form fields with previous user input when returning from register-request.php with errors (excludes password for security) -->
+      <form class="admin-new-user__form form" action="register-request.php" method="POST">
 
-      <!-- Sub-Heading -->
-      <p class="activities__subheading">Put your knowledge to the test with our Film Trivia Quiz. More games coming soon!</p>
+        <label for="username" class="form__label">Username <span class="required">*</span></label>
+        <?php if($_GET['error'] == 'usernameError') {echo '<span class="form__error">Sorry, this username already exists</span>';} ?>
+        <input name="username" type="text" class="form__text-input" maxlength="40" required>
 
+        <label for="password" class="form__label">Password (8-12 characters) <span class="required">*</span></label>
+        <input name="password" type="password" class="form__text-input" maxlength="12" required>
 
-      <!-- Quiz Embed Code -->
-      <a data-quiz="QQUQFW1XX" data-type=4 href="https://www.quiz-maker.com/QQUQFW1XX">Loading...</a><script>(function(i,s,o,g,r,a,m){var ql=document.querySelectorAll('A[quiz],DIV[quiz],A[data-quiz],DIV[data-quiz]'); if(ql){if(ql.length){for(var k=0;k<ql.length;k++){ql[k].id='quiz-embed-'+k;ql[k].href="javascript:var i=document.getElementById('quiz-embed-"+k+"');try{qz.startQuiz(i)}catch(e){i.start=1;i.style.cursor='wait';i.style.opacity='0.5'};void(0);"}}};i['QP']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//cdn.poll-maker.com/quiz-embed-v1.js','qp');</script>
+        <label for="confirm-password" class="form__label">Confirm Password <span class="required">*</span></label>
+        <?php if($_GET['error'] == 'passwordError') {echo '<span class="form__error">Password does not match</span>';} ?>
+        <input name="confirm-password" type="password" class="form__text-input" max-length="12" required>
+
+        <label for="date-of-birth" class="form__label">Date of Birth <span class="required">*</span></label>
+        <input name="date-of-birth" type="date" class="form__text-input datepicker" min="1900-01-01" required> <!-- See setDateInputMax.js -->
+
+        <label for="email" class="form__label">Email (optional)</label>
+        <input name="email" type="text" class="form__text-input" maxlength="40">
+
+        <input name="submit" type="submit" value="Submit" class="form__button button--primary button--large">
+        <input name="reset" type="reset" value="Reset" class="form__button button--negative button--large">
+        
+      </form>
+
+      <!-- PHP shows success confirmation when new user added -->
+      <?php
+
+      if ($_GET['success'] == 'success') {
+        echo '<span class="admin-new-user__success">User added successfully</span>';
+      }
+
+      ?>
 
     </div>
   </section>
@@ -153,19 +136,14 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
 
       <div class="footer__nav">
         <a href="index.php#films" class="footer__link">What's On?</a>
-        <!-- PHP adds activities link for junior and admin users -->
-        <?php
-
-        if ((isset($_SESSION['username']) && $_SESSION['userAge'] < 18) || $_SESSION['admin'] == 'admin') {
-          echo '<a href="#top" class="footer__link">Activities</a>';
-        }
-        ?>
+        <a href="activities.php" class="footer__link">Activities</a>
         <a href="about.php" class="footer__link">About</a>
         <a href="contact.php" class="footer__link">Contact</a>
       </div>
 
-      
+
       <div class="footer__flex-wrapper">
+
         <div class="footer__social">
           <a class="footer__social--icon" href="#"><i class="fab fa-facebook-f"></i></a>
           <a class="footer__social--icon" href="#"><i class="fab fa-youtube"></i></a>
@@ -175,6 +153,7 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
         <div class="footer__copyright">
           &copy; 2020 Limelight Cinemas. All Rights Reserved.
         </div>
+
       </div>
 
 
@@ -184,11 +163,6 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
 
     </div>
   </footer>
-
-
-  <!-- JAVASCRIPT
-  --------------------------------------------------------->
-  <script type='text/javascript' src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/js/toggleMenu.js"></script>
 
 
   <!-- END DOCUMENT

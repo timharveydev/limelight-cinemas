@@ -2,6 +2,9 @@
 
 session_start();
 
+// Stores current URL minus arguments
+$_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
+
 ?>
 
 <!DOCTYPE html>

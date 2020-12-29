@@ -18,13 +18,13 @@ $_SESSION['email'] = $_POST['email'];
 $query = mysqli_query($connection, "SELECT * FROM users WHERE username='$_SESSION[username]'");
 
 if (mysqli_num_rows($query) > 0) {
-  header("Location: login-register.php?section=register&error=usernameError");
+  header("Location: " . $_SESSION['redirect'] . "?section=register&error=usernameError");
 }
 
 
 // Check password matches confirmPassword - if it doesn't, return to register form with password error in URL
 elseif ($_SESSION['password'] != $_SESSION['confirm-password']) {
-  header("Location: login-register.php?section=register&error=passwordError");
+  header("Location: " . $_SESSION['redirect'] . "?section=register&error=passwordError");
 }
 
 
@@ -43,18 +43,25 @@ else {
 
 
   
-  // Set user age
-  list($year, $month, $day) = explode('-', $_SESSION['dob']);
-    
-  $timeOfBirth = mktime(0, 0, 0, $month, $day, $year);
+  // Set user age (only if user is not admin - ensures admin user's age doesn't get reset)
+  if ($_SESSION['admin'] != 'admin') {
+    list($year, $month, $day) = explode('-', $_SESSION['dob']);
+      
+    $timeOfBirth = mktime(0, 0, 0, $month, $day, $year);
 
-  $_SESSION['userAge'] = floor((time() - $timeOfBirth) / 31556926);
+    $_SESSION['userAge'] = floor((time() - $timeOfBirth) / 31556926);
+  }
 
 
   // Set reg-success variable to true - used to provide success alert following successful login - see bottom of index.php
-  // Head to login-request.php for automatic login
-  $_SESSION['registrationSuccess'] = true;
-  header("Location: login-request.php");
+  // Not applicable to admins adding new user
+  if ($_SESSION['admin'] != 'admin') {
+    $_SESSION['registrationSuccess'] = true;
+    header("Location: login-request.php");
+  }
+  else {
+    header("Location: " . $_SESSION['redirect'] . "?success=success");
+  }
 }
 
 ?>
