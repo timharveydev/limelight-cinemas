@@ -35,6 +35,7 @@
 @import 'components/search-bar';
 @import 'components/criteria-selectors';
 @import 'components/film-info-box';
+@import 'components/data-table';
 
 // Includes page-specific styling.
 @import 'pages/homepage'; // Within index.php
@@ -49,6 +50,7 @@
 @import 'pages/adminNewUser';
 @import 'pages/adminNewAdmin';
 @import 'pages/adminNewFilm';
+@import 'pages/adminChangeUsers';
 
 // Includes alternate theme styles for different user types.
 // Classes applied using PHP when user logs in.

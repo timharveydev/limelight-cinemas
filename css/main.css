@@ -1180,6 +1180,76 @@ h6 {
   }
 }
 
+/* DATA TABLE
+--------------------------------------------*/
+/**
+ * This component provides a table of data taken from a database. It is made up of many forms allowing for easy updating of content by user.
+ *
+ * It will fill all available horizontal space.
+ * Place within a container and set preferred width on the container.
+*/
+.data-table {
+  width: 100%;
+  margin: 6rem 0;
+  text-align: center;
+}
+
+.data-table__form {
+  margin-bottom: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.data-table__heading {
+  width: 20%;
+  text-align: center;
+  font-weight: 600;
+  height: 3.8rem;
+  padding: 0 1.5rem;
+  font-size: 2rem;
+  line-height: 3.8rem;
+  background-color: #3b3b3b;
+  color: #f3f3f3;
+  border: none;
+  outline: none;
+  cursor: default;
+}
+
+.data-table__input {
+  width: 20%;
+  text-align: center;
+  height: 5rem;
+  padding: 0 1.5rem;
+  font-size: 1.6rem;
+  line-height: 5rem;
+  background-color: #3b3b3b;
+  color: #f3f3f3;
+  border: none;
+}
+
+.data-table__input:hover, .data-table__input:focus, .data-table__input:active {
+  outline: 1px solid #d6d6d6;
+}
+
+.data-table__button--hidden {
+  visibility: hidden;
+}
+
+.data-table hr {
+  margin-bottom: 2rem;
+}
+
 /* HOMEPAGE
 --------------------------------------------*/
 .hero {
@@ -2094,6 +2164,46 @@ h6 {
 }
 
 .admin-new-film__success {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #49b171;
+  margin-top: 3rem;
+}
+
+/* ADMIN CHANGE USERS
+--------------------------------------------*/
+.admin-change-users {
+  min-height: 100%;
+  width: 100%;
+}
+
+.admin-change-users__container {
+  max-width: 1200px;
+  padding: 12rem 0;
+}
+
+.admin-change-users__heading {
+  text-align: center;
+  margin-bottom: 8rem;
+}
+
+.admin-change-users__search-bar {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.admin-change-users__success {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
