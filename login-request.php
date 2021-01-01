@@ -8,6 +8,7 @@ include 'connection.php';
 
 // Automatically login if $_SESSION['username'] is already set - e.g. if the user has just completed the registration form
 if (isset($_SESSION['username'])) {
+  $_SESSION['currentUser'] = $_SESSION['username'];
   header("Location: index.php");
 }
 
@@ -38,6 +39,9 @@ else {
   
   // If details found, set session variables
   else {
+
+    // Set current user
+    $_SESSION['currentUser'] = $_SESSION['username'];
 
 
     // Set date of birth and email

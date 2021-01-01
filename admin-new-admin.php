@@ -89,7 +89,7 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
       <!-- Register form (this is the same form that appears on the register/login page) -->
       <!-- PHP code between label and input produces error spans -> error type is sent via URL from register-request.php -->
       <!-- PHP within input value parameters populates form fields with previous user input when returning from register-request.php with errors (excludes password for security) -->
-      <form class="admin-new-admin__form form" action="register-request.php" method="POST">
+      <form class="admin-new-admin__form form" action="register-request.php?admin=admin" method="POST">
 
         <label for="username" class="form__label">Username <span class="required">*</span></label>
         <?php if($_GET['error'] == 'usernameError') {echo '<span class="form__error">Sorry, this username already exists</span>';} ?>

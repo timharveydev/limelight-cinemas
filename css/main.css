@@ -2107,6 +2107,7 @@ h6 {
           align-items: center;
   color: #49b171;
   margin-top: 3rem;
+  font-size: 1.8rem;
 }
 
 /* ADMIN NEW ADMIN
@@ -2143,6 +2144,7 @@ h6 {
           align-items: center;
   color: #49b171;
   margin-top: 3rem;
+  font-size: 1.8rem;
 }
 
 /* ADMIN NEW FILM
@@ -2179,6 +2181,7 @@ h6 {
           align-items: center;
   color: #49b171;
   margin-top: 3rem;
+  font-size: 1.8rem;
 }
 
 /* ADMIN CHANGE USERS
@@ -2203,6 +2206,11 @@ h6 {
   margin-right: auto;
 }
 
+.admin-change-users__instruction {
+  text-align: center;
+  padding: 1rem 0;
+}
+
 .admin-change-users__success {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2219,6 +2227,7 @@ h6 {
           align-items: center;
   color: #49b171;
   margin-top: 3rem;
+  font-size: 1.8rem;
 }
 
 /* JUNIOR

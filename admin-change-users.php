@@ -2,8 +2,40 @@
 
 session_start();
 
+
+// Connection
+include 'connection.php';
+
+
 // Stores current URL minus arguments
 $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
+
+
+// Store search term from search bar
+if (isset($_POST['search'])) {
+  $searchTerm = $_POST['searchTerm'];
+}
+else {
+  $searchTerm = '';
+}
+
+
+// Update database when Update button is pressed
+if (isset($_POST['update'])) {
+  mysqli_query($connection, "UPDATE users SET username='$_POST[username]', password='$_POST[password]', date_of_birth='$_POST[dob]', email='$_POST[email]' WHERE ID='$_POST[id]'");
+
+  // Reload page with success alert
+  header("Location: " . $_SESSION['redirect'] . "?success=success");
+}
+
+
+// Delete from database when Delete button is pressed
+if (isset($_POST['delete'])) {
+  mysqli_query($connection, "DELETE FROM users WHERE ID='$_POST[id]'");
+
+  // Reload page with success alert
+  header("Location: " . $_SESSION['redirect'] . "?success=success");
+}
 
 ?>
 
@@ -89,15 +121,17 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
 
 
       <!-- Search bar component -->
-      <form class="admin-change-users__search-bar search-bar" action="#" method="#">
+      <form class="admin-change-users__search-bar search-bar" action="" method="POST">
         
-        <input type="text" name="search" class="search-bar__input" placeholder="Search user details ...">
+        <input type="text" name="searchTerm" class="search-bar__input" placeholder="Search user details ...">
 
-        <!-- Search button for most devices -->
-        <button type="submit" name="submit" class="search-bar__button button--positive"><i class="fas fa-search"></i> Search</button>
+        <!-- Search button -->
+        <button type="submit" name="search" class="search-bar__button button--positive"><i class="fas fa-search"></i> Search</button>
 
       </form>
 
+
+      <p class="admin-change-users__instruction">Run an empty search to refresh the user list.</p>
 
 
       <!-- Success confirmation - shown when user details changed -->
@@ -114,8 +148,8 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
       <!-- Users table (data table component) -->
       <div class="admin-change-users__data-table data-table">
 
-      <!-- Table headings -->
-      <form class="data-table__form" action="" method="POST">
+        <!-- Table headings -->
+        <form class="data-table__form">
           <input type="text" class="data-table__heading" value="Username" readonly>
           <input type="text" class="data-table__heading" value="Password" readonly>
           <input type="text" class="data-table__heading" value="Date of Birth" readonly>
@@ -125,16 +159,48 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
         </form>
         <hr>
 
+
         <!-- Table content - PHP creates separate form for each user, taking info from DB -->
-        <form class="data-table__form" action="" method="POST">
-          <input type="text" class="data-table__input" value="Username">
-          <input type="text" class="data-table__input" value="Password">
-          <input type="text" class="data-table__input" value="DoB">
-          <input type="text" class="data-table__input" value="Email">
-          <input type="hidden" class="data-table__input" value="ID">
-          <input type="submit" class="data-table__button button--primary" value="Update">
-          <input type="submit" class="data-table__button button--negative" value="Delete">
-        </form>
+        <?php
+
+        // If search term exists, show requested content only
+        if ($searchTerm != '') {
+          $query = mysqli_query($connection, "SELECT * FROM users WHERE NOT (admin <=> 'admin') AND username LIKE '%$searchTerm%' OR password LIKE '%$searchTerm%' OR date_of_birth LIKE '%$searchTerm%' OR email LIKE '%$searchTerm%'");
+
+          while ($row = mysqli_fetch_array($query)) {
+            extract($row);
+            echo "<form class='data-table__form' action='' method='POST'>";
+            echo "<input name='username' type='text' class='data-table__input' value='$username'>";
+            echo "<input name='password' type='password' class='data-table__input' value='$password'>";
+            echo "<input name='dob' type='text' class='data-table__input' value='$date_of_birth'>";
+            echo "<input name='email' type='text' class='data-table__input' value='$email'>";
+            echo "<input name='id' type='hidden' class='data-table__input' value='$ID'>";
+            echo "<input name='update' type='submit' class='data-table__button button--primary' value='Update'>";
+            echo "<input name='delete' type='submit' class='data-table__button button--negative' value='Delete'>";
+            echo "</form>";
+          }
+        }
+
+        // Else if search term isn't set, show all content from DB
+        else {
+          $query = mysqli_query($connection, "SELECT * FROM users WHERE NOT (admin <=> 'admin')");
+
+          while ($row = mysqli_fetch_array($query)) {
+            extract($row);
+            echo "<form class='data-table__form' action='' method='POST'>";
+            echo "<input name='username' type='text' class='data-table__input' value='$username'>";
+            echo "<input name='password' type='password' class='data-table__input' value='$password'>";
+            echo "<input name='dob' type='text' class='data-table__input' value='$date_of_birth'>";
+            echo "<input name='email' type='text' class='data-table__input' value='$email'>";
+            echo "<input name='id' type='hidden' class='data-table__input' value='$ID'>";
+            echo "<input name='update' type='submit' class='data-table__button button--primary' value='Update'>";
+            echo "<input name='delete' type='submit' class='data-table__button button--negative' value='Delete'>";
+            echo "</form>";
+          }
+        }
+
+        ?>
+
 
       </div>
 

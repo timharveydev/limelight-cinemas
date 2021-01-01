@@ -21,9 +21,15 @@
     margin-right: auto;
   }
 
+  &__instruction {
+    text-align: center;
+    padding: 1rem 0;
+  }
+
   &__success {
     @include display-flex;
     color: $color-primary;
     margin-top: 3rem;
+    font-size: 1.8rem;
   }
 }

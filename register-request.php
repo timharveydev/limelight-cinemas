@@ -29,7 +29,7 @@ elseif ($_SESSION['password'] != $_SESSION['confirm-password']) {
 
 
 // If above checks ok, insert data into DB
-mysqli_query($connection, "INSERT INTO users (username, password, date_of_birth, email, admin) VALUES ('$_SESSION[username]', '$_SESSION[password]', '$_SESSION[dob]', '$_SESSION[email]', '$_SESSION[admin]')");
+mysqli_query($connection, "INSERT INTO users (username, password, date_of_birth, email, admin) VALUES ('$_SESSION[username]', '$_SESSION[password]', '$_SESSION[dob]', '$_SESSION[email]', '$_GET[admin]')");
 
 
 // Set user age (only if user is not admin - ensures admin user's age doesn't get reset)

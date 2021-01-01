@@ -86,7 +86,7 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
 
       <h1 class="admin-home__heading">Admin Panel</h1>
 
-      <h4 class="admin-home__user">User: <?php echo $_SESSION['username']; ?></h4>
+      <h4 class="admin-home__user">User: <?php echo $_SESSION['currentUser']; ?></h4>
 
       <div class="admin-home__button-selectors">
         <a href="admin-new-user.php" class="admin-home__button button--primary">New User</a>
