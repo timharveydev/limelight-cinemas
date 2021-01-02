@@ -51,6 +51,21 @@
     &:active { outline: 1px solid $light-grey; }
   }
 
+  &__textarea {
+    flex: 1;
+    height: 14rem;
+    padding: 1rem;
+    margin: 0.8rem 1px 0.8rem 0;
+    line-height: 2rem;
+    background-color: $dark-grey;
+    color: $white;
+    border: none;
+
+    &:hover,
+    &:focus,
+    &:active { outline: 1px solid $light-grey; }
+  }
+
   &__button--hidden { visibility: hidden; }
 
   & hr { margin-bottom: 2rem; }

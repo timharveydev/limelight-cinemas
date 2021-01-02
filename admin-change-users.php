@@ -165,7 +165,7 @@ if (isset($_POST['delete'])) {
 
         // If search term exists, show requested content only
         if ($searchTerm != '') {
-          $query = mysqli_query($connection, "SELECT * FROM users WHERE (NOT admin <=> 'admin') AND (username LIKE '%$searchTerm%' OR password LIKE '%$searchTerm%' OR date_of_birth LIKE '%$searchTerm%' OR email LIKE '%$searchTerm%')");
+          $query = mysqli_query($connection, "SELECT * FROM users WHERE (NOT admin <=> 'admin') AND (username LIKE '%$searchTerm%' OR password LIKE '%$searchTerm%' OR date_of_birth LIKE '%$searchTerm%' OR email LIKE '%$searchTerm%') ORDER BY username");
 
           while ($row = mysqli_fetch_array($query)) {
             extract($row);
@@ -183,7 +183,7 @@ if (isset($_POST['delete'])) {
 
         // Else if search term isn't set, show all content from DB
         else {
-          $query = mysqli_query($connection, "SELECT * FROM users WHERE NOT admin <=> 'admin'");
+          $query = mysqli_query($connection, "SELECT * FROM users WHERE NOT admin <=> 'admin' ORDER BY username");
 
           while ($row = mysqli_fetch_array($query)) {
             extract($row);

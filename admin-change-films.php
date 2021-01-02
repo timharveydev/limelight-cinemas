@@ -22,7 +22,7 @@ else {
 
 // Update database when Update button is pressed
 if (isset($_POST['update'])) {
-  mysqli_query($connection, "UPDATE users SET username='$_POST[username]', password='$_POST[password]', date_of_birth='$_POST[dob]', email='$_POST[email]' WHERE ID='$_POST[id]'");
+  mysqli_query($connection, "UPDATE films SET title='$_POST[title]', summary='$_POST[summary]', trailer='$_POST[trailer]' WHERE ID='$_POST[id]'");
 
   // Reload page with success alert
   header("Location: " . $_SESSION['redirect'] . "?success=success");
@@ -31,7 +31,11 @@ if (isset($_POST['update'])) {
 
 // Delete from database when Delete button is pressed
 if (isset($_POST['delete'])) {
-  mysqli_query($connection, "DELETE FROM users WHERE ID='$_POST[id]'");
+  mysqli_query($connection, "DELETE FROM films WHERE ID='$_POST[id]'");
+
+  // Remove film poster image from DB
+  chmod("http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/image_uploads/'$_POST[image]'", 0755);
+  unlink("http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/image_uploads/'$_POST[image]'");
 
   // Reload page with success alert
   header("Location: " . $_SESSION['redirect'] . "?success=success");
@@ -113,17 +117,17 @@ if (isset($_POST['delete'])) {
 
   <!-- Admin panel content
   ------------------------------------->
-  <section class="admin-change-admins">
-    <div class="admin-change-admins__container container">
+  <section class="admin-change-films">
+    <div class="admin-change-films__container container">
 
-      <h1 class="admin-change-admins__heading">Change / Remove Admins</h1>
+      <h1 class="admin-change-films__heading">Change / Remove Films</h1>
 
 
 
       <!-- Search bar component -->
-      <form class="admin-change-admins__search-bar search-bar" action="admin-change-admins.php" method="POST">
+      <form class="admin-change-films__search-bar search-bar" action="admin-change-films.php" method="POST">
         
-        <input type="text" name="searchTerm" class="search-bar__input" placeholder="Search user details ...">
+        <input type="text" name="searchTerm" class="search-bar__input" placeholder="Search film title ...">
 
         <!-- Search button -->
         <button type="submit" name="search" class="search-bar__button button--positive"><i class="fas fa-search"></i> Search</button>
@@ -131,29 +135,28 @@ if (isset($_POST['delete'])) {
       </form>
 
 
-      <p class="admin-change-admins__instruction">Run an empty search to refresh the user list.</p>
+      <p class="admin-change-films__instruction">Run an empty search to refresh the film list.</p>
 
 
       <!-- Success confirmation - shown when user details changed -->
       <?php
 
       if ($_GET['success'] == 'success') {
-        echo '<span class="admin-change-admins__success">Changes successful</span>';
+        echo '<span class="admin-change-films__success">Changes successful</span>';
       }
 
       ?>
 
 
 
-      <!-- Admin users table (data table component) -->
-      <div class="admin-change-admins__data-table data-table">
+      <!-- Films table (data table component) -->
+      <div class="admin-change-films__data-table data-table">
 
         <!-- Table headings -->
         <form class="data-table__form">
-          <input type="text" class="data-table__heading" value="Username" readonly>
-          <input type="text" class="data-table__heading" value="Password" readonly>
-          <input type="text" class="data-table__heading" value="Date of Birth" readonly>
-          <input type="text" class="data-table__heading" value="Email" readonly>
+          <input type="text" class="data-table__heading" value="Title" readonly>
+          <input type="text" class="data-table__heading" value="Summary" readonly>
+          <input type="text" class="data-table__heading" value="Trailer" readonly>
           <input type="submit" class="data-table__button--hidden button--primary" value="Update" readonly>
           <input type="submit" class="data-table__button--hidden button--negative" value="Delete" readonly>
         </form>
@@ -165,16 +168,16 @@ if (isset($_POST['delete'])) {
 
         // If search term exists, show requested content only
         if ($searchTerm != '') {
-          $query = mysqli_query($connection, "SELECT * FROM users WHERE (admin = 'admin') AND (username LIKE '%$searchTerm%' OR password LIKE '%$searchTerm%' OR date_of_birth LIKE '%$searchTerm%' OR email LIKE '%$searchTerm%') ORDER BY username");
+          $query = mysqli_query($connection, "SELECT * FROM films WHERE title LIKE '%$searchTerm%' ORDER BY title");
 
           while ($row = mysqli_fetch_array($query)) {
             extract($row);
             echo "<form class='data-table__form' action='' method='POST'>";
-            echo "<input name='username' type='text' class='data-table__input' value='$username'>";
-            echo "<input name='password' type='password' class='data-table__input' value='$password'>";
-            echo "<input name='dob' type='text' class='data-table__input' value='$date_of_birth'>";
-            echo "<input name='email' type='text' class='data-table__input' value='$email'>";
+            echo "<input name='title' type='text' class='data-table__input left-align' value='$title'>";
+            echo "<textarea name='summary' class='data-table__textarea'>$summary</textarea>";
+            echo "<textarea name='trailer' class='data-table__textarea'>$trailer</textarea>";
             echo "<input name='id' type='hidden' class='data-table__input' value='$ID'>";
+            echo "<input name='image' type='hidden' class='data-table__input' value='$image'>"; // Used to remove image from DB when delete button clicked
             echo "<input name='update' type='submit' class='data-table__button button--primary' value='Update'>";
             echo "<input name='delete' type='submit' class='data-table__button button--negative' value='Delete'>";
             echo "</form>";
@@ -183,16 +186,16 @@ if (isset($_POST['delete'])) {
 
         // Else if search term isn't set, show all content from DB
         else {
-          $query = mysqli_query($connection, "SELECT * FROM users WHERE admin = 'admin' ORDER BY username");
+          $query = mysqli_query($connection, "SELECT * FROM films ORDER BY title");
 
           while ($row = mysqli_fetch_array($query)) {
             extract($row);
             echo "<form class='data-table__form' action='' method='POST'>";
-            echo "<input name='username' type='text' class='data-table__input' value='$username'>";
-            echo "<input name='password' type='password' class='data-table__input' value='$password'>";
-            echo "<input name='dob' type='text' class='data-table__input' value='$date_of_birth'>";
-            echo "<input name='email' type='text' class='data-table__input' value='$email'>";
+            echo "<input name='title' type='text' class='data-table__input left-align' value='$title'>";
+            echo "<textarea name='summary' class='data-table__textarea'>$summary</textarea>";
+            echo "<textarea name='trailer' class='data-table__textarea'>$trailer</textarea>";
             echo "<input name='id' type='hidden' class='data-table__input' value='$ID'>";
+            echo "<input name='image' type='hidden' class='data-table__input' value='$image'>"; // Used to remove image from DB when delete button clicked
             echo "<input name='update' type='submit' class='data-table__button button--primary' value='Update'>";
             echo "<input name='delete' type='submit' class='data-table__button button--negative' value='Delete'>";
             echo "</form>";
