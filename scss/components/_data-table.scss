@@ -20,12 +20,12 @@
   }
 
   &__heading {
-    width: 20%;
+    flex: 1;
     text-align: center;
-    font-weight: 600;
     height: 3.8rem; // Same as line height
-    padding: 0 1.5rem;
-    font-size: 2rem;
+    margin-right: 1px;
+    font-size: 1.8rem;
+    font-weight: 600;
     line-height: 3.8rem; // Same as height
     background-color: $dark-grey;
     color: $white;
@@ -35,10 +35,11 @@
   }
 
   &__input {
-    width: 20%;
+    flex: 1;
     text-align: center;
     height: 5rem; // Same as line height
     padding: 0 1.5rem;
+    margin-right: 1px;
     font-size: 1.6rem;
     line-height: 5rem; // Same as height
     background-color: $dark-grey;
@@ -53,4 +54,7 @@
   &__button--hidden { visibility: hidden; }
 
   & hr { margin-bottom: 2rem; }
+
+  // To be given as a class to form inputs
+  & .left-align { text-align: left; }
 }

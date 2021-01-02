@@ -113,15 +113,15 @@ if (isset($_POST['delete'])) {
 
   <!-- Admin panel content
   ------------------------------------->
-  <section class="admin-change-users">
-    <div class="admin-change-users__container container">
+  <section class="admin-change-admins">
+    <div class="admin-change-admins__container container">
 
-      <h1 class="admin-change-users__heading">Change / Remove Users</h1>
+      <h1 class="admin-change-admins__heading">Change / Remove Admins</h1>
 
 
 
       <!-- Search bar component -->
-      <form class="admin-change-users__search-bar search-bar" action="admin-change-users.php" method="POST">
+      <form class="admin-change-admins__search-bar search-bar" action="admin-change-admins.php" method="POST">
         
         <input type="text" name="searchTerm" class="search-bar__input" placeholder="Search user details ...">
 
@@ -131,22 +131,22 @@ if (isset($_POST['delete'])) {
       </form>
 
 
-      <p class="admin-change-users__instruction">Run an empty search to refresh the user list.</p>
+      <p class="admin-change-admins__instruction">Run an empty search to refresh the user list.</p>
 
 
       <!-- Success confirmation - shown when user details changed -->
       <?php
 
       if ($_GET['success'] == 'success') {
-        echo '<span class="admin-change-users__success">Changes successful</span>';
+        echo '<span class="admin-change-admins__success">Changes successful</span>';
       }
 
       ?>
 
 
 
-      <!-- Users table (data table component) -->
-      <div class="admin-change-users__data-table data-table">
+      <!-- Admin users table (data table component) -->
+      <div class="admin-change-admins__data-table data-table">
 
         <!-- Table headings -->
         <form class="data-table__form">
@@ -165,7 +165,7 @@ if (isset($_POST['delete'])) {
 
         // If search term exists, show requested content only
         if ($searchTerm != '') {
-          $query = mysqli_query($connection, "SELECT * FROM users WHERE (NOT admin <=> 'admin') AND (username LIKE '%$searchTerm%' OR password LIKE '%$searchTerm%' OR date_of_birth LIKE '%$searchTerm%' OR email LIKE '%$searchTerm%')");
+          $query = mysqli_query($connection, "SELECT * FROM users WHERE (admin = 'admin') AND (username LIKE '%$searchTerm%' OR password LIKE '%$searchTerm%' OR date_of_birth LIKE '%$searchTerm%' OR email LIKE '%$searchTerm%')");
 
           while ($row = mysqli_fetch_array($query)) {
             extract($row);
@@ -183,7 +183,7 @@ if (isset($_POST['delete'])) {
 
         // Else if search term isn't set, show all content from DB
         else {
-          $query = mysqli_query($connection, "SELECT * FROM users WHERE NOT admin <=> 'admin'");
+          $query = mysqli_query($connection, "SELECT * FROM users WHERE admin = 'admin'");
 
           while ($row = mysqli_fetch_array($query)) {
             extract($row);
