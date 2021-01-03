@@ -2,8 +2,43 @@
 
 session_start();
 
+
+// Connection
+include 'connection.php';
+
+
 // Stores current URL minus arguments
 $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
+
+
+// Set variables to be used in the Booking Confirmation Section
+$query = mysqli_query($connection, "SELECT * FROM films WHERE ID=$_GET[filmID]");
+while ($row = mysqli_fetch_array($query)) {
+  extract($row);
+  $ID;
+  $title;
+  $genre;
+  $age_rating;
+  $runtime;
+  $stock;
+  $image;
+}
+
+
+// Set booking reference code (age rating + first letter of each word of the film title + quantity)
+$words = explode(" ", "$title");
+$acronym = "";
+
+foreach ($words as $w) {
+  $acronym .= $w[0];
+}
+
+$referenceCode = $age_rating . $acronym . $_POST['quantity'];
+
+
+// Update film stock in DB
+$updatedStock = $stock - $_POST['quantity'];
+mysqli_query($connection, "UPDATE films SET stock='$updatedStock' WHERE ID='$_GET[filmID]'");
 
 ?>
 
@@ -136,13 +171,13 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
         <h2 class="confirmation-box__heading">Booking Success!</h2>
 
         <!-- Subheading -->
-        <h3 class="confirmation-box__subheading">You have booked X tickets to see FILM TITLE.</h3>
+        <h3 class="confirmation-box__subheading"><?php echo "You have booked $_POST[quantity] tickets to see $title." ?></h3>
 
         <!-- Details -->
-        <p class="confirmation-box__details">Your booking reference number:</p>
-        <p class="confirmation-box__details--large">XXXXXXXXXX</p>
+        <p class="confirmation-box__details">Your booking reference code:</p>
+        <p class="confirmation-box__details--large"><?php echo $referenceCode ?></p>
         <br><br>
-        <p class="confirmation-box__details">Please make a note of your booking reference number as you will be required to show it on arrival at the cinema. If you provided an email address during registration, a confirmation email will be sent to you.</p>
+        <p class="confirmation-box__details">Please make a note of your booking reference code as you will be required to show it on arrival at the cinema. If you provided an email address during registration, a confirmation email will be sent to you.</p>
         <br><br>
         <p class="confirmation-box__details">Thank you, we hope you enjoy the film!</p>
         <br><br>

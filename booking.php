@@ -2,8 +2,27 @@
 
 session_start();
 
+
+// Connection
+include 'connection.php';
+
+
 // Stores current URL minus arguments
 $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
+
+
+// Set variables to be used in the Booking Section
+$query = mysqli_query($connection, "SELECT * FROM films WHERE ID=$_GET[filmID]");
+while ($row = mysqli_fetch_array($query)) {
+  extract($row);
+  $ID;
+  $title;
+  $genre;
+  $age_rating;
+  $runtime;
+  $stock;
+  $image;
+}
 
 ?>
 
@@ -137,7 +156,7 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
 
         <!-- Film poster -->
         <div class="booking-box__img-div">
-          <img src="img/placeholder.jpg" alt="placeholder image">
+          <img src="image_uploads/<?php echo $image; ?>" alt="Film poster for <?php echo $title; ?>">
         </div>
 
 
@@ -145,10 +164,10 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
         <div class="booking-box__content-div">
 
           <div class="booking-box__flex-wrapper">
-            <h2 class="booking-box__title">Film Title</h2>
+            <h2 class="booking-box__title"><?php echo $title; ?></h2>
             <hr class="booking-box__underline">
             <div class="booking-box__attributes">
-              <p>Action | Rating: 15 | <i class="far fa-clock"></i> 1h 47m | <a href="about.php#showing-times">Showing times</a></p>
+              <p><?php echo $genre; ?> | Rating: <?php echo $age_rating; ?> | <i class="far fa-clock"></i> <?php echo $runtime; ?> | <a href="about.php#showing-times">Showing times</a></p>
             </div>
           </div>
 
@@ -157,20 +176,34 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
 
 
           <!-- Ticket selection -->
-          <form class="booking-box__form form" action="booking-confirmation.php" method="#">
+          <!-- PHP disables select & options depending on stock available in DB -->
+          <form class="booking-box__form form" action="booking-confirmation.php?filmID=<?php echo $ID; ?>" method="POST">
 
             <label class="form__label" for="tickets"><strong>Quantity:</strong></label>
 
-            <select name="tickets" class="form__select">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
+            <select name="quantity" class="form__select" <?php if ($stock < 1) { echo 'disabled'; } ?>>
+              <option value="1" <?php if ($stock < 1) { echo 'disabled'; } ?>>1</option>
+              <option value="2" <?php if ($stock < 2) { echo 'disabled'; } ?>>2</option>
+              <option value="3" <?php if ($stock < 3) { echo 'disabled'; } ?>>3</option>
+              <option value="4" <?php if ($stock < 4) { echo 'disabled'; } ?>>4</option>
             </select>
 
-            <label class="form__label">(XX tickets remaining)</label>
+            <label class="form__label">(<?php echo $stock; ?> tickets remaining)</label>
 
-            <input class="form__button button--primary button--large" type="submit" name="submit" value="Book Now">
+
+            <!-- Submit button -->
+            <?php
+
+            // Active when stock > 0
+            if ($stock > 0) {
+              echo '<input class="form__button button--primary button--large" type="submit" name="submit" value="Book Now">';
+            }
+            // Disabled when stock <= 0
+            else {
+              echo '<input class="form__button button--disabled button--large" type="submit" name="submit" value="Book Now" disabled>';
+            }
+
+            ?>
 
           </form>
 

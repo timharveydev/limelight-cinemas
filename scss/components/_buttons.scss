@@ -70,6 +70,19 @@
   }
 
 
+  &--disabled {
+    @include button;
+    opacity: 0.5;
+    cursor: default;
+
+    &:hover,
+    &:focus {
+      border-color: $white;
+      outline: 0;
+    }
+  }
+
+
   // To be added in addition to one of the other button classes
   &--large {
     font-size: 1.4rem;
