@@ -12,8 +12,9 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
 
 
 // Store search term from search bar
+// Replace apostrophe in string to avoid SQL errors
 if (isset($_POST['search'])) {
-  $searchTerm = $_POST['searchTerm'];
+  $searchTerm = str_replace("'", "&#39;", $_POST['searchTerm']);
 }
 else {
   $searchTerm = '';
@@ -158,7 +159,7 @@ if (isset($_POST['update'])) {
           while ($row = mysqli_fetch_array($query)) {
             extract($row);
             echo "<form class='data-table__form' action='' method='POST'>";
-            echo "<input name='title' type='text' class='data-table__input left-align' value='$title'>";
+            echo "<input name='title' type='text' class='data-table__input left-align' value='$title' readonly>";
             echo "<input name='stock' type='text' class='data-table__input' value='$stock'>";
             echo "<input name='update' type='submit' class='data-table__button button--primary' value='Update'>";
             echo "</form>";
@@ -172,7 +173,7 @@ if (isset($_POST['update'])) {
           while ($row = mysqli_fetch_array($query)) {
             extract($row);
             echo "<form class='data-table__form' action='' method='POST'>";
-            echo "<input name='title' type='text' class='data-table__input left-align' value='$title'>";
+            echo "<input name='title' type='text' class='data-table__input left-align' value='$title' readonly>";
             echo "<input name='stock' type='text' class='data-table__input' value='$stock'>";
             echo "<input name='update' type='submit' class='data-table__button button--primary' value='Update'>";
             echo "</form>";
@@ -208,9 +209,9 @@ if (isset($_POST['update'])) {
       <div class="footer__flex-wrapper">
 
         <div class="footer__social">
-          <a class="footer__social--icon" href="#"><i class="fab fa-facebook-f"></i></a>
-          <a class="footer__social--icon" href="#"><i class="fab fa-youtube"></i></a>
-          <a class="footer__social--icon" href="#"><i class="fab fa-twitter"></i></a>
+          <a class="footer__social--icon" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a class="footer__social--icon" href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a class="footer__social--icon" href="#" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
 
         <div class="footer__copyright">

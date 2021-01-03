@@ -12,8 +12,9 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
 
 
 // Store search term from search bar
+// Replace apostrophe in string to avoid SQL errors
 if (isset($_POST['search'])) {
-  $searchTerm = $_POST['searchTerm'];
+  $searchTerm = str_replace("'", "&#39;", $_POST['searchTerm']);
 }
 else {
   $searchTerm = '';
@@ -21,8 +22,14 @@ else {
 
 
 // Update database when Update button is pressed
+// Replace apostrophes in strings to avoid SQL errors
 if (isset($_POST['update'])) {
-  mysqli_query($connection, "UPDATE users SET username='$_POST[username]', password='$_POST[password]', date_of_birth='$_POST[dob]', email='$_POST[email]' WHERE ID='$_POST[id]'");
+  $username = str_replace("'", "&#39;", $_POST['username']);
+  $password = str_replace("'", "&#39;", $_POST['password']);
+  $dob = str_replace("'", "&#39;", $_POST['dob']);
+  $email = str_replace("'", "&#39;", $_POST['email']);
+
+  mysqli_query($connection, "UPDATE users SET username='$username', password='$password', date_of_birth='$dob', email='$email' WHERE ID='$_POST[id]'");
 
   // Reload page with success alert
   header("Location: " . $_SESSION['redirect'] . "?success=success");
@@ -228,9 +235,9 @@ if (isset($_POST['delete'])) {
       <div class="footer__flex-wrapper">
 
         <div class="footer__social">
-          <a class="footer__social--icon" href="#"><i class="fab fa-facebook-f"></i></a>
-          <a class="footer__social--icon" href="#"><i class="fab fa-youtube"></i></a>
-          <a class="footer__social--icon" href="#"><i class="fab fa-twitter"></i></a>
+          <a class="footer__social--icon" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a class="footer__social--icon" href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a class="footer__social--icon" href="#" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
 
         <div class="footer__copyright">

@@ -12,8 +12,9 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
 
 
 // Store search term from search bar
+// Replace apostrophe in string to avoid SQL errors
 if (isset($_POST['search'])) {
-  $searchTerm = $_POST['searchTerm'];
+  $searchTerm = str_replace("'", "&#39;", $_POST['searchTerm']);
 }
 else {
   $searchTerm = '';
@@ -21,8 +22,13 @@ else {
 
 
 // Update database when Update button is pressed
+// Replace apostrophes in strings to avoid SQL errors
 if (isset($_POST['update'])) {
-  mysqli_query($connection, "UPDATE films SET title='$_POST[title]', summary='$_POST[summary]', trailer='$_POST[trailer]' WHERE ID='$_POST[id]'");
+  $title = str_replace("'", "&#39;", $_POST['title']);
+  $summary = str_replace("'", "&#39;", $_POST['summary']);
+  $trailer = str_replace("'", "&#39;", $_POST['trailer']);
+
+  mysqli_query($connection, "UPDATE films SET title='$title', summary='$summary', trailer='$trailer' WHERE ID='$_POST[id]'");
 
   // Reload page with success alert
   header("Location: " . $_SESSION['redirect'] . "?success=success");
@@ -32,10 +38,6 @@ if (isset($_POST['update'])) {
 // Delete from database when Delete button is pressed
 if (isset($_POST['delete'])) {
   mysqli_query($connection, "DELETE FROM films WHERE ID='$_POST[id]'");
-
-  // Remove film poster image from DB
-  chmod("http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/image_uploads/'$_POST[image]'", 0755);
-  unlink("http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/image_uploads/'$_POST[image]'");
 
   // Reload page with success alert
   header("Location: " . $_SESSION['redirect'] . "?success=success");
@@ -177,7 +179,6 @@ if (isset($_POST['delete'])) {
             echo "<textarea name='summary' class='data-table__textarea'>$summary</textarea>";
             echo "<textarea name='trailer' class='data-table__textarea'>$trailer</textarea>";
             echo "<input name='id' type='hidden' class='data-table__input' value='$ID'>";
-            echo "<input name='image' type='hidden' class='data-table__input' value='$image'>"; // Used to remove image from DB when delete button clicked
             echo "<input name='update' type='submit' class='data-table__button button--primary' value='Update'>";
             echo "<input name='delete' type='submit' class='data-table__button button--negative' value='Delete'>";
             echo "</form>";
@@ -195,7 +196,6 @@ if (isset($_POST['delete'])) {
             echo "<textarea name='summary' class='data-table__textarea'>$summary</textarea>";
             echo "<textarea name='trailer' class='data-table__textarea'>$trailer</textarea>";
             echo "<input name='id' type='hidden' class='data-table__input' value='$ID'>";
-            echo "<input name='image' type='hidden' class='data-table__input' value='$image'>"; // Used to remove image from DB when delete button clicked
             echo "<input name='update' type='submit' class='data-table__button button--primary' value='Update'>";
             echo "<input name='delete' type='submit' class='data-table__button button--negative' value='Delete'>";
             echo "</form>";
@@ -231,9 +231,9 @@ if (isset($_POST['delete'])) {
       <div class="footer__flex-wrapper">
 
         <div class="footer__social">
-          <a class="footer__social--icon" href="#"><i class="fab fa-facebook-f"></i></a>
-          <a class="footer__social--icon" href="#"><i class="fab fa-youtube"></i></a>
-          <a class="footer__social--icon" href="#"><i class="fab fa-twitter"></i></a>
+          <a class="footer__social--icon" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a class="footer__social--icon" href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a class="footer__social--icon" href="#" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
 
         <div class="footer__copyright">

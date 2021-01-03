@@ -131,7 +131,8 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
         <textarea name="summary" cols="50" rows="5" class="form__text-area" maxlength="500" required></textarea>
 
         <!-- Film Poster -->
-        <label for="image" class="form__label">Upload Film Poster</label>
+        <!-- File name can't include apostrophies as they mess with SQL -->
+        <label for="image" class="form__label">Upload Film Poster (file name must not include apostrophies)</label>
         <br>
         <input name="image" type="file" class="form__file-upload-button" required>
 
@@ -174,9 +175,9 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
       <div class="footer__flex-wrapper">
 
         <div class="footer__social">
-          <a class="footer__social--icon" href="#"><i class="fab fa-facebook-f"></i></a>
-          <a class="footer__social--icon" href="#"><i class="fab fa-youtube"></i></a>
-          <a class="footer__social--icon" href="#"><i class="fab fa-twitter"></i></a>
+          <a class="footer__social--icon" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a class="footer__social--icon" href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a class="footer__social--icon" href="#" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
 
         <div class="footer__copyright">

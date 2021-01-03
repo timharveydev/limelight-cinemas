@@ -7,11 +7,12 @@ include 'connection.php';
 
 
 // User input variables
-$_SESSION['username'] = $_POST['username'];
-$_SESSION['password'] = $_POST['password'];
-$_SESSION['confirm-password'] = $_POST['confirm-password'];
-$_SESSION['dob'] = $_POST['date-of-birth'];
-$_SESSION['email'] = $_POST['email'];
+// Replace apostrophes in strings to avoid SQL errors
+$_SESSION['username'] = str_replace("'", "&#39;", $_POST['username']);
+$_SESSION['password'] = str_replace("'", "&#39;", $_POST['password']);
+$_SESSION['confirm-password'] = str_replace("'", "&#39;", $_POST['confirm-password']);
+$_SESSION['dob'] = str_replace("'", "&#39;", $_POST['date-of-birth']);
+$_SESSION['email'] = str_replace("'", "&#39;", $_POST['email']);
 
 
 // Check username is not already taken - if it is, return to register form with username error in URL

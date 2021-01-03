@@ -7,13 +7,14 @@ include 'connection.php';
 
 
 // Form input variables
-$title = $_POST['title'];
+// Replace apostrophes in strings to avoid SQL errors
+$title = str_replace("'", "&#39;", $_POST['title']);
 $age_rating = $_POST['age-rating'];
 $genre = $_POST['genre'];
-$runtime = $_POST['runtime'];
-$trailer = $_POST['trailer'];
+$runtime = str_replace("'", "&#39;", $_POST['runtime']);
+$trailer = str_replace("'", "&#39;", $_POST['trailer']);
 $stock = $_POST['stock'];
-$summary = $_POST['summary'];
+$summary = str_replace("'", "&#39;", $_POST['summary']);
 $image = $_FILES['image']['name'];
 
 

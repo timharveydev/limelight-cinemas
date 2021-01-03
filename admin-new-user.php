@@ -148,9 +148,9 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
       <div class="footer__flex-wrapper">
 
         <div class="footer__social">
-          <a class="footer__social--icon" href="#"><i class="fab fa-facebook-f"></i></a>
-          <a class="footer__social--icon" href="#"><i class="fab fa-youtube"></i></a>
-          <a class="footer__social--icon" href="#"><i class="fab fa-twitter"></i></a>
+          <a class="footer__social--icon" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a class="footer__social--icon" href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a class="footer__social--icon" href="#" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
 
         <div class="footer__copyright">

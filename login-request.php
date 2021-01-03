@@ -17,11 +17,12 @@ if (isset($_SESSION['username'])) {
 
 
 // If $_SESSION['username'] not already set, standard log in process below:
+// Replace apostrophes in strings to avoid SQL errors
 else {
   
   // User input variables
-  $_SESSION['username'] = $_POST['username'];
-  $_SESSION['password'] = $_POST['password'];
+  $_SESSION['username'] = str_replace("'", "&#39;", $_POST['username']);
+  $_SESSION['password'] = str_replace("'", "&#39;", $_POST['password']);
 
   // Check username and password exist in DB
   $query = mysqli_query($connection, "SELECT * FROM users WHERE username='$_SESSION[username]' AND password='$_SESSION[password]'");
