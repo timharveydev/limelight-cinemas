@@ -1,0 +1,16 @@
+
+/* This file includes styling specific to junior users only. */
+
+
+/* Make font sizes larger */
+.nav__link { font-size: 1.4rem; }
+body { font-size: 1.6rem; }
+
+
+/* Change background color of pages to green/yellow gradient */
+body {
+  background-color: #7fcec5;
+  background-image: linear-gradient(#7fcec5 0%, #14557b 74%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}

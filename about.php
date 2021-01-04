@@ -23,6 +23,15 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
   <!-- CSS
   --------------------------------------------------------->
   <link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/main.css">
+  <!-- PHP includes css styles specific to junior & unregistered users -->
+  <?php
+    if (!isset($_SESSION['username']) || $_SESSION['userAge'] < 18) {
+      echo '<link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/junior-unregistered.css">';
+    }
+    if (isset($_SESSION['username']) && $_SESSION['userAge'] < 18) {
+      echo '<link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/junior-only.css">';
+    }
+  ?>
 
   <!-- FONTS
   --------------------------------------------------------->

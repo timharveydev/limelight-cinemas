@@ -69,6 +69,15 @@ elseif (isset($_POST['family'])) {
   <!-- CSS
   --------------------------------------------------------->
   <link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/main.css">
+  <!-- PHP includes css styles specific to junior & unregistered users -->
+  <?php
+    if (!isset($_SESSION['username']) || $_SESSION['userAge'] < 18) {
+      echo '<link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/junior-unregistered.css">';
+    }
+    if (isset($_SESSION['username']) && $_SESSION['userAge'] < 18) {
+      echo '<link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/junior-only.css">';
+    }
+  ?>
 
   <!-- FONTS
   --------------------------------------------------------->
@@ -355,7 +364,12 @@ elseif (isset($_POST['family'])) {
         echo "    <p class='film-info-box__summary'><strong>Summary:</strong><br><br>$summary</p>";
 
         echo "    <div class='film-info-box__buttons'>";
-        echo "      <a href='$trailer' class='button' target='_blank'>View Trailer</a>";
+        if (isset($_SESSION['username']) && $_SESSION['userAge'] >= 18) {
+          echo "     <a href='$trailer' class='button' target='_blank'>View Trailer</a>";
+        }
+        else {
+          echo "     <a href='$trailer' class='button--primary' target='_blank'>View Trailer</a>";
+        }
 
         echo "      <!-- PHP displays Book Tickets button to logged in users over 18 only -->";
         if (isset($_SESSION['username']) && $_SESSION['userAge'] >= 18) {

@@ -9,7 +9,10 @@ body {
   width: 100vw;
   max-width: 100vw;
   height: 100vh;
-  background-color: $dark-grey;
+  background-color: #485461;
+  background-image: linear-gradient(#485461 0%, #28313b 74%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: $white;
   overflow-x: hidden;
 

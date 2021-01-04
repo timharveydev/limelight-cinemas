@@ -52,6 +52,8 @@
 
 
   // Slider image URLs
+  // These are the defaults, for regular/adult users
+  // Junior / unregistered users are shown different images -> see junior-unregistered.css & junior.css
   &__img:nth-child(1) { 
     background-image: url(../img/1.jpg) 
   }

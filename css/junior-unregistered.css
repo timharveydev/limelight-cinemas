@@ -1,0 +1,20 @@
+
+/* This file contains css styles specific to junior and unregistered users. */
+
+
+
+/* FULL-PAGE-SLIDER
+--------------------------------------------*/
+/* Some of the slider images are changed here to be more junior friendly. */
+
+
+
+.slider__img:nth-child(1) {
+  background-image: url(../img/junior1.jpg);
+}
+
+.slider__img:nth-child(4) {
+  background-image: url(../img/junior4.jpg);
+  -webkit-animation-delay: 18s;
+          animation-delay: 18s;
+}

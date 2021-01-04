@@ -13,7 +13,7 @@
   width: 100%;
   padding: 6rem;
   margin: 4rem 0;
-  background-color: $medium-grey;
+  background-image: linear-gradient(to bottom right, #6a6e74, #363a3b);
   border-radius: $border-radius-default;
   @include display-flex;
   @include box-shadow;
