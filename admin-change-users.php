@@ -173,37 +173,23 @@ if (isset($_POST['delete'])) {
         // If search term exists, show requested content only
         if ($searchTerm != '') {
           $query = mysqli_query($connection, "SELECT * FROM users WHERE (NOT admin <=> 'admin') AND (username LIKE '%$searchTerm%' OR password LIKE '%$searchTerm%' OR date_of_birth LIKE '%$searchTerm%' OR email LIKE '%$searchTerm%') ORDER BY username");
-
-          while ($row = mysqli_fetch_array($query)) {
-            extract($row);
-            echo "<form class='data-table__form' action='' method='POST'>";
-            echo "<input name='username' type='text' class='data-table__input' value='$username'>";
-            echo "<input name='password' type='password' class='data-table__input' value='$password'>";
-            echo "<input name='dob' type='text' class='data-table__input' value='$date_of_birth'>";
-            echo "<input name='email' type='text' class='data-table__input' value='$email'>";
-            echo "<input name='id' type='hidden' class='data-table__input' value='$ID'>";
-            echo "<input name='update' type='submit' class='data-table__button button--primary' value='Update'>";
-            echo "<input name='delete' type='submit' class='data-table__button button--negative' value='Delete'>";
-            echo "</form>";
-          }
         }
-
         // Else if search term isn't set, show all content from DB
         else {
           $query = mysqli_query($connection, "SELECT * FROM users WHERE NOT admin <=> 'admin' ORDER BY username");
+        }
 
-          while ($row = mysqli_fetch_array($query)) {
-            extract($row);
-            echo "<form class='data-table__form' action='' method='POST'>";
-            echo "<input name='username' type='text' class='data-table__input' value='$username'>";
-            echo "<input name='password' type='password' class='data-table__input' value='$password'>";
-            echo "<input name='dob' type='text' class='data-table__input' value='$date_of_birth'>";
-            echo "<input name='email' type='text' class='data-table__input' value='$email'>";
-            echo "<input name='id' type='hidden' class='data-table__input' value='$ID'>";
-            echo "<input name='update' type='submit' class='data-table__button button--primary' value='Update'>";
-            echo "<input name='delete' type='submit' class='data-table__button button--negative' value='Delete'>";
-            echo "</form>";
-          }
+        while ($row = mysqli_fetch_array($query)) {
+          extract($row);
+          echo "<form class='data-table__form' action='' method='POST'>";
+          echo "<input name='username' type='text' class='data-table__input' value='$username'>";
+          echo "<input name='password' type='password' class='data-table__input' value='$password'>";
+          echo "<input name='dob' type='text' class='data-table__input' value='$date_of_birth'>";
+          echo "<input name='email' type='text' class='data-table__input' value='$email'>";
+          echo "<input name='id' type='hidden' class='data-table__input' value='$ID'>";
+          echo "<input name='update' type='submit' class='data-table__button button--primary' value='Update'>";
+          echo "<input name='delete' type='submit' class='data-table__button button--negative' value='Delete'>";
+          echo "</form>";
         }
 
         ?>

@@ -171,35 +171,22 @@ if (isset($_POST['delete'])) {
         // If search term exists, show requested content only
         if ($searchTerm != '') {
           $query = mysqli_query($connection, "SELECT * FROM films WHERE title LIKE '%$searchTerm%' ORDER BY title");
-
-          while ($row = mysqli_fetch_array($query)) {
-            extract($row);
-            echo "<form class='data-table__form' action='' method='POST'>";
-            echo "<input name='title' type='text' class='data-table__input left-align' value='$title'>";
-            echo "<textarea name='summary' class='data-table__textarea'>$summary</textarea>";
-            echo "<textarea name='trailer' class='data-table__textarea'>$trailer</textarea>";
-            echo "<input name='id' type='hidden' class='data-table__input' value='$ID'>";
-            echo "<input name='update' type='submit' class='data-table__button button--primary' value='Update'>";
-            echo "<input name='delete' type='submit' class='data-table__button button--negative' value='Delete'>";
-            echo "</form>";
-          }
         }
-
         // Else if search term isn't set, show all content from DB
         else {
           $query = mysqli_query($connection, "SELECT * FROM films ORDER BY title");
+        }
 
-          while ($row = mysqli_fetch_array($query)) {
-            extract($row);
-            echo "<form class='data-table__form' action='' method='POST'>";
-            echo "<input name='title' type='text' class='data-table__input left-align' value='$title'>";
-            echo "<textarea name='summary' class='data-table__textarea'>$summary</textarea>";
-            echo "<textarea name='trailer' class='data-table__textarea'>$trailer</textarea>";
-            echo "<input name='id' type='hidden' class='data-table__input' value='$ID'>";
-            echo "<input name='update' type='submit' class='data-table__button button--primary' value='Update'>";
-            echo "<input name='delete' type='submit' class='data-table__button button--negative' value='Delete'>";
-            echo "</form>";
-          }
+        while ($row = mysqli_fetch_array($query)) {
+          extract($row);
+          echo "<form class='data-table__form' action='' method='POST'>";
+          echo "<input name='title' type='text' class='data-table__input left-align' value='$title'>";
+          echo "<textarea name='summary' class='data-table__textarea'>$summary</textarea>";
+          echo "<textarea name='trailer' class='data-table__textarea'>$trailer</textarea>";
+          echo "<input name='id' type='hidden' class='data-table__input' value='$ID'>";
+          echo "<input name='update' type='submit' class='data-table__button button--primary' value='Update'>";
+          echo "<input name='delete' type='submit' class='data-table__button button--negative' value='Delete'>";
+          echo "</form>";
         }
 
         ?>
