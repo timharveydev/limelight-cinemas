@@ -22,8 +22,15 @@
     padding: 5rem 0;
   }
 
+  &__success {
+    @include display-flex;
+    color: $color-primary;
+    margin-bottom: 3rem;
+    font-size: 1.8rem;
+  }
+
   // Padding-bottom stops form, heading and subheading being too vertically spread out
-&__form { padding-bottom: 2rem; }
+  &__form { padding-bottom: 2rem; }
 }
 
 

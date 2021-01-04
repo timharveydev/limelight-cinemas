@@ -2,6 +2,14 @@
 
 session_start();
 
+
+// If previous URL not login-register.php, send alert and redirect to index.php
+if ($_SESSION['redirect'] != '/~HNCWEBMR4/limelight-cinemas/admin-new-film.php') {
+  header("Location: index.php");
+  exit();
+}
+
+
 // Connection
 include 'connection.php';
 

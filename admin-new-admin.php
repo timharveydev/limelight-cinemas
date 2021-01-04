@@ -2,6 +2,16 @@
 
 session_start();
 
+
+// If user not admin send alert and redirect to index.php
+if ($_SESSION['admin'] != 'admin') {
+  echo '<script type="text/javascript">'; 
+  echo 'alert("You do not have permission to view this page");';
+  echo 'window.location.href = "index.php";';
+  echo '</script>';
+}
+
+
 // Stores current URL minus arguments
 $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
 
@@ -86,6 +96,17 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
 
       <h1 class="admin-new-admin__heading">Add New Admin User</h1>
 
+
+      <!-- PHP shows success confirmation when new user added -->
+      <?php
+
+      if ($_GET['success'] == 'success') {
+        echo '<span class="admin-new-admin__success">Admin user added successfully</span>';
+      }
+
+      ?>
+
+
       <!-- Register form (this is the same form that appears on the register/login page) -->
       <!-- PHP code between label and input produces error spans -> error type is sent via URL from register-request.php -->
       <!-- PHP within input value parameters populates form fields with previous user input when returning from register-request.php with errors (excludes password for security) -->
@@ -115,15 +136,6 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
         <input name="reset" type="reset" value="Reset" class="form__button button--negative button--large">
         
       </form>
-
-      <!-- PHP shows success confirmation when new user added -->
-      <?php
-
-      if ($_GET['success'] == 'success') {
-        echo '<span class="admin-new-user__success">Admin user added successfully</span>';
-      }
-
-      ?>
 
     </div>
   </section>

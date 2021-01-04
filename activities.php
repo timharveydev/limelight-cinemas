@@ -2,6 +2,16 @@
 
 session_start();
 
+
+// If user not logged in send alert and redirect to index.php
+if (!isset($_SESSION['username'])) {
+  echo '<script type="text/javascript">'; 
+  echo 'alert("You do not have permission to view this page");';
+  echo 'window.location.href = "index.php";';
+  echo '</script>';
+}
+
+
 // Stores current URL minus arguments
 $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
 

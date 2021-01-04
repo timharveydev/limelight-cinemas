@@ -53,6 +53,7 @@
 
   &__textarea {
     flex: 1;
+    min-width: 26rem;
     height: 14rem;
     padding: 1rem;
     margin: 0.8rem 1px 0.8rem 0;
@@ -72,4 +73,19 @@
 
   // To be given as a class to form inputs
   & .left-align { text-align: left; }
+}
+
+
+
+
+
+/* MEDIA QUERIES
+--------------------------------------------*/
+
+// Laptops / tablets
+@media only screen and (max-width: 1400px) {
+  .data-table {
+    overflow-x: scroll;
+    outline: 2px solid $medium-grey;
+  }
 }

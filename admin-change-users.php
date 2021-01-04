@@ -3,6 +3,15 @@
 session_start();
 
 
+// If user not admin send alert and redirect to index.php
+if ($_SESSION['admin'] != 'admin') {
+  echo '<script type="text/javascript">'; 
+  echo 'alert("You do not have permission to view this page");';
+  echo 'window.location.href = "index.php";';
+  echo '</script>';
+}
+
+
 // Connection
 include 'connection.php';
 

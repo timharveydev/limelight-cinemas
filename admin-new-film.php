@@ -2,6 +2,16 @@
 
 session_start();
 
+
+// If user not admin send alert and redirect to index.php
+if ($_SESSION['admin'] != 'admin') {
+  echo '<script type="text/javascript">'; 
+  echo 'alert("You do not have permission to view this page");';
+  echo 'window.location.href = "index.php";';
+  echo '</script>';
+}
+
+
 // Stores current URL minus arguments
 $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
 
@@ -87,6 +97,16 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
       <h1 class="admin-new-film__heading">Add New Film</h1>
 
 
+      <!-- PHP shows success confirmation when new film added -->
+      <?php
+
+      if ($_GET['success'] == 'success') {
+        echo '<span class="admin-new-film__success">Film added successfully</span>';
+      }
+
+      ?>
+
+
       <!-- Film form -->
       <form class="admin-new-film__form form" action="new-film-request.php" method="POST" enctype="multipart/form-data">
 
@@ -141,16 +161,6 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
         <input name="reset" type="reset" value="Reset" class="form__button button--negative button--large">
         
       </form>
-
-
-      <!-- PHP shows success confirmation when new film added -->
-      <?php
-
-      if ($_GET['success'] == 'success') {
-        echo '<span class="admin-new-film__success">Film added successfully</span>';
-      }
-
-      ?>
 
     </div>
   </section>

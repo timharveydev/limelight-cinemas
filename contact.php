@@ -136,7 +136,17 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
       <p class="contact__subheading">If you would like to get in touch, please fill in the form below and we will get back to you as soon as we can.</p>
 
 
-      <form class="contact__form form" action="#" method="POST">
+      <!-- Success confirmation - shown when user details changed -->
+      <?php
+
+      if ($_GET['success'] == 'success') {
+        echo '<span class="contact__success">Changes successful</span>';
+      }
+
+      ?>
+
+
+      <form class="contact__form form" action="contact.php?success=success" method="POST">
 
         <label for="name" class="form__label">Name</label>
         <input name="name" type="text" class="form__text-input" required>

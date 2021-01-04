@@ -3,6 +3,15 @@
 session_start();
 
 
+// If user not logged in or under 18 or if previous URL not booking.php,  send alert and redirect to index.php
+if (!isset($_SESSION['username']) || $_SESSION['userAge'] < 18 || $_SESSION['redirect'] != '/~HNCWEBMR4/limelight-cinemas/booking.php') {
+  echo '<script type="text/javascript">'; 
+  echo 'alert("You do not have permission to view this page");';
+  echo 'window.location.href = "index.php";';
+  echo '</script>';
+}
+
+
 // Connection
 include 'connection.php';
 

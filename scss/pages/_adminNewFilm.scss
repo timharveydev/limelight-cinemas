@@ -20,7 +20,29 @@
   &__success {
     @include display-flex;
     color: $color-primary;
-    margin-top: 3rem;
+    margin-bottom: 3rem;
     font-size: 1.8rem;
+  }
+}
+
+
+
+
+
+/* MEDIA QUERIES
+--------------------------------------------*/
+
+@media only screen and (max-width: 1650px) {
+  .admin-new-film {
+    
+    &__container { width: 45%; }
+  }
+}
+
+
+@media only screen and (max-width: 1024px) {
+  .admin-new-film {
+    
+    &__container { width: 55%; }
   }
 }
