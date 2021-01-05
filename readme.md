@@ -13,3 +13,13 @@ This website was created as a part of my HND Web Development course. I was taske
 * A complete admin panel for admin users, where new users (regular and admin), films and stock can be added, updated or removed from the system.
 * All user-facing pages are fully mobile responsive. Admin pages are responsive for computers and tablets only; mobile phones are outside of the intended usage environment for admins.
 * Changes to the styling of the website for junior users, including junior-friendly images on the homepage image slider, larger body text and navigation link text, and a unique gradient background.
+
+## Logging In
+
+If you would like to explore all of the site's features you will need to login. Feel free to register as a new user if you like. Alternatively, you can login using the credentials below to gain access to various parts of the site:
+
+Login Credentials for Testing:
+
+username: adult | password: 12341234
+username: junior | password: 12341234
+username: admin | password: 12341234
