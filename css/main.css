@@ -1019,8 +1019,8 @@ h6 {
   width: 100%;
   padding: 6rem;
   margin: 4rem 0;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#6a6e74), to(#363a3b));
-  background-image: linear-gradient(to bottom right, #6a6e74, #363a3b);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#7e838a), to(#363a3b));
+  background-image: linear-gradient(to bottom right, #7e838a, #363a3b);
   border-radius: 4px;
   display: -webkit-box;
   display: -ms-flexbox;
