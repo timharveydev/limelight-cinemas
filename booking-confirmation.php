@@ -189,7 +189,7 @@ mysqli_query($connection, "UPDATE films SET stock='$updatedStock' WHERE ID='$_GE
         <h2 class="confirmation-box__heading">Booking Success!</h2>
 
         <!-- Subheading -->
-        <h3 class="confirmation-box__subheading"><?php echo "You have booked $_POST[quantity] tickets to see $title." ?></h3>
+        <h3 class="confirmation-box__subheading"><?php echo "You have booked $_POST[quantity] ticket/s to see $title." ?></h3>
 
         <!-- Details -->
         <p class="confirmation-box__details">Your booking reference code:</p>
@@ -202,6 +202,9 @@ mysqli_query($connection, "UPDATE films SET stock='$updatedStock' WHERE ID='$_GE
 
         <!-- Return to homepage -->
         <a class="confirmation-box__return" href="index.php">Return to homepage</a>
+        <br><br>
+        <!-- Printer-friendly version -->
+        <a class="confirmation-box__return" href="print-confirmation.php?filmID=<?php echo $ID; ?>&quantity=<?php echo $_POST[quantity]; ?>" target="_blank">Printer friendly version</a>
         
       </div>
 

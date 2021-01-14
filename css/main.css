@@ -2127,6 +2127,70 @@ h6 {
   }
 }
 
+/* PRINT CONFIRMATION
+--------------------------------------------*/
+.print-confirmation {
+  min-height: 100%;
+  width: 100%;
+  background-color: white;
+  color: black;
+}
+
+.print-confirmation__container {
+  max-width: 1200px;
+  padding: 12rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.print-confirmation-box {
+  width: 100%;
+  padding: 6rem 16rem;
+  margin: 6rem 0;
+  text-align: center;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.print-confirmation-box__subheading {
+  margin: 3rem 0;
+}
+
+.print-confirmation-box__details--large {
+  font-size: 3rem;
+  margin: 1.5rem 0;
+}
+
+.print-confirmation-box__return {
+  color: black;
+}
+
+/* MEDIA QUERIES
+--------------------------------------------*/
+@media only screen and (max-width: 1280px) {
+  .print-confirmation-box {
+    padding: 6rem;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .print-confirmation-box {
+    padding: 4rem 1.5rem;
+  }
+}
+
 /* ADMIN HOME
 --------------------------------------------*/
 .admin-home {
