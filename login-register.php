@@ -161,7 +161,7 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
         <input name="username" type="text" class="form__text-input" maxlength="40" required value="<?php echo $_SESSION['username']; ?>">
 
         <label for="password" class="form__label">Password (8-12 characters) <span class="required">*</span></label>
-        <input name="password" type="password" class="form__text-input" maxlength="12" required>
+        <input name="password" type="password" class="form__text-input" minlength="8" maxlength="12" required>
 
         <label for="confirm-password" class="form__label">Confirm Password <span class="required">*</span></label>
         <?php if($_GET['error'] == 'passwordError') {echo '<span class="form__error">Password does not match</span>';} ?>
