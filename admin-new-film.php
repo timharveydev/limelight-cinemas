@@ -161,7 +161,7 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
 
         <!-- Film Poster -->
         <!-- File name can't include apostrophies as they mess with SQL -->
-        <label for="image" class="form__label">Upload Film Poster (file name must not include apostrophies)</label>
+        <label for="image" class="form__label"><u>Upload Film Poster</u><br><br>(files should be in .jpg, .jpeg or .png format. File names should only include characters a-z, A-Z and 0-9.)</label>
         <br>
         <input name="image" type="file" class="form__file-upload-button" required>
 

@@ -198,9 +198,9 @@ if (isset($_POST['delete'])) {
         while ($row = mysqli_fetch_array($query)) {
           extract($row);
           echo "<form class='data-table__form' action='' method='POST'>";
-          echo "<input name='title' type='text' class='data-table__input left-align' value='$title'>";
-          echo "<textarea name='summary' class='data-table__textarea'>$summary</textarea>";
-          echo "<textarea name='trailer' class='data-table__textarea'>$trailer</textarea>";
+          echo "<input name='title' type='text' class='data-table__input left-align' value='$title' maxlength='50' required>";
+          echo "<textarea name='summary' class='data-table__textarea' maxlength='500' required>$summary</textarea>";
+          echo "<textarea name='trailer' class='data-table__textarea' maxlength='500' required>$trailer</textarea>";
           echo "<input name='id' type='hidden' class='data-table__input' value='$ID'>";
           echo "<input name='update' type='submit' class='data-table__button button--primary' value='Update'>";
           echo "<input name='delete' type='submit' class='data-table__button button--negative' value='Delete'>";

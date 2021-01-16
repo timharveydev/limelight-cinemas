@@ -201,7 +201,7 @@ if (isset($_POST['delete'])) {
           extract($row);
           echo "<form class='data-table__form' action='' method='POST'>";
           echo "<input name='username' type='text' class='data-table__input' value='$username'>";
-          echo "<input name='password' type='password' class='data-table__input' value='$password'>";
+          echo "<input name='password' type='password' class='data-table__input' value='$password' minlength='8' maxlength='12'>";
           echo "<input name='dob' type='text' class='data-table__input' value='$date_of_birth'>";
           echo "<input name='email' type='text' class='data-table__input' value='$email'>";
           echo "<input name='id' type='hidden' class='data-table__input' value='$ID'>";
