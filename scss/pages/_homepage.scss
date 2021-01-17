@@ -18,6 +18,14 @@
   // Left side
   &__left-side { width: 60%; }
 
+  &__pre-title {
+    font-family: $font-secondary;
+    font-size: 3.2rem;
+    font-weight: 500;
+    line-height: 3.2rem;
+    letter-spacing: 0.2rem;
+  }
+
   &__main-title {
     font-size: 9rem;
     font-weight: 600;
@@ -29,6 +37,13 @@
     &--primary-color {
       color: $color-primary;
     }
+  }
+
+  &__sub-title {
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 2.4rem;
+    letter-spacing: 0.2rem;
   }
 
 

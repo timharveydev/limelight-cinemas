@@ -87,7 +87,7 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
 
         <!-- Logout button (login button not needed - admin pages not accessible unless logged in) -->
         <li class="nav__item mobile-hidden">
-          <a class="nav__button button--negative" href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
+          <a class="nav__button button--negative" href="logout.php"><span class="fas fa-sign-out-alt"></span> Logout</a>
         </li>
       </ul>
 
@@ -140,9 +140,9 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
       <div class="footer__flex-wrapper">
 
         <div class="footer__social">
-          <a class="footer__social--icon" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          <a class="footer__social--icon" href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-          <a class="footer__social--icon" href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a class="footer__social--icon" href="#" target="_blank"><span class="fab fa-facebook-f"></span></a>
+          <a class="footer__social--icon" href="#" target="_blank"><span class="fab fa-youtube"></span></a>
+          <a class="footer__social--icon" href="#" target="_blank"><span class="fab fa-twitter"></span></a>
         </div>
 
         <div class="footer__copyright">

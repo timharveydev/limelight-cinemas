@@ -60,7 +60,7 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
   <nav class="nav">
     <div class="nav__container container">
 
-      <div class="nav__burger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+      <div class="nav__burger" onclick="toggleMenu()"><span class="fas fa-bars"></span></div>
 
       <div class="nav__logo">
         <a href="index.php"><img src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/img/logo.svg" alt="Limelight Cinemas Logo"></a>
@@ -99,11 +99,11 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
           <?php
 
           if (isset($_SESSION['username'])) {
-            echo '<a class="nav__button button--negative" href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>';
+            echo '<a class="nav__button button--negative" href="logout.php"><span class="fas fa-sign-out-alt"></span> Logout</a>';
           }
           
           else {
-            echo '<a class="nav__button button--positive" href="login-register.php?section=login"><i class="fas fa-sign-in-alt"></i> Login</a>';
+            echo '<a class="nav__button button--positive" href="login-register.php?section=login"><span class="fas fa-sign-in-alt"></span> Login</a>';
           }
           
           ?>
@@ -116,11 +116,11 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
       <?php
 
       if (isset($_SESSION['username'])) {
-        echo '<a class="nav__button button--negative mobile-only" href="logout.php"><i class="fas fa-sign-out-alt"></i></a>';
+        echo '<a class="nav__button button--negative mobile-only" href="logout.php"><span class="fas fa-sign-out-alt"></span></a>';
       }
       
       else {
-        echo '<a class="nav__button button--primary mobile-only" href="login-register.php?section=login"><i class="fas fa-sign-in-alt"></i></a>';
+        echo '<a class="nav__button button--primary mobile-only" href="login-register.php?section=login"><span class="fas fa-sign-in-alt"></span></a>';
       }
       
       ?>
@@ -199,9 +199,9 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
       
       <div class="footer__flex-wrapper">
         <div class="footer__social">
-          <a class="footer__social--icon" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          <a class="footer__social--icon" href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-          <a class="footer__social--icon" href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a class="footer__social--icon" href="#" target="_blank"><span class="fab fa-facebook-f"></span></a>
+          <a class="footer__social--icon" href="#" target="_blank"><span class="fab fa-youtube"></span></a>
+          <a class="footer__social--icon" href="#" target="_blank"><span class="fab fa-twitter"></span></a>
         </div>
 
         <div class="footer__copyright">

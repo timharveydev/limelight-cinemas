@@ -110,7 +110,7 @@ if (isset($_POST['update'])) {
 
         <!-- Logout button (login button not needed - admin pages not accessible unless logged in) -->
         <li class="nav__item mobile-hidden">
-          <a class="nav__button button--negative" href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
+          <a class="nav__button button--negative" href="logout.php"><span class="fas fa-sign-out-alt"></span> Logout</a>
         </li>
       </ul>
 
@@ -133,10 +133,11 @@ if (isset($_POST['update'])) {
       <!-- Search bar component -->
       <form class="admin-update-stock__search-bar search-bar" action="admin-update-stock.php" method="POST">
         
-        <input type="text" name="searchTerm" class="search-bar__input" placeholder="Search film title ...">
+        <label for="searchbox" hidden>Search for a film</label>
+        <input type="text" name="searchTerm" class="search-bar__input" id="searchbox" placeholder="Search film title ...">
 
         <!-- Search button -->
-        <button type="submit" name="search" class="search-bar__button button--positive"><i class="fas fa-search"></i> Search</button>
+        <button type="submit" name="search" class="search-bar__button button--positive"><span class="fas fa-search"></i> Search</button>
 
       </form>
 
@@ -217,9 +218,9 @@ if (isset($_POST['update'])) {
       <div class="footer__flex-wrapper">
 
         <div class="footer__social">
-          <a class="footer__social--icon" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          <a class="footer__social--icon" href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-          <a class="footer__social--icon" href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a class="footer__social--icon" href="#" target="_blank"><span class="fab fa-facebook-f"></i></a>
+          <a class="footer__social--icon" href="#" target="_blank"><span class="fab fa-youtube"></i></a>
+          <a class="footer__social--icon" href="#" target="_blank"><span class="fab fa-twitter"></i></a>
         </div>
 
         <div class="footer__copyright">

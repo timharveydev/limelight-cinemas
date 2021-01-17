@@ -106,7 +106,7 @@ elseif (isset($_POST['family'])) {
   <nav class="nav">
     <div class="nav__container container">
 
-      <div class="nav__burger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+      <div class="nav__burger" onclick="toggleMenu()"><span class="fas fa-bars"></span></div>
 
       <div class="nav__logo">
         <a href="#"><img src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/img/logo.svg" alt="Limelight Cinemas Logo"></a>
@@ -145,11 +145,11 @@ elseif (isset($_POST['family'])) {
           <?php
 
           if (isset($_SESSION['username'])) {
-            echo '<a class="nav__button button--negative" href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>';
+            echo '<a class="nav__button button--negative" href="logout.php"><span class="fas fa-sign-out-alt"></span> Logout</a>';
           }
           
           else {
-            echo '<a class="nav__button button--positive" href="login-register.php?section=login"><i class="fas fa-sign-in-alt"></i> Login</a>';
+            echo '<a class="nav__button button--positive" href="login-register.php?section=login"><span class="fas fa-sign-in-alt"></span> Login</a>';
           }
           
           ?>
@@ -162,11 +162,11 @@ elseif (isset($_POST['family'])) {
       <?php
 
       if (isset($_SESSION['username'])) {
-        echo '<a class="nav__button button--negative mobile-only" href="logout.php"><i class="fas fa-sign-out-alt"></i></a>';
+        echo '<a class="nav__button button--negative mobile-only" href="logout.php"><span class="fas fa-sign-out-alt"></span></a>';
       }
       
       else {
-        echo '<a class="nav__button button--primary mobile-only" href="login-register.php?section=login"><i class="fas fa-sign-in-alt"></i></a>';
+        echo '<a class="nav__button button--primary mobile-only" href="login-register.php?section=login"><span class="fas fa-sign-in-alt"></span></a>';
       }
       
       ?>
@@ -202,9 +202,9 @@ elseif (isset($_POST['family'])) {
     <div class="hero__container container">
 
       <div class="hero__left-side">
-        <h2 class="hero__pre-title">Welcome to</h2>
+        <span class="hero__pre-title">Welcome to</span>
         <h1 class="hero__main-title"><span class="hero__main-title--primary-color">Lime</span>light</h1>
-        <h3 class="hero__sub-title">Premier cinemas in Midlothian</h3>
+        <h2 class="hero__sub-title">Premier cinemas in Midlothian</h2>
       </div>
 
       <div class="hero__right-side">
@@ -214,13 +214,13 @@ elseif (isset($_POST['family'])) {
         if (!isset($_SESSION['username'])) {
           echo '<h3 class="hero__sub-title">Become a member today ...</h3>';
           echo '<p class="hero__info">... to gain access to our full film database, book tickets and more!</p>';
-          echo '<a href="login-register.php?section=register" class="hero__button button--primary button--large"><i class="fas fa-user-plus"></i> Register</a>';
+          echo '<a href="login-register.php?section=register" class="hero__button button--primary button--large"><span class="fas fa-user-plus"></span> Register</a>';
         }
         // If user under 18, show activities info
         elseif ($_SESSION['userAge'] < 18) {
           echo '<h3 class="hero__sub-title">Visit our Activities page ...</h3>';
           echo '<p class="hero__info">... and put your knowledge to the test with some of our film trivia quizzes.</p>';
-          echo '<a href="activities.php" class="hero__button button--primary button--large"><i class="fas fa-trophy"></i> Activities</a>';
+          echo '<a href="activities.php" class="hero__button button--primary button--large"><span class="fas fa-trophy"></span> Activities</a>';
         }
         ?>
       </div>
@@ -229,10 +229,10 @@ elseif (isset($_POST['family'])) {
       <?php
         // If no user logged in, display membership info 
         if (isset($_SESSION['username']) && $_SESSION['userAge'] >= 18) {
-          echo '<a href="#films" class="hero__button--absolute-primary button--primary button--large">What\'s On? <i class="fas fa-arrow-down"></i></a>';
+          echo '<a href="#films" class="hero__button--absolute-primary button--primary button--large">What\'s On? <span class="fas fa-arrow-down"></span></a>';
         }
         else {
-          echo '<a href="#films" class="hero__button--absolute-positive button--positive button--large">What\'s On? <i class="fas fa-arrow-down"></i></a>';
+          echo '<a href="#films" class="hero__button--absolute-positive button--positive button--large">What\'s On? <span class="fas fa-arrow-down"></span></a>';
         }
       ?>
       
@@ -270,13 +270,14 @@ elseif (isset($_POST['family'])) {
       <!-- Search bar component -->
       <form class="films__search-bar search-bar" action="index.php#films" method="POST">
         
-        <input type="text" name="searchTerm" class="search-bar__input" placeholder="Enter film title ...">
+        <label for="searchbox" hidden>Search for a film</label>
+        <input type="text" name="searchTerm" class="search-bar__input" id="searchbox" placeholder="Enter film title ...">
 
         <!-- Search button for most devices -->
-        <button type="submit" name="search" class="search-bar__button button--positive"><i class="fas fa-search"></i> Search</button>
+        <button type="submit" name="search" class="search-bar__button button--positive"><span class="fas fa-search"></span> Search</button>
 
         <!-- Search button for phones -->
-        <button type="submit" name="search" class="search-bar__button--mobile button--primary"><i class="fas fa-search"></i></button>
+        <button type="submit" name="search" class="search-bar__button--mobile button--primary"><span class="fas fa-search"></span></button>
 
       </form>
 
@@ -357,7 +358,7 @@ elseif (isset($_POST['family'])) {
         echo "      <h2 class='film-info-box__title'>$title</h2>";
         echo "      <hr class='film-info-box__underline'>";
         echo "      <div class='film-info-box__attributes'>";
-        echo "        <p>$genre | Rating: $age_rating | <i class='far fa-clock'></i> $runtime | <a href='about.php#showing-times'>Showing times</a></p>";
+        echo "        <p>$genre | Rating: $age_rating | <span class='far fa-clock'></span> $runtime | <a href='about.php#showing-times'>Showing times</a></p>";
         echo "      </div>";
         echo "    </div>";
 
@@ -412,9 +413,9 @@ elseif (isset($_POST['family'])) {
       <div class="footer__flex-wrapper">
 
         <div class="footer__social">
-          <a class="footer__social--icon" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          <a class="footer__social--icon" href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-          <a class="footer__social--icon" href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a class="footer__social--icon" href="#" target="_blank"><span class="fab fa-facebook-f"></span></a>
+          <a class="footer__social--icon" href="#" target="_blank"><span class="fab fa-youtube"></span></a>
+          <a class="footer__social--icon" href="#" target="_blank"><span class="fab fa-twitter"></span></a>
         </div>
 
         <div class="footer__copyright">

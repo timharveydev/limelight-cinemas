@@ -1357,6 +1357,14 @@ h6 {
   width: 60%;
 }
 
+.hero__pre-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.2rem;
+  font-weight: 500;
+  line-height: 3.2rem;
+  letter-spacing: 0.2rem;
+}
+
 .hero__main-title {
   font-size: 9rem;
   font-weight: 600;
@@ -1368,6 +1376,13 @@ h6 {
 
 .hero__main-title--primary-color {
   color: #49b171;
+}
+
+.hero__sub-title {
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 2.4rem;
+  letter-spacing: 0.2rem;
 }
 
 .hero__right-side {
