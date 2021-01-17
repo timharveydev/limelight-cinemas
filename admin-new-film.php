@@ -28,7 +28,7 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Tim Harvey">
   <meta name="description" content="A dynamic cinema website created for my HND Web Development course.">
-  <title>Limelight | Admin Panel</title>
+  <title>Limelight | Admin New Film</title>
 
   <!-- CSS
   --------------------------------------------------------->
@@ -121,15 +121,15 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
 
         <!-- Title -->
         <label for="title" class="form__label">Title</label>
-        <input name="title" type="text" class="form__text-input" maxlength="50" required>
+        <input name="title" id="title" type="text" class="form__text-input" maxlength="50" required>
 
         <!-- Age Rating -->
         <label for="age-rating" class="form__label">Age Rating</label>
-        <input name="age-rating" type="text" class="form__text-input" maxlength="3" required>
+        <input name="age-rating" id="age-rating" type="text" class="form__text-input" maxlength="3" required>
 
         <!-- Genre -->
         <label for="genre" class="form__label">Genre</label>
-        <select name="genre" class="form__select">
+        <select name="genre" class="form__select" id="genre" >
           <option value="">Select genre</option>
           <option value="Action">Action</option>
           <option value="Adventure">Adventure</option>
@@ -145,25 +145,25 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
 
         <!-- Runtime -->
         <label for="runtime" class="form__label">Runtime (format: Xh XXm)</label>
-        <input name="runtime" type="text" class="form__text-input" maxlength="8" required>
+        <input name="runtime" id="runtime" type="text" class="form__text-input" maxlength="8" required>
 
         <!-- Trailer -->
         <label for="trailer" class="form__label">Trailer URL</label>
-        <input name="trailer" type="text" class="form__text-input" maxlength="500" required>
+        <input name="trailer" id="trailer" type="text" class="form__text-input" maxlength="500" required>
 
         <!-- Stock -->
         <label for="stock" class="form__label">Stock</label>
-        <input name="stock" type="text" class="form__text-input" maxlength="3" required>
+        <input name="stock" id="stock" type="text" class="form__text-input" maxlength="3" required>
 
         <!-- Summary -->
         <label for="summary" class="form__label">Summary (limit 500 characters)</label>
-        <textarea name="summary" cols="50" rows="5" class="form__text-area" maxlength="500" required></textarea>
+        <textarea name="summary" id="summary" cols="50" rows="5" class="form__text-area" maxlength="500" required></textarea>
 
         <!-- Film Poster -->
         <!-- File name can't include apostrophies as they mess with SQL -->
         <label for="image" class="form__label"><u>Upload Film Poster</u><br><br>(files should be in .jpg, .jpeg or .png format. File names should only include characters a-z, A-Z and 0-9.)</label>
         <br>
-        <input name="image" type="file" class="form__file-upload-button" required>
+        <input name="image" id="image" type="file" class="form__file-upload-button" required>
 
         <!-- Submit / Reset -->
         <input name="submit" type="submit" value="Add Film" class="form__button button--primary button--large">

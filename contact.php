@@ -158,13 +158,13 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
       <form class="contact__form form" action="contact.php?success=success" method="POST">
 
         <label for="name" class="form__label">Name</label>
-        <input name="name" type="text" class="form__text-input" maxlength="50" required>
+        <input name="name" id="name" type="text" class="form__text-input" maxlength="50" required>
 
         <label for="email" class="form__label">Email</label>
-        <input name="email" type="text" class="form__text-input" maxlength="50" required>
+        <input name="email" id="email" type="text" class="form__text-input" maxlength="50" required>
 
         <label for="message" class="form__label">Message</label>
-        <textarea name="message" cols="50" rows="5" class="form__text-area" placeholder="Type your message here ..." maxlength="1000" required></textarea>
+        <textarea name="message" id="message" cols="50" rows="5" class="form__text-area" placeholder="Type your message here ..." maxlength="1000" required></textarea>
 
         <input name="submit" type="submit" value="Submit" class="form__button button--primary button--large">
         <input name="reset" type="reset" value="Reset" class="form__button button--negative button--large">

@@ -15,7 +15,7 @@
 
 
   // Relates to nav links on left side
-  &__nav { @include display-flex($direction: column, $align: left); }
+  &__nav { @include display-flex($direction: column, $align: flex-start); }
 
 
   // Contains social media and copyright

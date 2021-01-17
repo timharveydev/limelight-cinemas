@@ -57,7 +57,7 @@ $referenceCode = $age_rating . $acronym . $_GET['quantity'];
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Tim Harvey">
   <meta name="description" content="A dynamic cinema website created for my HND Web Development course.">
-  <title>Limelight | Booking Confirmation</title>
+  <title>Limelight | Printer Friendly Confirmation</title>
 
   <!-- CSS
   --------------------------------------------------------->

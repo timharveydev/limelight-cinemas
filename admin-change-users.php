@@ -66,7 +66,7 @@ if (isset($_POST['delete'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Tim Harvey">
   <meta name="description" content="A dynamic cinema website created for my HND Web Development course.">
-  <title>Limelight | Admin Panel</title>
+  <title>Limelight | Admin Change Users</title>
 
   <!-- CSS
   --------------------------------------------------------->
@@ -179,8 +179,8 @@ if (isset($_POST['delete'])) {
           <input type="text" class="data-table__heading" value="Password" readonly>
           <input type="text" class="data-table__heading" value="Date of Birth" readonly>
           <input type="text" class="data-table__heading" value="Email" readonly>
-          <input type="submit" class="data-table__button--hidden button--primary" value="Update" readonly>
-          <input type="submit" class="data-table__button--hidden button--negative" value="Delete" readonly>
+          <input type="submit" class="data-table__button--hidden button--primary" value="Update">
+          <input type="submit" class="data-table__button--hidden button--negative" value="Delete">
         </form>
         <hr>
 
@@ -199,7 +199,7 @@ if (isset($_POST['delete'])) {
 
         while ($row = mysqli_fetch_array($query)) {
           extract($row);
-          echo "<form class='data-table__form' action='' method='POST'>";
+          echo "<form class='data-table__form' action='admin-change-users.php' method='POST'>";
           echo "<input name='username' type='text' class='data-table__input' value='$username'>";
           echo "<input name='password' type='password' class='data-table__input' value='$password' minlength='8' maxlength='12'>";
           echo "<input name='dob' type='text' class='data-table__input' value='$date_of_birth'>";

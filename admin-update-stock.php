@@ -51,7 +51,7 @@ if (isset($_POST['update'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Tim Harvey">
   <meta name="description" content="A dynamic cinema website created for my HND Web Development course.">
-  <title>Limelight | Admin Panel</title>
+  <title>Limelight | Admin Update Stock</title>
 
   <!-- CSS
   --------------------------------------------------------->
@@ -162,7 +162,7 @@ if (isset($_POST['update'])) {
         <form class="data-table__form">
           <input type="text" class="data-table__heading" value="Title" readonly>
           <input type="text" class="data-table__heading" value="Stock" readonly>
-          <input type="submit" class="data-table__button--hidden button--primary" value="Update" readonly>
+          <input type="submit" class="data-table__button--hidden button--primary" value="Update">
         </form>
         <hr>
 
@@ -181,7 +181,7 @@ if (isset($_POST['update'])) {
 
         while ($row = mysqli_fetch_array($query)) {
           extract($row);
-          echo "<form class='data-table__form' action='' method='POST'>";
+          echo "<form class='data-table__form' action='admin-update-stock.php' method='POST'>";
           echo "<input name='title' type='text' class='data-table__input left-align' value='$title' readonly>";
           echo "<input name='stock' type='text' class='data-table__input' value='$stock'>";
           echo "<input name='update' type='submit' class='data-table__button button--primary' value='Update'>";

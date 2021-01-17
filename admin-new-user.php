@@ -28,7 +28,7 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Tim Harvey">
   <meta name="description" content="A dynamic cinema website created for my HND Web Development course.">
-  <title>Limelight | Admin Panel</title>
+  <title>Limelight | Admin New User</title>
 
   <!-- CSS
   --------------------------------------------------------->
@@ -123,20 +123,20 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
 
         <label for="username" class="form__label">Username <span class="required">*</span></label>
         <?php if($_GET['error'] == 'usernameError') {echo '<span class="form__error">Sorry, this username already exists</span>';} ?>
-        <input name="username" type="text" class="form__text-input" maxlength="40" required>
+        <input name="username" id="username" type="text" class="form__text-input" maxlength="40" required>
 
         <label for="password" class="form__label">Password (8-12 characters) <span class="required">*</span></label>
-        <input name="password" type="password" class="form__text-input" minlength="8" maxlength="12" required>
+        <input name="password" id="password" type="password" class="form__text-input" minlength="8" maxlength="12" required>
 
         <label for="confirm-password" class="form__label">Confirm Password <span class="required">*</span></label>
         <?php if($_GET['error'] == 'passwordError') {echo '<span class="form__error">Password does not match</span>';} ?>
-        <input name="confirm-password" type="password" class="form__text-input" minlength="8" maxlength="12" required>
+        <input name="confirm-password" id="confirm-password" type="password" class="form__text-input" minlength="8" maxlength="12" required>
 
         <label for="date-of-birth" class="form__label">Date of Birth <span class="required">*</span></label>
-        <input name="date-of-birth" type="date" class="form__text-input datepicker" min="1900-01-01" required> <!-- See setDateInputMax.js -->
+        <input name="date-of-birth" id="date-of-birth" type="date" class="form__text-input datepicker" min="1900-01-01" required> <!-- See setDateInputMax.js -->
 
         <label for="email" class="form__label">Email (optional)</label>
-        <input name="email" type="text" class="form__text-input" maxlength="40">
+        <input name="email" id="email" type="text" class="form__text-input" maxlength="40">
 
         <!-- Allows register-request.php to set $_SESSION['admin'] = empty string -->
         <input type="hidden" name="admin" value="">

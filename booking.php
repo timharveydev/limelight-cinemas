@@ -199,7 +199,7 @@ while ($row = mysqli_fetch_array($query)) {
 
             <label class="form__label" for="tickets"><strong>Quantity:</strong></label>
 
-            <select name="quantity" class="form__select" <?php if ($stock < 1) { echo 'disabled'; } ?>>
+            <select name="quantity" class="form__select" id="tickets" <?php if ($stock < 1) { echo 'disabled'; } ?>>
               <option value="1" <?php if ($stock < 1) { echo 'disabled'; } ?>>1</option>
               <option value="2" <?php if ($stock < 2) { echo 'disabled'; } ?>>2</option>
               <option value="3" <?php if ($stock < 3) { echo 'disabled'; } ?>>3</option>

@@ -65,7 +65,7 @@ if (isset($_POST['delete'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Tim Harvey">
   <meta name="description" content="A dynamic cinema website created for my HND Web Development course.">
-  <title>Limelight | Admin Panel</title>
+  <title>Limelight | Admin Change Films</title>
 
   <!-- CSS
   --------------------------------------------------------->
@@ -177,8 +177,8 @@ if (isset($_POST['delete'])) {
           <input type="text" class="data-table__heading" value="Title" readonly>
           <input type="text" class="data-table__heading" value="Summary" readonly>
           <input type="text" class="data-table__heading" value="Trailer" readonly>
-          <input type="submit" class="data-table__button--hidden button--primary" value="Update" readonly>
-          <input type="submit" class="data-table__button--hidden button--negative" value="Delete" readonly>
+          <input type="submit" class="data-table__button--hidden button--primary" value="Update">
+          <input type="submit" class="data-table__button--hidden button--negative" value="Delete">
         </form>
         <hr>
 
@@ -197,7 +197,7 @@ if (isset($_POST['delete'])) {
 
         while ($row = mysqli_fetch_array($query)) {
           extract($row);
-          echo "<form class='data-table__form' action='' method='POST'>";
+          echo "<form class='data-table__form' action='admin-change-films.php' method='POST'>";
           echo "<input name='title' type='text' class='data-table__input left-align' value='$title' maxlength='50' required>";
           echo "<textarea name='summary' class='data-table__textarea' maxlength='500' required>$summary</textarea>";
           echo "<textarea name='trailer' class='data-table__textarea' maxlength='500' required>$trailer</textarea>";

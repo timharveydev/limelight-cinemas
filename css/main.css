@@ -383,9 +383,9 @@ h6 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: left;
-      -ms-flex-align: left;
-          align-items: left;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .footer__flex-wrapper {
@@ -739,7 +739,7 @@ h6 {
   color: transparent;
   background-size: cover;
   background-position: 50% 50%;
-  background-repeat: none;
+  background-repeat: no-repeat;
   opacity: 0;
   z-index: -1;
   -webkit-animation: imageAnimation 36s linear infinite 0s;
