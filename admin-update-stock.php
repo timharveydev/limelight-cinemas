@@ -161,8 +161,12 @@ if (isset($_POST['update'])) {
 
         <!-- Table headings -->
         <form class="data-table__form">
-          <input type="text" class="data-table__heading" value="Title" readonly>
-          <input type="text" class="data-table__heading" value="Stock" readonly>
+          <label for="title" hidden>title</label>
+          <input type="text" id="title" class="data-table__heading" value="Title" readonly>
+
+          <label for="stock" hidden>stock</label>
+          <input type="text" id="stock" class="data-table__heading" value="Stock" readonly>
+
           <input type="submit" class="data-table__button--hidden button--primary" value="Update">
         </form>
         <hr>
@@ -183,8 +187,13 @@ if (isset($_POST['update'])) {
         while ($row = mysqli_fetch_array($query)) {
           extract($row);
           echo "<form class='data-table__form' action='admin-update-stock.php' method='POST'>";
-          echo "<input name='title' type='text' class='data-table__input left-align' value='$title' readonly>";
-          echo "<input name='stock' type='text' class='data-table__input' value='$stock'>";
+
+          echo "<label for='$title' hidden>title</label>";
+          echo "<input name='title' type='text' id='$title' class='data-table__input left-align' value='$title' readonly>";
+
+          echo "<label for='$title$stock' hidden>stock</label>";
+          echo "<input name='stock' type='text' id='$title$stock' class='data-table__input' value='$stock'>";
+
           echo "<input name='update' type='submit' class='data-table__button button--primary' value='Update'>";
           echo "</form>";
         }

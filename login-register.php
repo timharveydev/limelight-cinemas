@@ -174,7 +174,8 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
         <input name="email" id="email" type="text" class="form__text-input" maxlength="40" value="<?php echo $_SESSION['email']; ?>">
 
         <input name="submit" type="submit" value="Submit" class="form__button button--primary button--large">
-        <input name="reset" type="reset" value="Reset" class="form__button button--negative button--large">
+        <input name="reset" type="reset" value="Reset" id="register-reset" class="form__button button--negative button--large">
+        <label for="register-reset" hidden>Reset</label>
         
       </form>
 
@@ -189,7 +190,8 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
         <input name="password" id="login-password" type="password" class="form__text-input" required>
 
         <input name="submit" type="submit" value="Submit" class="form__button button--primary button--large">
-        <input name="reset" type="reset" value="Reset" class="form__button button--negative button--large">
+        <input name="reset" type="reset" value="Reset" id="login-reset" class="form__button button--negative button--large">
+        <label for="login-reset" hidden>Reset</label>
       </form>
 
     </div>

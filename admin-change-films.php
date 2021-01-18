@@ -175,9 +175,15 @@ if (isset($_POST['delete'])) {
 
         <!-- Table headings -->
         <form class="data-table__form">
-          <input type="text" class="data-table__heading" value="Title" readonly>
-          <input type="text" class="data-table__heading" value="Summary" readonly>
-          <input type="text" class="data-table__heading" value="Trailer" readonly>
+          <label for="title" hidden>title</label>
+          <input type="text" id="title" class="data-table__heading" value="Title" readonly>
+
+          <label for="summary" hidden>summary</label>
+          <input type="text" id="summary" class="data-table__heading" value="Summary" readonly>
+
+          <label for="trailer" hidden>trailer</label>
+          <input type="text" id="trailer" class="data-table__heading" value="Trailer" readonly>
+
           <input type="submit" class="data-table__button--hidden button--primary" value="Update">
           <input type="submit" class="data-table__button--hidden button--negative" value="Delete">
         </form>
@@ -199,10 +205,18 @@ if (isset($_POST['delete'])) {
         while ($row = mysqli_fetch_array($query)) {
           extract($row);
           echo "<form class='data-table__form' action='admin-change-films.php' method='POST'>";
-          echo "<input name='title' type='text' class='data-table__input left-align' value='$title' maxlength='50' required>";
-          echo "<textarea name='summary' class='data-table__textarea' maxlength='500' required>$summary</textarea>";
-          echo "<textarea name='trailer' class='data-table__textarea' maxlength='500' required>$trailer</textarea>";
+
+          echo "<label for='$title' hidden>title</label>";
+          echo "<input name='title' type='text' id='$title' class='data-table__input left-align' value='$title' maxlength='50' required>";
+
+          echo "<label for='$summary' hidden>summary</label>";
+          echo "<textarea name='summary' id='$summary' class='data-table__textarea' maxlength='500' required>$summary</textarea>";
+
+          echo "<label for='$trailer' hidden>trailer</label>";
+          echo "<textarea name='trailer' id='$trailer' class='data-table__textarea' maxlength='500' required>$trailer</textarea>";
+
           echo "<input name='id' type='hidden' class='data-table__input' value='$ID'>";
+
           echo "<input name='update' type='submit' class='data-table__button button--primary' value='Update'>";
           echo "<input name='delete' type='submit' class='data-table__button button--negative' value='Delete'>";
           echo "</form>";

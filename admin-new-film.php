@@ -167,7 +167,8 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
 
         <!-- Submit / Reset -->
         <input name="submit" type="submit" value="Add Film" class="form__button button--primary button--large">
-        <input name="reset" type="reset" value="Reset" class="form__button button--negative button--large">
+        <input name="reset" type="reset" value="Reset" id="reset" class="form__button button--negative button--large">
+        <label for="reset" hidden>Reset</label>
         
       </form>
 

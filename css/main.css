@@ -2225,6 +2225,10 @@ h6 {
 .admin-home__user {
   text-align: right;
   margin: 2rem 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.8rem;
+  letter-spacing: 0.2rem;
 }
 
 .admin-home__button-selectors {

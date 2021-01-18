@@ -167,7 +167,8 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
         <textarea name="message" id="message" cols="50" rows="5" class="form__text-area" placeholder="Type your message here ..." maxlength="1000" required></textarea>
 
         <input name="submit" type="submit" value="Submit" class="form__button button--primary button--large">
-        <input name="reset" type="reset" value="Reset" class="form__button button--negative button--large">
+        <input name="reset" type="reset" value="Reset" id="reset" class="form__button button--negative button--large">
+        <label for="reset" hidden>Reset</label>
         
       </form>
 

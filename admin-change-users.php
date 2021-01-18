@@ -176,10 +176,18 @@ if (isset($_POST['delete'])) {
 
         <!-- Table headings -->
         <form class="data-table__form">
-          <input type="text" class="data-table__heading" value="Username" readonly>
-          <input type="text" class="data-table__heading" value="Password" readonly>
-          <input type="text" class="data-table__heading" value="Date of Birth" readonly>
-          <input type="text" class="data-table__heading" value="Email" readonly>
+          <label for="username" hidden>username</label>
+          <input type="text" id="username" class="data-table__heading" value="Username" readonly>
+
+          <label for="password" hidden>password</label>
+          <input type="text" id="password" class="data-table__heading" value="Password" readonly>
+
+          <label for="date-of-birth" hidden>date of birth</label>
+          <input type="text" id="date-of-birth" class="data-table__heading" value="Date of Birth" readonly>
+
+          <label for="email" hidden>email</label>
+          <input type="text" id="email" class="data-table__heading" value="Email" readonly>
+
           <input type="submit" class="data-table__button--hidden button--primary" value="Update">
           <input type="submit" class="data-table__button--hidden button--negative" value="Delete">
         </form>
@@ -201,11 +209,21 @@ if (isset($_POST['delete'])) {
         while ($row = mysqli_fetch_array($query)) {
           extract($row);
           echo "<form class='data-table__form' action='admin-change-users.php' method='POST'>";
-          echo "<input name='username' type='text' class='data-table__input' value='$username'>";
-          echo "<input name='password' type='password' class='data-table__input' value='$password' minlength='8' maxlength='12'>";
-          echo "<input name='dob' type='text' class='data-table__input' value='$date_of_birth'>";
-          echo "<input name='email' type='text' class='data-table__input' value='$email'>";
+
+          echo "<label for='$username' hidden>username</label>";
+          echo "<input name='username' type='text' id='$username' class='data-table__input' value='$username'>";
+
+          echo "<label for='$ID$password' hidden>password</label>";
+          echo "<input name='password' type='password' id='$ID$password' class='data-table__input' value='$password' minlength='8' maxlength='12'>";
+
+          echo "<label for='$date_of_birth' hidden>date of birth</label>";
+          echo "<input name='dob' type='text' id='$date_of_birth' class='data-table__input' value='$date_of_birth'>";
+
+          echo "<label for='$email' hidden>email</label>";
+          echo "<input name='email' type='text' id='$email' class='data-table__input' value='$email'>";
+
           echo "<input name='id' type='hidden' class='data-table__input' value='$ID'>";
+
           echo "<input name='update' type='submit' class='data-table__button button--primary' value='Update'>";
           echo "<input name='delete' type='submit' class='data-table__button button--negative' value='Delete'>";
           echo "</form>";
