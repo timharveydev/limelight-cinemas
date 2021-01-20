@@ -21,14 +21,14 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
 
   <!-- CSS
   --------------------------------------------------------->
-  <link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/main.css">
+  <link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/main.min.css">
   <!-- PHP includes css styles specific to junior & unregistered users -->
   <?php
     if (!isset($_SESSION['username']) || $_SESSION['userAge'] < 18) {
-      echo '<link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/junior-unregistered.css">';
+      echo '<link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/junior-unregistered.min.css">';
     }
     if (isset($_SESSION['username']) && $_SESSION['userAge'] < 18) {
-      echo '<link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/junior-only.css">';
+      echo '<link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/junior-only.min.css">';
     }
   ?>
 
@@ -168,7 +168,7 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
         <input name="confirm-password" id="confirm-register-password" type="password" class="form__text-input" maxlength="12" required>
 
         <label for="date-of-birth" class="form__label">Date of Birth <span class="required">*</span></label>
-        <input name="date-of-birth" id="date-of-birth" type="date" class="form__text-input datepicker" min="1900-01-01" required value="<?php echo $_SESSION['dob']; ?>"> <!-- See setDateInputMax.js -->
+        <input name="date-of-birth" id="date-of-birth" type="date" class="form__text-input datepicker" min="1900-01-01" required value="<?php echo $_SESSION['dob']; ?>"> <!-- See setDateInputMax.min.js -->
 
         <label for="email" class="form__label">Email (optional)</label>
         <input name="email" id="email" type="text" class="form__text-input" maxlength="40" value="<?php echo $_SESSION['email']; ?>">
@@ -243,9 +243,9 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
 
   <!-- JAVASCRIPT
   --------------------------------------------------------->
-  <script type='text/javascript' src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/js/toggleSection.js"></script>
-  <script type='text/javascript' src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/js/setDateInputMax.js"></script>
-  <script type='text/javascript' src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/js/toggleMenu.js"></script>
+  <script type='text/javascript' src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/js/toggleSection.min.js"></script>
+  <script type='text/javascript' src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/js/setDateInputMax.min.js" defer></script>
+  <script type='text/javascript' src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/js/toggleMenu.min.js" defer></script>
 
 
   <!-- END DOCUMENT

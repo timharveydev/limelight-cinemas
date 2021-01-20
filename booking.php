@@ -50,14 +50,14 @@ while ($row = mysqli_fetch_array($query)) {
 
   <!-- CSS
   --------------------------------------------------------->
-  <link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/main.css">
+  <link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/main.min.css">
   <!-- PHP includes css styles specific to junior & unregistered users -->
   <?php
     if (!isset($_SESSION['username']) || $_SESSION['userAge'] < 18) {
-      echo '<link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/junior-unregistered.css">';
+      echo '<link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/junior-unregistered.min.css">';
     }
     if (isset($_SESSION['username']) && $_SESSION['userAge'] < 18) {
-      echo '<link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/junior-only.css">';
+      echo '<link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/junior-only.min.css">';
     }
   ?>
 
@@ -174,7 +174,7 @@ while ($row = mysqli_fetch_array($query)) {
 
         <!-- Film poster -->
         <div class="booking-box__img-div">
-          <img src="image_uploads/<?php echo $image; ?>" alt="Film poster for <?php echo $title; ?>">
+          <img src="img/user_uploads/<?php echo $image; ?>" alt="Film poster for <?php echo $title; ?>">
         </div>
 
 
@@ -277,7 +277,7 @@ while ($row = mysqli_fetch_array($query)) {
 
   <!-- JAVASCRIPT
   --------------------------------------------------------->
-  <script type='text/javascript' src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/js/toggleMenu.js"></script>
+  <script type='text/javascript' src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/js/toggleMenu.min.js" defer></script>
 
 
   <!-- END DOCUMENT

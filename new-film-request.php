@@ -26,8 +26,8 @@ $summary = str_replace("'", "&#39;", $_POST['summary']);
 $image = $_FILES['image']['name'];
 
 
-// Move uploaded image file to 'image_uploads' directory
-move_uploaded_file($_FILES['image']['tmp_name'], "image_uploads/$image");
+// Move uploaded image file to 'img/user_uploads' directory
+move_uploaded_file($_FILES['image']['tmp_name'], "img/user_uploads/$image");
 
 
 // Insert data into DB

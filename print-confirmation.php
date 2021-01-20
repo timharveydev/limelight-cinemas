@@ -61,7 +61,7 @@ $referenceCode = $age_rating . $acronym . $_GET['quantity'];
 
   <!-- CSS
   --------------------------------------------------------->
-  <link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/main.css">
+  <link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/main.min.css">
 
   <!-- FONTS
   --------------------------------------------------------->

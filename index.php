@@ -68,14 +68,14 @@ elseif (isset($_POST['family'])) {
 
   <!-- CSS
   --------------------------------------------------------->
-  <link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/main.css">
+  <link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/main.min.css">
   <!-- PHP includes css styles specific to junior & unregistered users -->
   <?php
     if (!isset($_SESSION['username']) || $_SESSION['userAge'] < 18) {
-      echo '<link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/junior-unregistered.css">';
+      echo '<link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/junior-unregistered.min.css">';
     }
     if (isset($_SESSION['username']) && $_SESSION['userAge'] < 18) {
-      echo '<link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/junior-only.css">';
+      echo '<link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/junior-only.min.css">';
     }
   ?>
 
@@ -96,7 +96,7 @@ elseif (isset($_POST['family'])) {
   <link rel="mask-icon" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/img/favicon/safari-pinned-tab.svg" color="#49b171">
 
 </head>
-<body id="top" class="fade-in" onload="document.querySelector('.fade-in').style.opacity='1'">
+<body id="top">
 
   <!-- MAIN CONTENT
   --------------------------------------------------------->
@@ -349,7 +349,7 @@ elseif (isset($_POST['family'])) {
 
         echo "  <!-- Film poster -->";
         echo "  <div class='film-info-box__img-div'>";
-        echo "    <img src='http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/image_uploads/$image' alt='Film poster for $title'>";
+        echo "    <img src='http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/img/user_uploads/$image' alt='Film poster for $title'>";
         echo "  </div>";
 
         echo "  <!-- Film info & content -->";
@@ -449,7 +449,7 @@ elseif (isset($_POST['family'])) {
 
   <!-- JAVASCRIPT
   --------------------------------------------------------->
-  <script type='text/javascript' src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/js/toggleMenu.js"></script>
+  <script type='text/javascript' src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/js/toggleMenu.min.js" defer></script>
 
 
   <!-- END DOCUMENT

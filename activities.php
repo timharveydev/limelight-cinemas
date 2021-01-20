@@ -32,14 +32,14 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
 
   <!-- CSS
   --------------------------------------------------------->
-  <link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/main.css">
+  <link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/main.min.css">
   <!-- PHP includes css styles specific to junior & unregistered users -->
   <?php
     if (!isset($_SESSION['username']) || $_SESSION['userAge'] < 18) {
-      echo '<link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/junior-unregistered.css">';
+      echo '<link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/junior-unregistered.min.css">';
     }
     if (isset($_SESSION['username']) && $_SESSION['userAge'] < 18) {
-      echo '<link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/junior-only.css">';
+      echo '<link rel="stylesheet" href="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/css/junior-only.min.css">';
     }
   ?>
 
@@ -156,7 +156,7 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
 
 
       <!-- Quiz Embed Code -->
-      <a data-quiz="QQUQFW1XX" data-type=4 href="https://www.quiz-maker.com/QQUQFW1XX">Loading...</a><script>(function(i,s,o,g,r,a,m){var ql=document.querySelectorAll('A[quiz],DIV[quiz],A[data-quiz],DIV[data-quiz]'); if(ql){if(ql.length){for(var k=0;k<ql.length;k++){ql[k].id='quiz-embed-'+k;ql[k].href="javascript:var i=document.getElementById('quiz-embed-"+k+"');try{qz.startQuiz(i)}catch(e){i.start=1;i.style.cursor='wait';i.style.opacity='0.5'};void(0);"}}};i['QP']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//cdn.poll-maker.com/quiz-embed-v1.js','qp');</script>
+      <a data-quiz="QQUQFW1XX" data-type=4 href="https://www.quiz-maker.com/QQUQFW1XX">Loading...</a><script>(function(i,s,o,g,r,a,m){var ql=document.querySelectorAll('A[quiz],DIV[quiz],A[data-quiz],DIV[data-quiz]'); if(ql){if(ql.length){for(var k=0;k<ql.length;k++){ql[k].id='quiz-embed-'+k;ql[k].href="javascript:var i=document.getElementById('quiz-embed-"+k+"');try{qz.startQuiz(i)}catch(e){i.start=1;i.style.cursor='wait';i.style.opacity='0.5'};void(0);"}}};i['QP']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//cdn.poll-maker.com/quiz-embed-v1.min.js','qp');</script>
 
     </div>
   </section>
@@ -207,7 +207,7 @@ $_SESSION['redirect'] = strtok($_SERVER['REQUEST_URI'], '?');
 
   <!-- JAVASCRIPT
   --------------------------------------------------------->
-  <script type='text/javascript' src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/js/toggleMenu.js"></script>
+  <script type='text/javascript' src="http://webdev.edinburghcollege.ac.uk/~HNCWEBMR4/limelight-cinemas/js/toggleMenu.min.js" defer></script>
 
 
   <!-- END DOCUMENT
